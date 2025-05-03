@@ -17,7 +17,9 @@
   <!-- Onboarding Modal -->
   <div id="onboarding" class="modal">
     <div class="modal-content">
-      <div class="step active" id="step-0">
+      <span class="close-btn" onclick="closeOnboarding()">✖</span>
+
+      <div class="step" id="step-0">
         <h2>🔐 Create Wallet</h2>
         <p>No wallet? We'll show you how to create one.</p>
         <button class="onboarding-btn" onclick="nextStep()">Next</button>
@@ -46,7 +48,6 @@
   <section id="airdrops" class="airdrops">
     <h2>🔥 Trending Airdrops</h2>
     <div class="cards">
-
       <div class="card">
         <h3>🪙 $ZETA Airdrop</h3>
         <p>Retweet on Twitter</p>
@@ -67,7 +68,6 @@
         <span class="reward">+ $3 est.</span>
         <a href="#" class="card-btn">Join</a>
       </div>
-
     </div>
   </section>
 
@@ -81,20 +81,24 @@
 
     function startOnboarding() {
       document.getElementById('onboarding').style.display = 'flex';
-      steps[currentStep].classList.add('active');
+      showStep(0);
+    }
+
+    function showStep(stepIndex) {
+      steps.forEach(step => step.classList.remove('active'));
+      steps[stepIndex].classList.add('active');
+      currentStep = stepIndex;
     }
 
     function nextStep() {
       if (currentStep < steps.length - 1) {
-        steps[currentStep].classList.remove('active');
-        currentStep++;
-        steps[currentStep].classList.add('active');
+        showStep(currentStep + 1);
       }
     }
 
     function closeOnboarding() {
       document.getElementById('onboarding').style.display = 'none';
-      steps[currentStep].classList.remove('active');
+      steps.forEach(step => step.classList.remove('active'));
       currentStep = 0;
     }
   </script>
