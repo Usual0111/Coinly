@@ -11,16 +11,45 @@
   <header class="hero">
     <h1>Claim Free Crypto Now</h1>
     <p>No investment. No stress. Just simple tasks.</p>
-    <a href="#airdrops" class="cta-btn">Get Started</a>
+    <button class="cta-btn" onclick="startOnboarding()">Get Started</button>
   </header>
+
+  <!-- Onboarding Modal -->
+  <div id="onboarding" class="modal">
+    <div class="modal-content">
+      <div class="step active" id="step-0">
+        <h2>🔐 Create Wallet</h2>
+        <p>No wallet? We'll show you how to create one.</p>
+        <button class="onboarding-btn" onclick="nextStep()">Next</button>
+      </div>
+
+      <div class="step" id="step-1">
+        <h2>🏆 Get Your Reward</h2>
+        <p>Complete the task and claim your tokens.</p>
+        <button class="onboarding-btn" onclick="nextStep()">Next</button>
+      </div>
+
+      <div class="step" id="step-2">
+        <h2>🧩 How to Create a Wallet</h2>
+        <p>We recommend starting with <strong>OKX Wallet</strong>, which supports multiple chains.</p>
+        <ul class="wallet-links">
+          <li><a href="https://www.okx.com/web3" target="_blank">🌐 OKX Web Wallet</a></li>
+          <li><a href="https://chrome.google.com/webstore/detail/okx-wallet" target="_blank">🧩 OKX Chrome Extension</a></li>
+          <li><a href="#">📱 OKX Mobile App (iOS / Android)</a></li>
+        </ul>
+        <p style="margin-top: 20px;">Prefer other wallets? You can also use Metamask, Phantom, or Trust Wallet. Links coming soon.</p>
+        <button class="onboarding-btn" onclick="closeOnboarding()">Done</button>
+      </div>
+    </div>
+  </div>
 
   <section id="airdrops" class="airdrops">
     <h2>🔥 Trending Airdrops</h2>
     <div class="cards">
 
       <div class="card">
-        <h3>🪙 $3DOS Airdrop</h3>
-        <p>Run Chrome Extension, Social Tasks</p>
+        <h3>🪙 $ZETA Airdrop</h3>
+        <p>Retweet on Twitter</p>
         <span class="reward">+ $5 est.</span>
         <a href="#" class="card-btn">Claim</a>
       </div>
@@ -43,52 +72,32 @@
   </section>
 
   <footer class="footer">
-    <p>© 2025 Coinly. All rights reserved.</p>
+    <p>© 2025 AirdropTunnel. All rights reserved.</p>
   </footer>
 
-<!-- Onboarding Modal -->
-<div class="onboarding-overlay hidden" id="onboarding">
-  <div class="onboarding-box">
-    <div id="step-1" class="step active">
-      <h2>🔐 Create Wallet</h2>
-      <p>No wallet? We'll show you how to create one.</p>
-      <button class="onboarding-btn" onclick="nextStep(1)">Next</button>
-    </div>
-    <div id="step-2" class="step">
-      <h2>🎯 Choose a Task</h2>
-      <p>Select one of the airdrops to start earning.</p>
-      <button class="onboarding-btn" onclick="nextStep(2)">Next</button>
-    </div>
-    <div id="step-3" class="step">
-      <h2>🏆 Get Your Reward</h2>
-      <p>Complete the task and claim your tokens.</p>
-      <button class="onboarding-btn" onclick="closeOnboarding()">Done</button>
-    </div>
-  </div>
-</div>
+  <script>
+    const steps = document.querySelectorAll('.step');
+    let currentStep = 0;
 
-<script>
-  const onboarding = document.getElementById('onboarding');
-  const steps = document.querySelectorAll('.step');
+    function startOnboarding() {
+      document.getElementById('onboarding').style.display = 'flex';
+      steps[currentStep].classList.add('active');
+    }
 
-  document.querySelector('.cta-btn').addEventListener('click', (e) => {
-    e.preventDefault();
-    onboarding.classList.remove('hidden');
-    showStep(0);
-  });
+    function nextStep() {
+      if (currentStep < steps.length - 1) {
+        steps[currentStep].classList.remove('active');
+        currentStep++;
+        steps[currentStep].classList.add('active');
+      }
+    }
 
-  function nextStep(current) {
-    steps[current].classList.remove('active');
-    steps[current + 1].classList.add('active');
-  }
+    function closeOnboarding() {
+      document.getElementById('onboarding').style.display = 'none';
+      steps[currentStep].classList.remove('active');
+      currentStep = 0;
+    }
+  </script>
 
-  function showStep(index) {
-    steps.forEach((s, i) => s.classList.toggle('active', i === index));
-  }
-
-  function closeOnboarding() {
-    onboarding.classList.add('hidden');
-  }
-</script>
 </body>
 </html>
