@@ -58,19 +58,19 @@
     <p class="section-subtitle">Choose your quest:</p>
     <div class="cards">
       <div class="card">
-        <h3>🪙 Gradient Airdrop</h3>
+        <h3>🪙 Gradient </h3>
         <p>Install the browser extension & complete a few tasks!</p>
         <span class="reward">+$50-$250 (prev est.)</span>
         <a href="#" class="card-btn" onclick="openTask('zeta')">Claim</a>
       </div>
       <div class="card">
-        <h3>🧩 $NOVA Invite</h3>
-        <p>Invite 1 friend</p>
+        <h3>🧩 $3DOS </h3>
+        <p>Install the browser extension & complete a few tasks!</p>
         <span class="reward">+ $10 est.</span>
         <a href="#" class="card-btn" onclick="openTask('nova')">Start</a>
       </div>
       <div class="card">
-        <h3>🛡️ $ATOM Mission</h3>
+        <h3>🛡️ $GRASS </h3>
         <p>Join Discord</p>
         <span class="reward">+ $3 est.</span>
         <a href="#" class="card-btn" onclick="openTask('atom')">Join</a>
@@ -79,7 +79,7 @@
   </section>
 
   <footer class="footer">
-    <p>© 2025 AirdropTunnel. All rights reserved.</p>
+    <p>© 2025 Coinly. All rights reserved.</p>
   </footer>
   
   <script>
@@ -134,34 +134,30 @@
           break;
         case 'nova':
           taskContent.innerHTML = `
-            <h2>🧩 $NOVA Invite</h2>
-            <p>Invite friends to earn $NOVA tokens:</p>
+            <h2>💸 Earn Free $3DOS Just by Being Online</h2>
+            <p>Complete these simple steps to earn your $3DOS:</p>
             <ol class="task-steps">
-              <li>Copy your unique referral link</li>
-              <li>Share with at least 1 friend</li>
-              <li>Both you and your friend get rewards when they sign up</li>
+              <li>Sign up on 3DOS</li>
+              <li>Add the Chrome extension</li>
+              <li>Stay active & collect rewards</li>
             </ol>
-            <div class="referral-link">
-              <input type="text" value="https://airdroptunnel.xyz/ref/YOUR_ID" readonly>
-              <button onclick="copyReferralLink()">Copy</button>
-            </div>
             <div class="task-buttons">
-              <button class="task-btn">Share Link</button>
+              <a href="https://dashboard.3dos.ioregister?ref_code=5d1a7f" target="_blank" class="task-btn">Start Earning</a>
               <button class="onboarding-btn" onclick="showWalletHelp()">Need a Wallet?</button>
             </div>
           `;
           break;
         case 'atom':
           taskContent.innerHTML = `
-            <h2>🛡️ $ATOM Mission</h2>
-            <p>Join the $ATOM community to earn tokens:</p>
+            <h2>💰 Earn with Solix — just for being online</h2>
+            <p>No investment. Just turn it on — and start getting points.</p>
             <ol class="task-steps">
-              <li>Join the official Discord server</li>
-              <li>Verify your account</li>
-              <li>Say hello in the #newcomers channel</li>
+              <li>Create a Solix account</li>
+              <li>Add the Solix extension</li>
+              <li>Do simple tasks</li>
             </ol>
             <div class="task-buttons">
-              <a href="https://discord.gg/cosmos" target="_blank" class="task-btn">Join Discord</a>
+              <a href="https://dashboard.solixdepin.net/sign-up?ref=LzDVGhu7" target="_blank" class="task-btn">Start Earning</a>
               <button class="onboarding-btn" onclick="showWalletHelp()">Need a Wallet?</button>
             </div>
           `;
