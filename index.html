@@ -7,31 +7,26 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header class="hero">
     <h1>Claim Free Crypto Now</h1>
     <p>No investment. No stress. Just simple tasks.</p>
     <button class="cta-btn" onclick="startOnboarding()">Get Started</button>
   </header>
-
+  
   <!-- Onboarding Modal -->
   <div id="onboarding" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeOnboarding()">✖</span>
-
-      <!-- Удалён класс active -->
       <div class="step" id="step-0">
         <h2>🔐 Create Wallet</h2>
         <p>No wallet? We'll show you how to create one.</p>
         <button class="onboarding-btn" onclick="nextStep()">Next</button>
       </div>
-
       <div class="step" id="step-1">
         <h2>🏆 Get Your Reward</h2>
         <p>Complete the task and claim your tokens.</p>
         <button class="onboarding-btn" onclick="nextStep()">Next</button>
       </div>
-
       <div class="step" id="step-2">
         <h2>🧩 How to Create a Wallet</h2>
         <p>We recommend starting with <strong>OKX Wallet</strong>, which supports multiple chains.</p>
@@ -45,6 +40,16 @@
       </div>
     </div>
   </div>
+  
+  <!-- Task Modal -->
+  <div id="task-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeTaskModal()">✖</span>
+      <div id="task-content">
+        <!-- Task specific content will be loaded here -->
+      </div>
+    </div>
+  </div>
 
   <section id="airdrops" class="airdrops">
     <h2>🔥 Trending Airdrops</h2>
@@ -53,21 +58,44 @@
         <h3>🪙 $ZETA Airdrop</h3>
         <p>Retweet on Twitter</p>
         <span class="reward">+ $5 est.</span>
-        <a href="#" class="card-btn">Claim</a>
+        <a href="#" class="card-btn" onclick="openTask('zeta')">Claim</a>
       </div>
-
       <div class="card">
         <h3>🧩 $NOVA Invite</h3>
         <p>Invite a friend</p>
         <span class="reward">+ $10 est.</span>
-        <a href="#" class="card-btn">Start</a>
+        <a href="#" class="card-btn" onclick="openTask('nova')">Start</a>
       </div>
-
       <div class="card">
         <h3>🛡️ $ATOM Mission</h3>
         <p>Join Discord</p>
         <span class="reward">+ $3 est.</span>
-        <a href="#" class="card-btn">Join</a>
+        <a href="#" class="card-btn" onclick="openTask('atom')">Join</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="earn-now" class="earn-now">
+    <h2>🔥 Earn Now</h2>
+    <p class="section-subtitle">Choose your quest:</p>
+    <div class="cards">
+      <div class="card">
+        <h3>🪙 $ZETA Airdrop</h3>
+        <p>Easy Twitter retweet</p>
+        <span class="reward">+ $5 est.</span>
+        <a href="#" class="card-btn" onclick="openTask('zeta')">Claim</a>
+      </div>
+      <div class="card">
+        <h3>🧩 $NOVA Invite</h3>
+        <p>Invite 1 friend</p>
+        <span class="reward">+ $10 est.</span>
+        <a href="#" class="card-btn" onclick="openTask('nova')">Start</a>
+      </div>
+      <div class="card">
+        <h3>🛡️ $ATOM Mission</h3>
+        <p>Join Discord</p>
+        <span class="reward">+ $3 est.</span>
+        <a href="#" class="card-btn" onclick="openTask('atom')">Join</a>
       </div>
     </div>
   </section>
@@ -75,34 +103,113 @@
   <footer class="footer">
     <p>© 2025 AirdropTunnel. All rights reserved.</p>
   </footer>
-
+  
   <script>
+    // Onboarding Flow Logic
     const steps = document.querySelectorAll('.step');
     let currentStep = 0;
-
+    
     function startOnboarding() {
       document.getElementById('onboarding').style.display = 'flex';
       showStep(0);
     }
-
+    
     function showStep(stepIndex) {
       steps.forEach(step => step.classList.remove('active'));
       steps[stepIndex].classList.add('active');
       currentStep = stepIndex;
     }
-
+    
     function nextStep() {
       if (currentStep < steps.length - 1) {
         showStep(currentStep + 1);
       }
     }
-
+    
     function closeOnboarding() {
       document.getElementById('onboarding').style.display = 'none';
       steps.forEach(step => step.classList.remove('active'));
       currentStep = 0;
     }
-  </script>
 
+    // Task Modal Logic
+    function openTask(taskId) {
+      const taskModal = document.getElementById('task-modal');
+      const taskContent = document.getElementById('task-content');
+      
+      // Load task-specific content based on taskId
+      switch(taskId) {
+        case 'zeta':
+          taskContent.innerHTML = `
+            <h2>🪙 $ZETA Airdrop</h2>
+            <p>Complete these simple steps to earn your $ZETA tokens:</p>
+            <ol class="task-steps">
+              <li>Follow @ZetaChain on Twitter</li>
+              <li>Retweet the pinned post</li>
+              <li>Comment with your wallet address</li>
+            </ol>
+            <div class="task-buttons">
+              <a href="https://twitter.com/zetablockchain" target="_blank" class="task-btn">Go to Twitter</a>
+              <button class="onboarding-btn" onclick="showWalletHelp()">Need a Wallet?</button>
+            </div>
+          `;
+          break;
+        case 'nova':
+          taskContent.innerHTML = `
+            <h2>🧩 $NOVA Invite</h2>
+            <p>Invite friends to earn $NOVA tokens:</p>
+            <ol class="task-steps">
+              <li>Copy your unique referral link</li>
+              <li>Share with at least 1 friend</li>
+              <li>Both you and your friend get rewards when they sign up</li>
+            </ol>
+            <div class="referral-link">
+              <input type="text" value="https://airdroptunnel.xyz/ref/YOUR_ID" readonly>
+              <button onclick="copyReferralLink()">Copy</button>
+            </div>
+            <div class="task-buttons">
+              <button class="task-btn">Share Link</button>
+              <button class="onboarding-btn" onclick="showWalletHelp()">Need a Wallet?</button>
+            </div>
+          `;
+          break;
+        case 'atom':
+          taskContent.innerHTML = `
+            <h2>🛡️ $ATOM Mission</h2>
+            <p>Join the $ATOM community to earn tokens:</p>
+            <ol class="task-steps">
+              <li>Join the official Discord server</li>
+              <li>Verify your account</li>
+              <li>Say hello in the #newcomers channel</li>
+            </ol>
+            <div class="task-buttons">
+              <a href="https://discord.gg/cosmos" target="_blank" class="task-btn">Join Discord</a>
+              <button class="onboarding-btn" onclick="showWalletHelp()">Need a Wallet?</button>
+            </div>
+          `;
+          break;
+        default:
+          taskContent.innerHTML = `<p>Task details not available</p>`;
+      }
+      
+      taskModal.style.display = 'flex';
+    }
+
+    function closeTaskModal() {
+      document.getElementById('task-modal').style.display = 'none';
+    }
+
+    function showWalletHelp() {
+      closeTaskModal();
+      startOnboarding();
+    }
+
+    function copyReferralLink() {
+      const referralInput = document.querySelector('.referral-link input');
+      referralInput.select();
+      document.execCommand('copy');
+      alert('Referral link copied to clipboard!');
+    }
+  </script>
 </body>
 </html>
