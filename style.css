@@ -131,6 +131,7 @@ body {
     font-size: 2rem;
   }
 }
+
 /* Onboarding Modal */
 .modal {
   position: fixed;
@@ -193,25 +194,4 @@ body {
 
 .wallet-links a {
   text-decoration: none;
-  color: #007acc;
-  font-weight: bold;
-}
-
-.wallet-links a:hover {
-  text-decoration: underline;
-}
-/* Close button for modal */
-.close-btn {
-  position: absolute;
-  top: 12px;
-  right: 20px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: #999;
-  transition: color 0.3s ease;
-}
-
-.close-btn:hover {
-  color: #000;
-}
-
+  color: #
