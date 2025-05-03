@@ -43,12 +43,12 @@ body {
   background-color: #007acc;
 }
 /* Airdrop Cards */
-.airdrops, .earn-now {
+.earn-now {
   max-width: 960px;
   margin: 0 auto 40px;
   text-align: center;
 }
-.airdrops h2, .earn-now h2 {
+.earn-now h2 {
   margin-bottom: 15px;
   font-size: 1.8rem;
 }
@@ -152,6 +152,8 @@ body {
   cursor: pointer;
   color: #555;
   transition: color 0.2s ease;
+  z-index: 1001; /* Ensure it's above other content */
+  display: block; /* Ensure it's always visible */
 }
 .close-btn:hover {
   color: #000;
