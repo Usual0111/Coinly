@@ -46,5 +46,49 @@
     <p>© 2025 Coinly. All rights reserved.</p>
   </footer>
 
+<!-- Onboarding Modal -->
+<div class="onboarding-overlay hidden" id="onboarding">
+  <div class="onboarding-box">
+    <div id="step-1" class="step active">
+      <h2>🔐 Connect Wallet</h2>
+      <p>No wallet? We’ll create one for you.</p>
+      <button class="onboarding-btn" onclick="nextStep(1)">Next</button>
+    </div>
+    <div id="step-2" class="step">
+      <h2>🎯 Choose a Task</h2>
+      <p>Select one of the airdrops to start earning.</p>
+      <button class="onboarding-btn" onclick="nextStep(2)">Next</button>
+    </div>
+    <div id="step-3" class="step">
+      <h2>🏆 Get Your Reward</h2>
+      <p>Complete the task and claim your tokens.</p>
+      <button class="onboarding-btn" onclick="closeOnboarding()">Done</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const onboarding = document.getElementById('onboarding');
+  const steps = document.querySelectorAll('.step');
+
+  document.querySelector('.cta-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+    onboarding.classList.remove('hidden');
+    showStep(0);
+  });
+
+  function nextStep(current) {
+    steps[current].classList.remove('active');
+    steps[current + 1].classList.add('active');
+  }
+
+  function showStep(index) {
+    steps.forEach((s, i) => s.classList.toggle('active', i === index));
+  }
+
+  function closeOnboarding() {
+    onboarding.classList.add('hidden');
+  }
+</script>
 </body>
 </html>
