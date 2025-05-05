@@ -302,7 +302,7 @@
           description: "No money needed • Simple setup • Rewards are live.",
           steps: [
             "1. Sign Up on OpenLoop. Create an account and use code ol8ce15b49.",
-            "2. Connect Your Wallet. Log in and click “Link Wallet” to add your Solana wallet.",
+            "2. Connect Your Wallet. Log in and click "Link Wallet" to add your Solana wallet.",
             "3. Install the Extension. Download the Sentry Node extension and log in.",
           ],
           actionUrl: "https://openloop.so/auth/register?ref=ol8ce15b49",
@@ -318,7 +318,7 @@
         hot: false,
         taskId: "vortexpay",
         instructions: {
-          title: "🎁 Earn Free Rewards with Stork — It’s Easy!",
+          title: "🎁 Earn Free Rewards with Stork — It's Easy!",
           description: "No money needed • Simple setup • Rewards are live",
           steps: [
             "Install the Stork Extension. Download it from the Chrome Web Store and open it.",
@@ -342,7 +342,7 @@
           description: "No money needed • Simple setup • Rewards are live",
           steps: [
             "Sign Up on NodeGo. Register on the NodeGo website and install their browser extension.",
-            "Run the Node. Turn it on and keep it active — you’ll earn points automatically.",
+            "Run the Node. Turn it on and keep it active — you'll earn points automatically.",
             "Do Bonus Tasks. Visit the 'Rewards' tab and complete simple tasks to boost your points.",
           ],
           actionUrl: "https://app.nodego.ai/r/NODE91DC98C3479E",
@@ -436,8 +436,14 @@
       // You can easily add more projects here to reach 40 total
     ];
 
+    // Переменная для хранения позиции прокрутки
+    let scrollPosition = 0;
+
     // Task Modal Logic
     function openTask(taskId) {
+      // Сохраняем текущую позицию прокрутки перед открытием модального окна
+      scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      
       const taskModal = document.getElementById('task-modal');
       const taskContent = document.getElementById('task-content');
       
@@ -466,6 +472,11 @@
 
     function closeTaskModal() {
       document.getElementById('task-modal').style.display = 'none';
+      
+      // Восстанавливаем позицию прокрутки после закрытия модального окна
+      setTimeout(() => {
+        window.scrollTo(0, scrollPosition);
+      }, 10);
     }
 
     function showWalletHelp() {
