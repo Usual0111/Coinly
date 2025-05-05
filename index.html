@@ -302,7 +302,7 @@
           description: "No money needed • Simple setup • Rewards are live.",
           steps: [
             "1. Sign Up on OpenLoop. Create an account and use code ol8ce15b49.",
-            "2. Connect Your Wallet. Log in and click "Link Wallet" to add your Solana wallet.",
+            "2. Connect Your Wallet. Log in and click 'Link Wallet' to add your Solana wallet.",
             "3. Install the Extension. Download the Sentry Node extension and log in.",
           ],
           actionUrl: "https://openloop.so/auth/register?ref=ol8ce15b49",
@@ -468,6 +468,7 @@
       }
       
       taskModal.style.display = 'flex';
+      return false; // Предотвратить действие по умолчанию
     }
 
     function closeTaskModal() {
@@ -535,7 +536,7 @@
       button.href = '#';
       button.className = 'card-btn';
       button.textContent = project.btnText;
-      button.onclick = function() { openTask(project.taskId); };
+      button.onclick = function() { return openTask(project.taskId); };
       card.appendChild(button);
       
       return card;
