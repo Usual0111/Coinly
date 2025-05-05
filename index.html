@@ -102,38 +102,6 @@
       // all other projects will be shown in their original order
     ];
 
-    // Execute when DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', function() {
-      initializeProjects();
-    });
-    
-    // Onboarding Flow Logic
-    const steps = document.querySelectorAll('.step');
-    let currentStep = 0;
-    
-    function startOnboarding() {
-      document.getElementById('onboarding').style.display = 'flex';
-      showStep(0);
-    }
-    
-    function showStep(stepIndex) {
-      steps.forEach(step => step.classList.remove('active'));
-      steps[stepIndex].classList.add('active');
-      currentStep = stepIndex;
-    }
-    
-    function nextStep() {
-      if (currentStep < steps.length - 1) {
-        showStep(currentStep + 1);
-      }
-    }
-    
-    function closeOnboarding() {
-      document.getElementById('onboarding').style.display = 'none';
-      steps.forEach(step => step.classList.remove('active'));
-      currentStep = 0;
-    }
-
     // Project data - name, icon, description, reward, button text, hot status, taskId, instructions
     const projects = [
       // All projects in one array for easier editing
@@ -451,36 +419,170 @@
       // You can easily add more projects here to reach 40 total
     ];
 
-    // Function to sort projects according to specified order
-    function sortProjectsByOrder(projectsArray, orderArray) {
-      // Create a copy of the original array to avoid modifying it directly
-      const result = [...projectsArray];
-      
-      // Sort the array based on the order specified
-      result.sort((a, b) => {
-        const indexA = orderArray.indexOf(a.taskId);
-        const indexB = orderArray.indexOf(b.taskId);
+    // Execute when DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeProjects();
+    });
+    
+    // Onboarding Flow Logic
+    const steps = document.querySelectorAll('.step');
+    let currentStep = 0;
+    
+    function startOnboarding() {
+      document.getElementById('onboarding').style.display = 'flex';
+      showStep(0);
+    }
+    
+    function showStep(stepIndex) {
+      steps.forEach(step => step.classList.remove('active'));
+      steps[stepIndex].classList.add('active');
+      currentStep = stepIndex;
+    }
+    
+    function nextStep() {
+      if (currentStep < steps.length - 1) {
+        showStep(currentStep + 1);
+      }
+    }
+    
+    function closeOnboarding() {
+      document.getElementById('onboarding').style.display = 'none';
+      steps.forEach(step => step.classList.remove('active'));
+      currentStep = 0;
+    }
+
+    // Initialize the page with first 3 projects
+    let projectsShown = 0;
+    let clickCount = 0;
+    
+    function initializeProjects() {
+      // Sort the projects according to projectOrder array without modifying the original
+      const sortedProjects = [...projects].sort((a, b) => {
+        const indexA = projectOrder.indexOf(a.taskId);
+        const indexB = projectOrder.indexOf(b.taskId);
         
-        // If both items are in the order array, sort by their position in it
+        // If both projects are in the order array
         if (indexA !== -1 && indexB !== -1) {
           return indexA - indexB;
         }
         
-        // If only item A is in the order array, it comes first
-        if (indexA !== -1) {
-          return -1;
-        }
+        // If only one project is in the order array
+        if (indexA !== -1) return -1;
+        if (indexB !== -1) return 1;
         
-        // If only item B is in the order array, it comes first
-        if (indexB !== -1) {
-          return 1;
-        }
-        
-        // If neither item is in the order array, keep original order
+        // If neither project is in the order array
         return 0;
       });
       
-      return result;
+      // Reset the container and counters
+      const cardsContainer = document.getElementById('project-cards');
+      cardsContainer.innerHTML = ''; // Clear any existing cards
+      projectsShown = 0;
+      clickCount = 0;
+      
+      // Show first 3 projects on page load
+      const initialCards = Math.min(3, sortedProjects.length);
+      for (let i = 0; i < initialCards; i++) {
+        const project = sortedProjects[i];
+        if (!project) continue; // Skip if project is undefined
+        const card = createProjectCard(project);
+        cardsContainer.appendChild(card);
+        projectsShown++;
+      }
+      
+      // Update the show more button
+      updateShowMoreButton(sortedProjects);
+      
+      // Store the sorted projects for later use
+      window.sortedProjects = sortedProjects;
+    }
+    
+    // Create a single project card
+    function createProjectCard(project) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      
+      const cardHeader = document.createElement('div');
+      cardHeader.className = 'card-header';
+      
+      const title = document.createElement('h3');
+      title.textContent = `${project.icon} ${project.name}`;
+      cardHeader.appendChild(title);
+      
+      if (project.hot) {
+        const hotLabel = document.createElement('span');
+        hotLabel.className = 'hot-label';
+        hotLabel.textContent = '🔥 HOT';
+        cardHeader.appendChild(hotLabel);
+      }
+      
+      card.appendChild(cardHeader);
+      
+      const description = document.createElement('p');
+      description.textContent = project.description;
+      card.appendChild(description);
+      
+      const reward = document.createElement('span');
+      reward.className = 'reward';
+      reward.textContent = project.reward;
+      card.appendChild(reward);
+      
+      const button = document.createElement('a');
+      button.href = '#';
+      button.className = 'card-btn';
+      button.textContent = project.btnText;
+      button.onclick = function(e) { 
+        e.preventDefault();
+        openTask(project.taskId); 
+      };
+      card.appendChild(button);
+      
+      return card;
+    }
+    
+    // Update the show more button text and visibility
+    function updateShowMoreButton(projectsList) {
+      const showMoreBtn = document.getElementById('show-more-btn');
+      const actionButtons = document.getElementById('action-buttons');
+      
+      if (projectsShown >= projectsList.length) {
+        showMoreBtn.style.display = 'none';
+        actionButtons.style.display = 'flex';
+      } else {
+        const remaining = Math.min(3, projectsList.length - projectsShown);
+        showMoreBtn.textContent = `🔽 Show ${remaining} More Projects`;
+        showMoreBtn.style.display = 'block';
+      }
+    }
+    
+    // Show more projects function
+    function showMoreProjects() {
+      const cardsContainer = document.getElementById('project-cards');
+      const infoText = document.getElementById('info-text');
+      const projectsList = window.sortedProjects || projects;
+      
+      // Increment click count
+      clickCount++;
+      
+      // Add 3 more projects
+      const startIndex = projectsShown;
+      const endIndex = Math.min(startIndex + 3, projectsList.length);
+      
+      for (let i = startIndex; i < endIndex; i++) {
+        const project = projectsList[i];
+        if (!project) continue; // Skip if project is undefined
+        const card = createProjectCard(project);
+        cardsContainer.appendChild(card);
+        projectsShown++;
+      }
+      
+      // Show info text after second click
+      if (clickCount === 2) {
+        infoText.style.display = 'block';
+      }
+      
+      // Update the show more button
+      updateShowMoreButton(projectsList);
     }
 
     // Task Modal Logic
@@ -527,102 +629,6 @@
       alert('Referral link copied to clipboard!');
     }
     
-    // Show More Projects Logic
-    let projectsShown = 0;
-    let clickCount = 0;
-    
-    // Initialize the page with first 3 projects
-    function initializeProjects() {
-      // Sort projects according to projectOrder array
-      const sortedProjects = sortProjectsByOrder(projects, projectOrder);
-      
-      // Replace the original projects array with the sorted one
-      projects.length = 0;
-      sortedProjects.forEach(project => projects.push(project));
-      
-      // Show first 3 projects on page load
-      showMoreProjects();
-    }
-    
-    // Create a single project card
-    function createProjectCard(project) {
-      const card = document.createElement('div');
-      card.className = 'card';
-      
-      const cardHeader = document.createElement('div');
-      cardHeader.className = 'card-header';
-      
-      const title = document.createElement('h3');
-      title.textContent = `${project.icon} ${project.name}`;
-      cardHeader.appendChild(title);
-      
-      if (project.hot) {
-        const hotLabel = document.createElement('span');
-        hotLabel.className = 'hot-label';
-        hotLabel.textContent = '🔥 HOT';
-        cardHeader.appendChild(hotLabel);
-      }
-      
-      card.appendChild(cardHeader);
-      
-      const description = document.createElement('p');
-      description.textContent = project.description;
-      card.appendChild(description);
-      
-      const reward = document.createElement('span');
-      reward.className = 'reward';
-      reward.textContent = project.reward;
-      card.appendChild(reward);
-      
-      const button = document.createElement('a');
-      button.href = '#';
-      button.className = 'card-btn';
-      button.textContent = project.btnText;
-      button.onclick = function() { openTask(project.taskId); };
-      card.appendChild(button);
-      
-      return card;
-    }
-    
-    // Show more projects function
-    function showMoreProjects() {
-      const cardsContainer = document.getElementById('project-cards');
-      const showMoreBtn = document.getElementById('show-more-btn');
-      const infoText = document.getElementById('info-text');
-      const actionButtons = document.getElementById('action-buttons');
-      
-      // Increment click count only if not initial load
-      if (projectsShown > 0) {
-        clickCount++;
-      }
-      
-      // Add 3 more projects
-      const startIndex = projectsShown;
-      const endIndex = Math.min(startIndex + 3, projects.length);
-      
-      for (let i = startIndex; i < endIndex; i++) {
-        const project = projects[i];
-        const card = createProjectCard(project);
-        cardsContainer.appendChild(card);
-        projectsShown++;
-      }
-      
-      // Show info text after second click
-      if (clickCount === 2) {
-        infoText.style.display = 'block';
-      }
-      
-      // Show action buttons after showing all projects
-      if (projectsShown >= projects.length) {
-        showMoreBtn.style.display = 'none';
-        actionButtons.style.display = 'flex';
-      } else {
-        // Update button text to show how many projects remain
-        const remaining = Math.min(3, projects.length - projectsShown);
-        showMoreBtn.textContent = `🔽 Show ${remaining} More Projects`;
-      }
-    }
-    
     // Email Form Modal Logic
     function openEmailForm() {
       document.getElementById('email-modal').style.display = 'flex';
@@ -649,37 +655,8 @@
       projects.push(projectData);
       
       // Update the UI to reflect new counts
-      const showMoreBtn = document.getElementById('show-more-btn');
-      const remaining = Math.min(3, projects.length - projectsShown);
-      showMoreBtn.textContent = `🔽 Show ${remaining} More Projects`;
+      initializeProjects(); // Re-initialize to incorporate the new project
     }
-    
-    // Example of how to add a new project
-    /*
-    function addExampleProject() {
-      addProject({
-        icon: "💎",
-        name: "DiamondNode",
-        description: "Earn rewards for computing power",
-        reward: "+$40-$180 (prev est.)",
-        btnText: "Join",
-        hot: false,
-        taskId: "diamondnode",
-        instructions: {
-          title: "💎 DiamondNode - Computing Power to Crypto",
-          description: "Turn your unused computing power into passive income:",
-          steps: [
-            "Create your DiamondNode account",
-            "Install the browser extension",
-            "Set your computing power preferences",
-            "Collect rewards every 24 hours"
-          ],
-          actionUrl: "https://diamondnode.example/signup?ref=YOUR_REF_CODE",
-          actionText: "Start Mining"
-        }
-      });
-    }
-    */
   </script>
 </body>
 </html>
