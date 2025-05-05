@@ -468,6 +468,7 @@
       }
       
       taskModal.style.display = 'flex';
+      return false; // Предотвратить действие по умолчанию
     }
 
     function closeTaskModal() {
@@ -535,7 +536,7 @@
       button.href = '#';
       button.className = 'card-btn';
       button.textContent = project.btnText;
-      button.onclick = function() { openTask(project.taskId); };
+      button.onclick = function() { return openTask(project.taskId); };
       card.appendChild(button);
       
       return card;
