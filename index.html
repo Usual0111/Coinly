@@ -92,6 +92,16 @@
   </footer>
   
   <script>
+    // Project order configuration - you can change this array to reorder projects
+    // Just use the project ID (taskId) to set the order
+    let projectOrder = [
+      "wavenode", // TheVapeLabs
+      "atom",     // Solix
+      "zeta",     // Gradient
+      "nova",     // 3DOS
+      // all other projects will be shown in their original order
+    ];
+
     // Execute when DOM is fully loaded
     document.addEventListener('DOMContentLoaded', function() {
       initializeProjects();
@@ -199,8 +209,8 @@
           title: "💰 Earn Free $MIST Tokens in Minutes",
           description: "No investment. Just stay online. Rewards are live:",
           steps: [
-            "Open TheVapeLabs mini-app on Telegram — click “Login” and allow basic account check.",
-            "Check in daily — get 100 $MIST every day by clicking “Check In” and sending a message (it’s automatic).",
+            "Open TheVapeLabs mini-app on Telegram — click "Login" and allow basic account check.",
+            "Check in daily — get 100 $MIST every day by clicking "Check In" and sending a message (it's automatic).",
             "Boost rewards — complete simple social tasks (like joining Discords or following X accounts) and invite friends.",
           ],
           actionUrl: "https://app.thevapelabs.io/login?ref=9875af68-9efb-4a39-9db0-e0509bed2342",
@@ -441,6 +451,38 @@
       // You can easily add more projects here to reach 40 total
     ];
 
+    // Function to sort projects according to specified order
+    function sortProjectsByOrder(projectsArray, orderArray) {
+      // Create a copy of the original array to avoid modifying it directly
+      const result = [...projectsArray];
+      
+      // Sort the array based on the order specified
+      result.sort((a, b) => {
+        const indexA = orderArray.indexOf(a.taskId);
+        const indexB = orderArray.indexOf(b.taskId);
+        
+        // If both items are in the order array, sort by their position in it
+        if (indexA !== -1 && indexB !== -1) {
+          return indexA - indexB;
+        }
+        
+        // If only item A is in the order array, it comes first
+        if (indexA !== -1) {
+          return -1;
+        }
+        
+        // If only item B is in the order array, it comes first
+        if (indexB !== -1) {
+          return 1;
+        }
+        
+        // If neither item is in the order array, keep original order
+        return 0;
+      });
+      
+      return result;
+    }
+
     // Task Modal Logic
     function openTask(taskId) {
       const taskModal = document.getElementById('task-modal');
@@ -491,6 +533,13 @@
     
     // Initialize the page with first 3 projects
     function initializeProjects() {
+      // Sort projects according to projectOrder array
+      const sortedProjects = sortProjectsByOrder(projects, projectOrder);
+      
+      // Replace the original projects array with the sorted one
+      projects.length = 0;
+      sortedProjects.forEach(project => projects.push(project));
+      
       // Show first 3 projects on page load
       showMoreProjects();
     }
