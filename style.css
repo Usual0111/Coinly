@@ -366,4 +366,29 @@ footer {
     .task-buttons {
         flex-direction: column;
     }
+/* Добавляем стили для логотипа */
+.site-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+.site-logo img {
+    max-height: 50px;
+    width: auto;
+}
+
+/* Изменяем контейнер, чтобы учесть позиционирование логотипа */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    position: relative; /* Добавляем relative для правильного позиционирования логотипа */
+}
+
+/* Остальные CSS стили остаются без изменений */
 }
