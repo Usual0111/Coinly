@@ -366,6 +366,7 @@ footer {
     .task-buttons {
         flex-direction: column;
     }
+}
 
 /* Добавляем стили для логотипа */
 .site-logo {
@@ -391,4 +392,4 @@ footer {
     position: relative; /* Добавляем relative для правильного позиционирования логотипа */
 }
 
-}
+
