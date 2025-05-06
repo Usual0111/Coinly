@@ -22,7 +22,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 50% 100%, rgba(59, 130, 246, 0.15) 0%, rgba(46, 16, 101, 0.05) 40%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(circle at 50% 100%, rgba(59, 130, 246, 0.15) 0%, rgba(13, 15, 26, 0.05) 40%, rgba(0, 0, 0, 0) 70%);
   pointer-events: none;
   z-index: -1;
 }
@@ -31,7 +31,7 @@ body::before {
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(to bottom, rgba(31, 31, 46, 0.8), rgba(13, 15, 26, 0.9));
+  background: #1F1F2E;
   border-radius: 20px;
   margin-bottom: 40px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
@@ -42,10 +42,7 @@ body::before {
 .hero h1 {
   font-size: 2.8rem;
   margin-bottom: 15px;
-  background: linear-gradient(to right, #3B82F6, #8B5CF6);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #3B82F6;
   font-weight: 700;
   letter-spacing: -0.5px;
 }
@@ -57,7 +54,7 @@ body::before {
 }
 
 .cta-btn {
-  background: linear-gradient(45deg, #3B82F6, #8B5CF6);
+  background: #3B82F6;
   color: white;
   padding: 16px 36px;
   text-decoration: none;
@@ -70,9 +67,9 @@ body::before {
 }
 
 .cta-btn:hover {
-  background: linear-gradient(45deg, #8B5CF6, #3B82F6);
+  background: #10B981;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.5);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.5);
 }
 
 /* Airdrop Cards */
@@ -80,7 +77,7 @@ body::before {
   max-width: 1200px;
   margin: 0 auto 40px;
   text-align: center;
-  background: rgba(29, 31, 46, 0.5);
+  background: rgba(31, 31, 46, 0.7);
   padding: 40px 30px;
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
@@ -91,10 +88,7 @@ body::before {
 .earn-now h2 {
   margin-bottom: 20px;
   font-size: 1.8rem;
-  background: linear-gradient(to right, #3B82F6, #8B5CF6);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #3B82F6;
   font-weight: 700;
 }
 
@@ -112,14 +106,13 @@ body::before {
 }
 
 .card {
-  background: rgba(31, 31, 46, 0.7);
+  background: #1F1F2E;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   padding: 25px;
   width: 280px;
   transition: transform 0.3s ease, box-shadow 0.4s ease;
   border: 1px solid rgba(59, 130, 246, 0.1);
-  backdrop-filter: blur(5px);
 }
 
 .card:hover {
@@ -141,14 +134,14 @@ body::before {
 }
 
 .hot-label {
-  background: linear-gradient(45deg, #FF4B2B, #FF416C);
+  background: #10B981;
   color: white;
   font-size: 0.75rem;
   padding: 4px 10px;
   border-radius: 20px;
   font-weight: bold;
   display: inline-block;
-  box-shadow: 0 2px 8px rgba(255, 75, 43, 0.3);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
 }
 
 .card p {
@@ -168,7 +161,7 @@ body::before {
 .card-btn {
   display: inline-block;
   margin-top: 15px;
-  background: linear-gradient(45deg, #3B82F6, #8B5CF6);
+  background: #3B82F6;
   color: white;
   padding: 12px 24px;
   border-radius: 10px;
@@ -180,9 +173,9 @@ body::before {
 }
 
 .card-btn:hover {
-  background: linear-gradient(45deg, #8B5CF6, #3B82F6);
+  background: #10B981;
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.5);
+  box-shadow: 0 6px 15px rgba(16, 185, 129, 0.5);
 }
 
 /* Show More Button */
@@ -192,7 +185,7 @@ body::before {
 }
 
 .show-more-btn {
-  background: linear-gradient(45deg, #3B82F6, #8B5CF6);
+  background: #3B82F6;
   color: white;
   padding: 14px 30px;
   border-radius: 12px;
@@ -205,9 +198,9 @@ body::before {
 }
 
 .show-more-btn:hover {
-  background: linear-gradient(45deg, #8B5CF6, #3B82F6);
+  background: #10B981;
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.5);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.5);
 }
 
 .show-more-btn:active {
@@ -216,7 +209,7 @@ body::before {
 
 /* Info Text */
 .info-text {
-  background: rgba(31, 31, 46, 0.5);
+  background: #1F1F2E;
   padding: 20px;
   border-radius: 14px;
   margin: 30px auto;
@@ -249,7 +242,7 @@ body::before {
 }
 
 .table-view-btn {
-  background: rgba(31, 31, 46, 0.7);
+  background: #1F1F2E;
   color: #FFFFFF;
   text-decoration: none;
   border: 1px solid rgba(59, 130, 246, 0.3);
@@ -257,22 +250,23 @@ body::before {
 }
 
 .table-view-btn:hover {
-  background: rgba(39, 39, 56, 0.9);
+  background: #1F1F2E;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border-color: #3B82F6;
 }
 
 .alerts-btn {
-  background: linear-gradient(45deg, #10B981, #3B82F6);
+  background: #10B981;
   color: white;
   border: none;
   box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
 }
 
 .alerts-btn:hover {
-  background: linear-gradient(45deg, #3B82F6, #10B981);
+  background: #3B82F6;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.5);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.5);
 }
 
 /* Footer */
@@ -324,7 +318,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(8, 6, 24, 0.85);
+  background: rgba(13, 15, 26, 0.85);
   display: none;
   align-items: center;
   justify-content: center;
@@ -333,7 +327,7 @@ body::before {
 }
 
 .modal-content {
-  background: linear-gradient(to bottom, rgba(31, 31, 46, 0.95), rgba(13, 15, 26, 0.98));
+  background: #1F1F2E;
   padding: 40px 30px;
   border-radius: 20px;
   text-align: center;
@@ -363,8 +357,8 @@ body::before {
 }
 
 .close-btn:hover {
-  color: #fff;
-  background: rgba(39, 39, 56, 0.9);
+  color: #FFFFFF;
+  background: #3B82F6;
 }
 
 .step {
@@ -377,15 +371,12 @@ body::before {
 
 .step h2 {
   margin-bottom: 15px;
-  background: linear-gradient(to right, #3B82F6, #8B5CF6);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #3B82F6;
 }
 
 .onboarding-btn, .task-btn {
   margin-top: 20px;
-  background: linear-gradient(45deg, #3B82F6, #8B5CF6);
+  background: #3B82F6;
   color: white;
   padding: 14px 30px;
   border: none;
@@ -398,9 +389,9 @@ body::before {
 }
 
 .onboarding-btn:hover, .task-btn:hover {
-  background: linear-gradient(45deg, #8B5CF6, #3B82F6);
+  background: #10B981;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.5);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.5);
 }
 
 /* Wallet Links */
@@ -422,14 +413,14 @@ body::before {
   display: block;
   padding: 10px 15px;
   border-radius: 10px;
-  background: rgba(31, 31, 46, 0.6);
+  background: #1F1F2E;
   border: 1px solid rgba(59, 130, 246, 0.15);
 }
 
 .wallet-links a:hover {
-  color: #8B5CF6;
-  background: rgba(39, 39, 56, 0.7);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #FFFFFF;
+  background: #3B82F6;
+  border: 1px solid #3B82F6;
   transform: translateY(-2px);
 }
 
@@ -454,7 +445,7 @@ body::before {
 
 .referral-link {
   display: flex;
-  background: rgba(31, 31, 46, 0.6);
+  background: #1F1F2E;
   border-radius: 10px;
   overflow: hidden;
   margin: 15px 0;
@@ -472,7 +463,7 @@ body::before {
 
 .referral-link button {
   padding: 12px 15px;
-  background: linear-gradient(45deg, #3B82F6, #8B5CF6);
+  background: #3B82F6;
   color: white;
   border: none;
   cursor: pointer;
@@ -481,7 +472,7 @@ body::before {
 }
 
 .referral-link button:hover {
-  background: linear-gradient(45deg, #8B5CF6, #3B82F6);
+  background: #10B981;
 }
 
 /* Email Form */
@@ -494,7 +485,7 @@ body::before {
 
 .email-form input {
   padding: 14px 20px;
-  background: rgba(31, 31, 46, 0.6);
+  background: #1F1F2E;
   border: 1px solid rgba(59, 130, 246, 0.2);
   border-radius: 10px;
   font-size: 1rem;
@@ -503,7 +494,7 @@ body::before {
 }
 
 .email-form input:focus {
-  border-color: rgba(59, 130, 246, 0.6);
+  border-color: #3B82F6;
   outline: none;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
 }
@@ -527,11 +518,11 @@ body::after {
   height: 100%;
   pointer-events: none;
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0) 0.5%),
-    radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0) 0.5%),
-    radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0) 0.5%),
-    radial-gradient(circle at 70% 90%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0) 0.5%),
-    radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0) 0.5%);
+    radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.01) 0%, rgba(59, 130, 246, 0) 0.5%),
+    radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.01) 0%, rgba(59, 130, 246, 0) 0.5%),
+    radial-gradient(circle at 50% 40%, rgba(59, 130, 246, 0.01) 0%, rgba(59, 130, 246, 0) 0.5%),
+    radial-gradient(circle at 70% 90%, rgba(59, 130, 246, 0.01) 0%, rgba(59, 130, 246, 0) 0.5%),
+    radial-gradient(circle at 90% 10%, rgba(59, 130, 246, 0.01) 0%, rgba(59, 130, 246, 0) 0.5%);
   animation: sparkle 8s infinite alternate;
   z-index: -1;
 }
