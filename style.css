@@ -550,6 +550,8 @@ section h2 {
 @media (max-width: 768px) {
     .menu-toggle {
         display: block; /* Показываем кнопку */
+        cursor: pointer;
+        z-index: 1002;
     }
     
     .nav-links {
@@ -563,27 +565,26 @@ section h2 {
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         padding: 10px;
         border-radius: 5px;
+        z-index: 1001;
     }
     
     .nav-links.show {
-        display: flex; /* Показываем при клике */
+        display: flex !important; /* Показываем при клике (с приоритетом) */
     }
 
     .nav-links li {
         padding: 10px 15px;
         border-bottom: 1px solid #e9ecef; /* Разделители */
+        width: 100%;
     }
 
     .nav-links li:last-child {
         border-bottom: none;
     }
-
-@media (max-width: 768px) {
+    
     .site-logo {
         width: 80px; /* Уменьшаем размер логотипа */
         left: 5px;
         top: 5px;
     }
 }
-
-
