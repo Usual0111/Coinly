@@ -546,26 +546,36 @@ section h2 {
     z-index: 1001;
 }
 
-/* Адаптируем навигацию для мобильных */
+/* Адаптируем меню для мобильных */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block; /* Показываем кнопку */
     }
     
     .nav-links {
-        display: none; /* Скрываем ссылки */
+        display: none; /* Скрываем меню */
         flex-direction: column;
         position: absolute;
         top: 60px;
-        right: 10px;
+        left: 0; /* Делаем меню шириной на всю страницу */
+        width: 100%;
         background: white;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         padding: 10px;
         border-radius: 5px;
     }
     
     .nav-links.show {
         display: flex; /* Показываем при клике */
+    }
+
+    .nav-links li {
+        padding: 10px 15px;
+        border-bottom: 1px solid #e9ecef; /* Разделители */
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
     }
 
 @media (max-width: 768px) {
