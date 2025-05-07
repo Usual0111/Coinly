@@ -32,4 +32,8 @@ window.onclick = function(event) {
   if (event.target === guideModal) {
     guideModal.style.display = "none";
   }
+
+function toggleMenu() {
+    document.querySelector(".nav-links").classList.toggle("show");
+}
 };
