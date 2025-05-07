@@ -26,7 +26,7 @@ function toggleMenu() {
   const navLinks = document.querySelector(".nav-links");
   if (navLinks) {
     navLinks.classList.toggle("show");
-    console.log("Menu toggled");
+    console.log("Menu toggled", navLinks.classList.contains("show"));
   } else {
     console.error("Nav links not found");
   }
@@ -55,8 +55,12 @@ document.addEventListener("DOMContentLoaded", function() {
   
   if (menuToggleButton) {
     console.log("Menu button found");
-    menuToggleButton.addEventListener("click", function() {
+    // Очищаем старые обработчики событий
+    menuToggleButton.onclick = null;
+    // Добавляем новый обработчик события клика
+    menuToggleButton.addEventListener("click", function(e) {
       console.log("Menu button clicked");
+      e.preventDefault(); // Предотвращаем действие по умолчанию
       toggleMenu();
     });
   } else {
@@ -68,8 +72,12 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log("Found menu buttons:", allMenuButtons.length);
   
   allMenuButtons.forEach(button => {
-    button.addEventListener("click", function() {
+    // Очищаем старые обработчики событий
+    button.onclick = null;
+    // Добавляем новый обработчик события клика
+    button.addEventListener("click", function(e) {
       console.log("Menu button clicked (from class selector)");
+      e.preventDefault(); // Предотвращаем действие по умолчанию
       toggleMenu();
     });
   });
