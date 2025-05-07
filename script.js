@@ -22,7 +22,14 @@ function closeGuideModal() {
 
 // Функция переключения мобильного меню
 function toggleMenu() {
-  document.querySelector(".nav-links").classList.toggle("show");
+  console.log("Toggle menu called");
+  const navLinks = document.querySelector(".nav-links");
+  if (navLinks) {
+    navLinks.classList.toggle("show");
+    console.log("Menu toggled");
+  } else {
+    console.error("Nav links not found");
+  }
 }
 
 // Закрыть лайтбокс при клике вне изображения
@@ -40,11 +47,30 @@ window.onclick = function(event) {
 };
 
 // Добавляем обработчик событий после загрузки DOM
-document.addEventListener("DOMContentLoaded", function () {
-  const toggleButton = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
-
-  toggleButton.addEventListener("click", function () {
-    navLinks.classList.toggle("show");
+document.addEventListener("DOMContentLoaded", function() {
+  console.log("DOM fully loaded");
+  
+  // Находим кнопку меню
+  const menuToggleButton = document.getElementById("menu-toggle-button");
+  
+  if (menuToggleButton) {
+    console.log("Menu button found");
+    menuToggleButton.addEventListener("click", function() {
+      console.log("Menu button clicked");
+      toggleMenu();
+    });
+  } else {
+    console.error("Menu toggle button not found");
+  }
+  
+  // Дополнительно добавляем обработчик для всех кнопок с классом menu-toggle
+  const allMenuButtons = document.querySelectorAll(".menu-toggle");
+  console.log("Found menu buttons:", allMenuButtons.length);
+  
+  allMenuButtons.forEach(button => {
+    button.addEventListener("click", function() {
+      console.log("Menu button clicked (from class selector)");
+      toggleMenu();
+    });
   });
 });
