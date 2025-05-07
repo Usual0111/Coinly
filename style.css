@@ -16,6 +16,7 @@ body {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    position: relative; /* Добавляем relative для правильного позиционирования логотипа */
 }
 header {
     text-align: center;
@@ -339,35 +340,6 @@ footer {
     padding: 1rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-    .subtitle {
-        font-size: 1rem;
-    }
-    .stats {
-        font-size: 0.9rem;
-    }
-    .offer-header {
-        flex-wrap: wrap;
-    }
-    .badge {
-        margin-top: 0.5rem;
-    }
-    .join-btn {
-        position: relative;
-        bottom: auto;
-        right: auto;
-        width: 100%;
-        margin-top: 1rem;
-    }
-    .task-buttons {
-        flex-direction: column;
-    }
-}
-
 /* Добавляем стили для логотипа */
 .site-logo {
     position: absolute;
@@ -379,17 +351,6 @@ footer {
 .site-logo img {
     max-height: 60px;
     width: auto;
-}
-
-/* Изменяем контейнер, чтобы учесть позиционирование логотипа */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    position: relative; /* Добавляем relative для правильного позиционирования логотипа */
 }
 
 .screenshot-gallery {
@@ -502,10 +463,13 @@ header.site-header {
   text-decoration: none;
 }
 
+/* Стили для десктопного меню */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1.2rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li a {
@@ -518,6 +482,114 @@ header.site-header {
 
 .nav-links li a:hover {
   color: #0d6efd;
+}
+
+/* Добавим стиль для подсветки активного элемента меню */
+.nav-links li a.active {
+  color: #0d6efd;
+}
+
+/* Стили для кнопки мобильного меню */
+.menu-toggle {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  z-index: 1002;
+}
+
+/* Стили для мобильного меню */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block !important;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1001;
+  }
+  
+  .nav-links.show {
+    display: flex !important;
+  }
+
+  .nav-links li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e9ecef;
+    width: 100%;
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+  
+  .site-logo {
+    max-width: 80px;
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 5px 0;
+  }
+  
+  .site-logo img {
+    max-height: 40px;
+  }
+  
+  .offer-header {
+    flex-wrap: wrap;
+  }
+  
+  .badge {
+    margin-top: 0.5rem;
+  }
+  
+  .join-btn {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .task-buttons {
+    flex-direction: column;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .stats {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
 }
 
 /* Секции (если нужно выровнять с остальным контентом) */
@@ -533,115 +605,4 @@ section h2 {
   font-size: 1.6rem;
   font-weight: 700;
   color: #121212;
-}
-.menu-toggle {
-    font-size: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: none; /* По умолчанию скрываем */
-    z-index: 1002;
-}
-
-/* Адаптируем меню для мобильных */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block; /* Показываем кнопку */
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        z-index: 1002;
-    }
-    
-    .nav-links {
-        display: none; /* Скрываем меню */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0; /* Делаем меню шириной на всю страницу */
-        width: 100%;
-        background: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-        border-radius: 5px;
-        z-index: 1001;
-    }
-    
-    .nav-links.show {
-        display: flex !important; /* Показываем при клике (с приоритетом) */
-    }
-
-    .nav-links li {
-        padding: 10px 15px;
-        border-bottom: 1px solid #e9ecef; /* Разделители */
-        width: 100%;
-    }
-
-    .nav-links li:last-child {
-        border-bottom: none;
-    }
-    
-    .site-logo {
-        width: 80px; /* Уменьшаем размер логотипа */
-        left: 5px;
-        top: 5px;
-    }
-/* Убедимся, что стили навигации правильно работают на мобильных устройствах */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block !important; /* Принудительно показываем кнопку на мобильных */
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        font-size: 2rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 1002;
-    }
-    
-    .nav-links {
-        display: none; /* Скрываем меню по умолчанию */
-        flex-direction: column;
-        position: fixed; /* fixed вместо absolute для лучшего поведения */
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-        border-radius: 5px;
-        z-index: 1001;
-    }
-    
-    .nav-links.show {
-        display: flex !important; /* Показываем при клике с высоким приоритетом */
-    }
-
-    .nav-links li {
-        padding: 10px 15px;
-        border-bottom: 1px solid #e9ecef;
-        width: 100%;
-    }
-
-    .nav-links li:last-child {
-        border-bottom: none;
-    }
-    
-    .site-logo {
-        max-width: 80px; /* Уменьшаем размер логотипа */
-        position: relative; /* Изменяем с absolute на relative */
-        left: auto;
-        top: auto;
-        margin: 5px 0;
-    }
-    
-    .site-logo img {
-        max-height: 40px;
-    }
-}
-
-/* Добавим стиль для подсветки активного элемента меню */
-.nav-links li a.active {
-    color: #0d6efd;
 }
