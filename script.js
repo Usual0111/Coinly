@@ -20,6 +20,11 @@ function closeGuideModal() {
   document.getElementById("guideModal").style.display = "none";
 }
 
+// Функция переключения мобильного меню
+function toggleMenu() {
+  document.querySelector(".nav-links").classList.toggle("show");
+}
+
 // Закрыть лайтбокс при клике вне изображения
 window.onclick = function(event) {
   const lightbox = document.getElementById("lightbox");
@@ -32,17 +37,14 @@ window.onclick = function(event) {
   if (event.target === guideModal) {
     guideModal.style.display = "none";
   }
-
-function toggleMenu() {
-    document.querySelector(".nav-links").classList.toggle("show");
-}
-document.addEventListener("DOMContentLoaded", function () {
-    const toggleButton = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-
-    toggleButton.addEventListener("click", function () {
-        navLinks.classList.toggle("show");
-    });
-});
-
 };
+
+// Добавляем обработчик событий после загрузки DOM
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleButton = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  toggleButton.addEventListener("click", function () {
+    navLinks.classList.toggle("show");
+  });
+});
