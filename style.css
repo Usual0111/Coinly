@@ -370,10 +370,9 @@ footer {
 
 /* Добавляем стили для логотипа */
 .site-logo {
-    position: fixed;
+    position: absolute;
     top: 20px;
-    left: 50%;
-    transform: translateX(-400px);
+    left: 610px;
     z-index: 1000;
 }
 
