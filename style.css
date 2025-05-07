@@ -392,4 +392,26 @@ footer {
     position: relative; /* Добавляем relative для правильного позиционирования логотипа */
 }
 
+.screenshot-gallery {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+  justify-content: flex-start;
+}
+
+.screenshot-gallery img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+  object-fit: cover;
+}
+
+.screenshot-gallery img:hover {
+  transform: scale(1.05);
+  cursor: zoom-in;
+}
+
 
