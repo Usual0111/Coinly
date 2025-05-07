@@ -8,17 +8,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- ✅ Верхнее меню -->
+  <!-- Исправленная структура меню для мобильных устройств -->
 <header class="site-header">
-  <!-- ✅ лого -->
-  <div class="site-logo">
-    <img src="logo.png" alt="Claimy Logo">
-  </div>
   <nav class="navbar">
-    <div class="logo"></div>
-    <!-- Кнопку меню перемещаем в navbar и добавляем нужные классы -->
-    <button class="menu-toggle" id="menu-toggle-button">☰</button>
-    <ul class="nav-links">
+    <!-- Лого -->
+    <div class="site-logo">
+      <img src="logo.png" alt="Claimy Logo">
+    </div>
+    
+    <!-- Кнопка меню -->
+    <button class="menu-toggle" id="menu-toggle-button" type="button">☰</button>
+    
+    <!-- Навигационные ссылки -->
+    <ul class="nav-links" id="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#airdrops">Airdrops</a></li>
       <li><a href="#exchanges">Exchanges</a></li>
@@ -29,6 +31,26 @@
     </ul>
   </nav>
 </header>
+
+<!-- Добавляем небольшой встроенный скрипт для решения проблемы с меню -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Находим кнопку меню и добавляем обработчик
+  const menuButton = document.getElementById('menu-toggle-button');
+  const navLinks = document.getElementById('nav-links');
+  
+  // Проверяем, существует ли кнопка
+  if (menuButton) {
+    menuButton.addEventListener('click', function() {
+      console.log('Menu button clicked');
+      if (navLinks) {
+        navLinks.classList.toggle('show');
+        console.log('Menu toggled:', navLinks.classList.contains('show'));
+      }
+    });
+  }
+});
+</script>
         <div class="container">
         <header>
             <h1>Claim Free Crypto Now</h1>
