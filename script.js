@@ -123,7 +123,6 @@ function openTask(taskId) {
   const project = projects.find(p => p.taskId === taskId);
   
   if (project && project.instructions) {
-    // Generate HTML from project instructions
     taskContent.innerHTML = `
         <h2>${project.instructions.title}</h2>
         <p>${project.instructions.description}</p>
@@ -140,7 +139,7 @@ function openTask(taskId) {
   }
   
   taskModal.style.display = 'flex';
-  return false; // Предотвратить действие по умолчанию
+  return false;
 }
 
 function closeTaskModal() {
