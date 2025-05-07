@@ -540,17 +540,16 @@ section h2 {
     border: none;
     cursor: pointer;
     display: none; /* По умолчанию скрываем */
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    z-index: 1001;
+    z-index: 1002;
 }
 
 /* Адаптируем меню для мобильных */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block; /* Показываем кнопку */
-        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 15px;
         z-index: 1002;
     }
     
