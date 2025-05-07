@@ -39,25 +39,38 @@ document.addEventListener('DOMContentLoaded', function() {
   const menuButton = document.getElementById('menu-toggle-button');
   const navLinks = document.getElementById('nav-links');
   
-  // Проверяем, существует ли кнопка
+  // Проверяем, существует ли кнопка и используем только для мобильных устройств
   if (menuButton) {
+    // Изначально скрываем кнопку на десктопе
+    if (window.innerWidth > 768) {
+      menuButton.style.display = 'none';
+    }
+    
     menuButton.addEventListener('click', function() {
-      console.log('Menu button clicked');
       if (navLinks) {
         navLinks.classList.toggle('show');
-        console.log('Menu toggled:', navLinks.classList.contains('show'));
+      }
+    });
+    
+    // Адаптируем интерфейс при изменении размера экрана
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        menuButton.style.display = 'none';
+        navLinks.classList.remove('show'); // Убираем класс show на десктопе
+      } else {
+        menuButton.style.display = 'block';
       }
     });
   }
 });
 </script>
         <div class="container">
-        <header>
+        <div class="hero-section">
             <h1>Unlock Crypto Rewards</h1>
             <p class="subtitle">No investment. No stress. Just simple tasks.</p>
             <p class="stats">👥 23K+ earning passively  ⭐ Top-rated projects  📈 +3.4K joined last month</p>
             <button class="btn-primary" onclick="startOnboarding()">Get Started</button>
-        </header>
+        </div>
         
         <div class="divider"></div>
         
@@ -211,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
   <p>Telegram: <a href="https://t.me/your_bot">@your_bot</a></p>
 </section>
-
+</div>
     <footer>
         <p>© 2025 Claimy. All rights reserved.</p>
     </footer>
