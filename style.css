@@ -371,7 +371,7 @@ footer {
 /* Добавляем стили для логотипа */
 .site-logo {
     position: absolute;
-    top: 20px;
+    top: 10px;
     left: 610px;
     z-index: 1000;
 }
@@ -534,3 +534,46 @@ section h2 {
   font-weight: 700;
   color: #121212;
 }
+.menu-toggle {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none; /* По умолчанию скрываем */
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+}
+
+/* Адаптируем навигацию для мобильных */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Показываем кнопку */
+    }
+    
+    .nav-links {
+        display: none; /* Скрываем ссылки */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    .nav-links.show {
+        display: flex; /* Показываем при клике */
+    }
+
+@media (max-width: 768px) {
+    .site-logo {
+        width: 80px; /* Уменьшаем размер логотипа */
+        left: 5px;
+        top: 5px;
+    }
+}
+
+
