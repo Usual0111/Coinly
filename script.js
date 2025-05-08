@@ -272,3 +272,38 @@ function openEmailForm() {
 function closeEmailModal() {
   document.getElementById('email-modal').style.display = 'none';
 }
+// Для кнопки "Next" в модальном окне
+document.querySelectorAll('.next-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const currentStep = document.querySelector('.step.active');
+    const nextStep = currentStep.nextElementSibling;
+    
+    if (nextStep && nextStep.classList.contains('step')) {
+      currentStep.classList.remove('active');
+      nextStep.classList.add('active');
+    }
+  });
+});
+
+// Для кнопки "Show 3 More Projects"
+document.querySelector('.btn-show-more').addEventListener('click', function() {
+  document.querySelectorAll('.hidden-project').forEach(project => {
+    project.classList.add('visible');
+  });
+  this.style.display = 'none'; // Скрыть кнопку после показа всех проектов
+});
+
+// Для открытия модального окна
+document.querySelectorAll('.join-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const modalId = this.getAttribute('data-modal');
+    document.getElementById(modalId).classList.add('active');
+  });
+});
+
+// Для закрытия модального окна
+document.querySelectorAll('.close-btn, .modal .close').forEach(btn => {
+  btn.addEventListener('click', function() {
+    this.closest('.modal').classList.remove('active');
+  });
+});
