@@ -718,3 +718,15 @@ section h2 {
 .mb-4 {
     margin-bottom: 1.5rem;
 }
+/* Центрирование первого блока под меню */
+header h1,
+header .subtitle,
+header .stats {
+    text-align: center;
+}
+
+header .btn-primary {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
