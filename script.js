@@ -1,102 +1,99 @@
-// Глобальные переменные
+// Глобальные переменные (объявляем один раз)
 let scrollPosition = 0;
-let currentStep = 0;
+let currentStep = 0; // Используется для отслеживания текущего шага в онбординге
 let projectsShown = 0;
 let clickCount = 0;
-let steps = [];
+let steps = []; // Будет содержать шаги онбординга (NodeList)
 
-// Функция показа изображения в лайтбоксе
+// Лайтбокс
 function openLightbox(src) {
-  const lightbox = document.getElementById("lightbox");
   const img = document.getElementById("lightbox-img");
-  img.src = src;
-  lightbox.classList.add("active");
-}
-
-// Функция закрытия лайтбокса
-function closeLightbox() {
-  document.getElementById("lightbox").classList.remove("active");
-}
-
-// Функции модального окна гайда
-function openGuideModal() {
-  document.getElementById("guideModal").classList.add("active");
-}
-
-function closeGuideModal() {
-  document.getElementById("guideModal").classList.remove("active");
-}
-
-// Функция переключения мобильного меню
-function toggleMenu() {
-  console.log("Toggle menu called");
-  const navLinks = document.querySelector(".nav-links");
-  if (navLinks) {
-    navLinks.classList.toggle("show");
-    console.log("Menu toggled", navLinks.classList.contains("show"));
-  } else {
-    console.error("Nav links not found");
+  const lightbox = document.getElementById("lightbox");
+  if (img && lightbox) {
+    img.src = src;
+    lightbox.classList.add("active");
   }
 }
 
-// Обработчики для модальных окон и лайтбоксов
+function closeLightbox() {
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox) lightbox.classList.remove("active");
+}
+
+// Гайд (Мобильное руководство)
+function openGuideModal() {
+  const modal = document.getElementById("guideModal");
+  if (modal) modal.classList.add("active");
+}
+
+function closeGuideModal() {
+  const modal = document.getElementById("guideModal");
+  if (modal) modal.classList.remove("active");
+  scrollToAirdropsSection(); // Прокрутка к нужному блоку после закрытия
+}
+
+function scrollToAirdropsSection() {
+  const airdropsSection = document.getElementById("airdrops");
+  if (airdropsSection) {
+    airdropsSection.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+// Мобильное меню
+function toggleMenu() {
+  const navLinks = document.getElementById("nav-links"); // Используем ID для точности
+  if (navLinks) navLinks.classList.toggle("show");
+}
+
+// Модальные окна — закрытие при клике вне
 function setupModalEvents() {
-  // Закрыть модальные окна при клике вне содержимого
   window.onclick = function(event) {
-    // Лайтбокс
-    const lightbox = document.getElementById("lightbox");
-    if (event.target === lightbox) {
-      lightbox.classList.remove("active");
-    }
-    
-    // Гайд модальное окно
-    const guideModal = document.getElementById("guideModal");
-    if (event.target === guideModal) {
-      guideModal.classList.remove("active");
-    }
-    
-    // Таск модальное окно
-    const taskModal = document.getElementById("task-modal");
-    if (event.target === taskModal) {
-      closeTaskModal();
-    }
-    
-    // Email модальное окно
-    const emailModal = document.getElementById("email-modal");
-    if (event.target === emailModal) {
-      closeEmailModal();
-    }
-    
-    // Onboarding модальное окно
-    const onboarding = document.getElementById("onboarding");
-    if (event.target === onboarding) {
-      closeOnboarding();
-    }
+    ["lightbox", "guideModal", "task-modal", "email-modal", "onboarding"].forEach(id => {
+      const modal = document.getElementById(id);
+      // Закрываем, если клик был непосредственно по оверлею модального окна
+      if (event.target === modal) {
+        modal?.classList.remove("active");
+      }
+    });
   };
 }
 
-// Onboarding Flow Logic
+// Onboarding (Процесс адаптации)
 function startOnboarding() {
-  const onboarding = document.getElementById('onboarding');
-  if (onboarding) {
-    onboarding.classList.add('active');
-    showStep(0);
-  } else {
-    console.error("Onboarding modal not found");
+  const onboardingModal = document.getElementById('onboarding');
+  if (onboardingModal) {
+    onboardingModal.classList.add('active');
+    // Инициализируем или обновляем NodeList шагов онбординга
+    steps = document.querySelectorAll('#onboarding .step');
+    if (steps.length > 0) {
+      showStep(0);
+    } else {
+      console.error("Onboarding steps not found inside #onboarding element.");
+    }
   }
 }
 
 function closeOnboarding() {
-  const onboarding = document.getElementById('onboarding');
-  if (onboarding) {
-    onboarding.classList.remove('active');
-    steps.forEach(step => step.classList.remove('active'));
+  const onboardingModal = document.getElementById('onboarding');
+  if (onboardingModal) {
+    onboardingModal.classList.remove('active');
+    // Скрываем все шаги, если они были инициализированы
+    if (steps && steps.length > 0) {
+      steps.forEach(step => step.classList.remove('active'));
+    } else {
+      // Запасной вариант, если `steps` не был корректно заполнен
+      document.querySelectorAll('#onboarding .step').forEach(s => s.classList.remove('active'));
+    }
     currentStep = 0;
   }
 }
 
 function showStep(stepIndex) {
-  steps = document.querySelectorAll('.step');
+  // `steps` должен быть NodeList шагов онбординга, установленный в startOnboarding
+  if (!steps || steps.length === 0) {
+    console.error("Onboarding steps not available in showStep.");
+    return;
+  }
   steps.forEach(step => step.classList.remove('active'));
   if (steps[stepIndex]) {
     steps[stepIndex].classList.add('active');
@@ -105,7 +102,8 @@ function showStep(stepIndex) {
 }
 
 function nextStep() {
-  if (currentStep < steps.length - 1) {
+  // `steps` используется из глобальной области, установленной в startOnboarding
+  if (steps && currentStep < steps.length - 1) {
     showStep(currentStep + 1);
   }
 }
@@ -116,305 +114,273 @@ function prevStep() {
   }
 }
 
-// Task Modal Logic
+// Task Modal (Модальное окно задачи)
 function openTask(taskId) {
-  // Сохраняем текущую позицию прокрутки перед открытием модального окна
   scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-  
   const taskModal = document.getElementById('task-modal');
   const taskContent = document.getElementById('task-content');
-  
-  // Проверяем, определен ли массив projects
+
+  if (!taskModal || !taskContent) {
+    console.error("Task modal or task content element not found.");
+    return false;
+  }
+
   if (typeof projects !== 'undefined') {
-    // Find project by taskId
     const project = projects.find(p => p.taskId === taskId);
-    
     if (project && project.instructions) {
       taskContent.innerHTML = `
-          <h2>${project.instructions.title}</h2>
-          <p>${project.instructions.description}</p>
-          <ol class="task-steps">
-              ${project.instructions.steps.map(step => `<li>${step}</li>`).join('')}
-          </ol>
-          <div class="task-buttons">
-              <a href="${project.instructions.actionUrl}" target="_blank" class="btn-primary">${project.instructions.actionText}</a>
-              <button class="btn-secondary" onclick="showWalletHelp()">Need a Wallet?</button>
-          </div>
-      `;
+        <h2>${project.instructions.title}</h2>
+        <p>${project.instructions.description}</p>
+        <ol class="task-steps">${project.instructions.steps.map(step => `<li>${step}</li>`).join('')}</ol>
+        <div class="task-buttons">
+          <a href="${project.instructions.actionUrl}" target="_blank" class="btn-primary">${project.instructions.actionText}</a>
+          <button class="btn-secondary" onclick="showWalletHelp()">Need a Wallet?</button>
+        </div>`;
     } else {
-      taskContent.innerHTML = `<p>Task details not available</p>`;
+      taskContent.innerHTML = `<p>Task details not available for ID: ${taskId}</p>`;
     }
   } else {
-    taskContent.innerHTML = `<p>Project data is not defined</p>`;
-    console.error("Projects array is not defined");
+    taskContent.innerHTML = `<p>Project data is not defined. Cannot open task.</p>`;
+    console.error("Projects array is not defined.");
   }
-  
+
   taskModal.classList.add('active');
-  return false;
+  return false; // Полезно, если вызывается из <a> href="#"
 }
 
 function closeTaskModal() {
   const taskModal = document.getElementById('task-modal');
-  taskModal.classList.remove('active');
-  
-  // Восстанавливаем позицию прокрутки после закрытия модального окна
-  setTimeout(() => {
-    window.scrollTo(0, scrollPosition);
-  }, 10);
+  if (taskModal) taskModal.classList.remove('active');
+  // Восстанавливаем позицию прокрутки
+  setTimeout(() => window.scrollTo(0, scrollPosition), 10);
 }
 
 function showWalletHelp() {
   closeTaskModal();
-  startOnboarding();
+  startOnboarding(); // Показываем онбординг для помощи с кошельком
 }
 
+// Копирование реферальной ссылки (если используется)
 function copyReferralLink() {
-  const referralInput = document.querySelector('.referral-link input');
+  const referralInput = document.querySelector('.referral-link input'); // Убедитесь, что такой элемент существует
   if (referralInput) {
     referralInput.select();
+    referralInput.setSelectionRange(0, 99999); // Для мобильных устройств
     try {
-      const successful = document.execCommand('copy');
-      if (successful) {
-        alert('Referral link copied to clipboard!');
-      } else {
-        console.error('Unable to copy');
-      }
+      document.execCommand('copy');
+      alert('Referral link copied to clipboard!');
     } catch (err) {
-      console.error('Error during copy', err);
+      console.error('Error copying referral link:', err);
+      alert('Failed to copy. Please copy manually.');
     }
   }
 }
 
-// Show More Projects Logic
-// Initialize the page with first 3 projects
+// Project Cards (Карточки проектов)
 function initializeProjects() {
-  // Проверяем, определен ли массив projects
-  if (typeof projects === 'undefined') {
-    console.error("Projects array is not defined. Please define it before initializing projects.");
+  if (typeof projects === 'undefined' || projects.length === 0) {
+    console.error("Projects array is not defined or empty. Cannot initialize project cards.");
+    const container = document.getElementById('project-cards');
+    if(container) container.innerHTML = "<p>No projects to display.</p>";
+    const showMoreBtn = document.getElementById('show-more-btn');
+    if(showMoreBtn) showMoreBtn.style.display = 'none';
     return;
   }
-  
-  // Show first 3 projects on page load
-  showMoreProjects();
+  // Сбрасываем счетчики перед первой загрузкой
+  projectsShown = 0;
+  clickCount = 0;
+  // Очищаем контейнер перед добавлением карточек (если это повторная инициализация)
+  const container = document.getElementById('project-cards');
+  if(container) container.innerHTML = '';
+
+  showMoreProjects(); // Показываем первую порцию проектов
 }
 
-// Create a single project card
 function createProjectCard(project) {
   const card = document.createElement('div');
+  // Добавляем общий класс 'project-card' для возможности стилизации или выбора всех карточек проектов
   card.className = 'offer-card project-card';
-  
-  const cardHeader = document.createElement('div');
-  cardHeader.className = 'offer-header';
-  
-  const logoDiv = document.createElement('div');
-  logoDiv.className = 'logo';
-  logoDiv.textContent = project.icon;
-  cardHeader.appendChild(logoDiv);
-  
-  const titleDiv = document.createElement('div');
-  titleDiv.className = 'offer-title';
-  
-  const title = document.createElement('h3');
-  title.textContent = project.name;
-  titleDiv.appendChild(title);
-  
-  const description = document.createElement('p');
-  description.textContent = project.description;
-  titleDiv.appendChild(description);
-  
-  cardHeader.appendChild(titleDiv);
-  
-  if (project.hot) {
-    const badgeDiv = document.createElement('div');
-    badgeDiv.className = 'badge';
-    const hotLabel = document.createElement('span');
-    hotLabel.className = 'badge-tag';
-    hotLabel.textContent = '🔥 HOT';
-    badgeDiv.appendChild(hotLabel);
-    cardHeader.appendChild(badgeDiv);
-  }
-  
-  card.appendChild(cardHeader);
-  
-  const reward = document.createElement('p');
-  reward.className = 'reward-range';
-  reward.innerHTML = project.reward;
-  card.appendChild(reward);
-  
-  const button = document.createElement('button');
-  button.className = 'btn-primary join-btn';
-  button.textContent = project.btnText || 'Join Now';
-  button.setAttribute('data-task-id', project.taskId);
-  button.onclick = function() { return openTask(project.taskId); };
-  card.appendChild(button);
-  
+
+  card.innerHTML = `
+    <div class="offer-header">
+      <div class="logo">${project.icon}</div>
+      <div class="offer-title">
+        <h3>${project.name}</h3>
+        <p>${project.description}</p>
+      </div>
+      ${project.hot ? `<div class="badge"><span class="badge-tag">🔥 HOT</span></div>` : ""}
+    </div>
+    <p class="reward-range">${project.reward}</p>
+    <button class="btn-primary join-btn">${project.btnText || 'Join Now'}</button>
+  `;
+  // Привязываем событие к кнопке через JS, а не data-task-id + querySelector в openTask
+  card.querySelector(".join-btn").onclick = () => openTask(project.taskId);
   return card;
 }
 
-// Show more projects function
 function showMoreProjects() {
-  const cardsContainer = document.getElementById('project-cards');
+  const container = document.getElementById('project-cards');
   const showMoreBtn = document.getElementById('show-more-btn');
   const infoText = document.getElementById('info-text');
   const actionButtons = document.getElementById('action-buttons');
-  
-  if (!cardsContainer) {
-    console.error("Project cards container not found");
+
+  if (!container) {
+    console.error("Project cards container not found.");
     return;
   }
-  
-  // Проверяем, определен ли массив projects
   if (typeof projects === 'undefined') {
-    console.error("Projects array is not defined");
+    console.error("Projects array is not defined in showMoreProjects.");
     return;
   }
-  
-  // Increment click count only if not initial load
-  if (projectsShown > 0) {
-    clickCount++;
+
+  if (projectsShown > 0) { // Не увеличиваем clickCount при первой загрузке (projectsShown === 0)
+      clickCount++;
   }
-  
-  // Add 3 more projects
-  const startIndex = projectsShown;
-  const endIndex = Math.min(startIndex + 3, projects.length);
-  
-  for (let i = startIndex; i < endIndex; i++) {
-    const project = projects[i];
-    const card = createProjectCard(project);
-    
-    // Если это проект после первых трех, добавляем класс hidden-project
-    if (i >= 3) {
-      card.classList.add('hidden-project');
-    }
-    
-    cardsContainer.appendChild(card);
+
+  const start = projectsShown;
+  const end = Math.min(start + 3, projects.length);
+
+  for (let i = start; i < end; i++) {
+    const card = createProjectCard(projects[i]);
+    // Класс hidden-project не используется в текущей логике `showMoreProjects` для пагинации
+    // Если он нужен для другой логики "показать все скрытые", это должно быть отдельно.
+    // if (i >= 3) card.classList.add('hidden-project'); // Удалено, т.к. пагинация обрабатывается иначе
+    container.appendChild(card);
     projectsShown++;
   }
-  
-  // Show info text after second click
-  if (infoText && clickCount === 2) {
+
+  if (infoText && clickCount === 2) { // Показываем текст после второго клика на "показать еще"
     infoText.style.display = 'block';
   }
-  
-  // Show action buttons after showing all projects
+
   if (projectsShown >= projects.length) {
     if (showMoreBtn) showMoreBtn.style.display = 'none';
-    if (actionButtons) actionButtons.style.display = 'flex';
+    if (actionButtons) actionButtons.style.display = 'flex'; // Показываем кнопки действий, когда все проекты отображены
   } else if (showMoreBtn) {
-    // Update button text to show how many projects remain
+    showMoreBtn.style.display = 'inline-block'; // Убедимся, что кнопка видима
     const remaining = Math.min(3, projects.length - projectsShown);
     showMoreBtn.textContent = `🔽 Show ${remaining} More Projects`;
   }
 }
 
-// Email Form Modal Logic
+// Email Modal (Модальное окно для Email)
 function openEmailForm() {
-  const emailModal = document.getElementById('email-modal');
-  if (emailModal) {
-    emailModal.classList.add('active');
-  }
+  const modal = document.getElementById('email-modal');
+  if (modal) modal.classList.add('active');
 }
 
 function closeEmailModal() {
-  const emailModal = document.getElementById('email-modal');
-  if (emailModal) {
-    emailModal.classList.remove('active');
-  }
+  const modal = document.getElementById('email-modal');
+  if (modal) modal.classList.remove('active');
 }
 
-// Функция для инициализации всех обработчиков событий
+// Инициализация всех обработчиков событий
 function initEventHandlers() {
-  console.log("Initializing event handlers");
-  
-  // Обработчик для кнопки меню
-  const menuToggleButton = document.getElementById("menu-toggle-button");
-  if (menuToggleButton) {
-    console.log("Menu button found");
-    menuToggleButton.addEventListener("click", function(e) {
-      console.log("Menu button clicked");
-      e.preventDefault();
-      toggleMenu();
-    });
-  }
-  
-  // Обработчики для всех кнопок с классом menu-toggle
-  const allMenuButtons = document.querySelectorAll(".menu-toggle");
-  console.log("Found menu buttons:", allMenuButtons.length);
-  allMenuButtons.forEach(button => {
-    button.addEventListener("click", function(e) {
-      console.log("Menu toggle button clicked");
-      e.preventDefault();
-      toggleMenu();
-    });
-  });
-  
-  // Обработчики для кнопок "next" в шагах модального окна
-  document.querySelectorAll('.next-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      nextStep();
-    });
-  });
-  
-  // Обработчики для кнопок "prev" в шагах модального окна
-  document.querySelectorAll('.prev-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      prevStep();
-    });
-  });
-  
-  // Обработчик для кнопки "Show More Projects"
-  const showMoreBtn = document.getElementById('show-more-btn');
-  if (showMoreBtn) {
-    showMoreBtn.addEventListener('click', function() {
-      showMoreProjects();
-    });
-  }
-  
-  // Кнопки для открытия модальных окон
-  document.querySelectorAll('[data-modal]').forEach(btn => {
-    btn.addEventListener('click', function() {
-      const modalId = this.getAttribute('data-modal');
-      const modal = document.getElementById(modalId);
-      if (modal) {
-        modal.classList.add('active');
+  // Мобильное меню
+  const menuButton = document.getElementById('menu-toggle-button');
+  const navLinks = document.getElementById('nav-links');
+  if (menuButton && navLinks) {
+    if (window.innerWidth > 768) {
+      menuButton.style.display = 'none';
+    } else {
+      menuButton.style.display = 'block';
+    }
+    menuButton.addEventListener('click', toggleMenu);
+
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        menuButton.style.display = 'none';
+        navLinks.classList.remove('show');
+      } else {
+        menuButton.style.display = 'block';
       }
     });
+  }
+  // Дополнительные переключатели меню, если есть (например, кнопки внутри самого меню для его закрытия)
+  document.querySelectorAll(".menu-toggle").forEach(btn => {
+      if (btn.id !== 'menu-toggle-button') { // Чтобы не дублировать обработчик для основной кнопки
+          btn.addEventListener("click", toggleMenu);
+      }
   });
-  
-  // Обработчики для закрытия модальных окон
+
+
+  // Кнопки онбординга
+  document.querySelectorAll('#onboarding .next-btn').forEach(btn => btn.addEventListener('click', nextStep));
+  document.querySelectorAll('#onboarding .prev-btn').forEach(btn => btn.addEventListener('click', prevStep));
+  document.querySelector('#onboarding .done-btn')?.addEventListener('click', function() {
+    closeOnboarding();
+    scrollToAirdropsSection();
+  });
+
+  // Кнопка "Показать еще проекты"
+  // HTML: <button id="show-more-btn" ... onclick="showMoreProjects()">...
+  // Если onclick атрибут убран из HTML, этот слушатель будет работать. Если onclick есть, он сработает первым.
+  // Для чистоты лучше убрать onclick из HTML и полагаться только на этот слушатель.
+  const showMoreProjectsBtn = document.getElementById('show-more-btn');
+  if (showMoreProjectsBtn && !showMoreProjectsBtn.hasAttribute('onclick')) { // Добавляем слушатель, только если нет onclick
+      showMoreProjectsBtn.addEventListener('click', showMoreProjects);
+  }
+
+
+  // Открытие модальных окон по data-атрибуту (если используется)
+  document.querySelectorAll('[data-modal]').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const modalId = this.getAttribute('data-modal');
+      const modal = document.getElementById(modalId);
+      if (modal) modal.classList.add('active');
+    });
+  });
+
+  // Общие кнопки закрытия для всех модальных окон
   document.querySelectorAll('.close-btn, .modal .close').forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
       const modal = this.closest('.modal');
       if (modal) {
         modal.classList.remove('active');
+        // Если это было модальное окно гайда, и оно было закрыто общей кнопкой,
+        // а не специальной onclick="closeGuideModal()", то также прокручиваем.
+        if (modal.id === 'guideModal') {
+            // scrollToAirdropsSection(); // Раскомментируйте, если нужно всегда скроллить при закрытии guideModal
+                                        // В HTML уже есть onclick="closeGuideModal()", которая это делает.
+        }
       }
     });
   });
-  
-  // Обработчики для кнопок показа скрытых проектов
-  document.querySelectorAll('.btn-show-more').forEach(btn => {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.hidden-project').forEach(project => {
-        project.classList.add('visible');
-      });
-      this.style.display = 'none';
+
+  // Форма подписки по Email
+  const emailForm = document.querySelector('#email-modal .email-form'); // Уточненный селектор
+  if (emailForm) {
+    emailForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const emailInput = emailForm.querySelector('input[type="email"]');
+      if (emailInput && emailInput.value) {
+         // Здесь должна быть реальная логика отправки формы, например, fetch POST-запрос
+        console.log("Email for subscription:", emailInput.value);
+        alert('Subscription successful! You will receive alerts about top-paying nodes.'); // Заглушка
+        emailInput.value = ''; // Очистка поля
+        closeEmailModal();
+      } else {
+        alert('Please enter a valid email address.');
+      }
     });
-  });
-  
-  // Инициализация обработчиков для модальных окон и лайтбоксов
+  }
+
+  // Настройка закрытия модальных окон по клику вне их контентной части
   setupModalEvents();
 }
 
-// Запуск инициализации после загрузки DOM
-document.addEventListener("DOMContentLoaded", function() {
-  console.log("DOM fully loaded");
-  
-  // Инициализация обработчиков событий
-  initEventHandlers();
-  
-  // Инициализация проектов при загрузке страницы
-  initializeProjects();
-  
-  // Инициализация шагов (если они есть)
-  steps = document.querySelectorAll('.step');
+// Запуск всей логики после полной загрузки DOM
+document.addEventListener("DOMContentLoaded", function () {
+  // `projects` массив должен быть определен в HTML в inline <script> теге ПЕРЕД этим файлом.
+  if (typeof projects !== 'undefined' && projects.length > 0) {
+    initializeProjects(); // Инициализация и отображение карточек проектов
+  } else {
+    console.warn("Projects array is not defined or is empty. No project cards will be displayed.");
+    const container = document.getElementById('project-cards');
+    if(container) container.innerHTML = "<p>No projects to display at the moment.</p>";
+    const showMoreBtn = document.getElementById('show-more-btn');
+    if(showMoreBtn) showMoreBtn.style.display = 'none'; // Скрыть кнопку "показать еще", если проектов нет
+  }
+
+  initEventHandlers(); // Настройка всех остальных обработчиков событий
 });
