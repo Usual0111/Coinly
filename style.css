@@ -749,3 +749,93 @@ section h2 {
 .btn-primary.pulse {
   animation: pulse 2s infinite;
 }
+/* Стили для модального окна онбординга (#onboarding) */
+
+#onboarding .modal-content {
+    /* Устанавливаем минимальную высоту для всей контентной области модального окна.
+       Подберите это значение так, чтобы оно вмещало самый высокий из ваших шагов.
+       Это предотвратит изменение высоты модального окна при переключении шагов. */
+    min-height: 480px; /* Примерное значение, измените при необходимости */
+
+    display: flex; /* Используем flexbox для дочернего элемента .step */
+    flex-direction: column; /* Располагаем дочерние элементы (активный .step) вертикально */
+}
+
+#onboarding .step {
+    /* Скрываем все шаги по умолчанию. Активный шаг будет показан через класс .active из JS */
+    display: none;
+    width: 100%; /* Шаг должен занимать всю ширину .modal-content */
+
+    /* Используем flexbox для внутреннего расположения элементов шага (заголовок, текст, кнопка) */
+    flex-direction: column;
+    /* flex-grow: 1; /* Позволяет активному шагу занять всю высоту .modal-content, если она больше его собственного контента */
+    /* justify-content: space-between; /* Распределяет пространство: заголовок/текст сверху, кнопка снизу */
+       /* Если вы хотите, чтобы основной контент занимал место, а кнопка была строго внизу,
+          можно обернуть текст в div с flex-grow: 1 или использовать margin-top: auto для кнопки.
+          Попробуем сначала с justify-content. */
+}
+
+#onboarding .step.active {
+    display: flex; /* Показываем только активный шаг и применяем flex-свойства */
+    flex-grow: 1; /* Активный шаг растягивается на всю доступную высоту .modal-content */
+    justify-content: space-between; /* Равномерно распределяет пространство между дочерними элементами шага */
+}
+
+/* Стили для заголовков и параграфов внутри шагов */
+#onboarding .step h2 {
+    margin-top: 0; /* Убираем верхний отступ у заголовка, если он первый элемент */
+    margin-bottom: 20px; /* Отступ под заголовком */
+    font-size: 1.5em; /* Пример размера шрифта */
+    color: #333;
+}
+
+#onboarding .step p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+#onboarding .step ul.wallet-links {
+    list-style: none; /* Убираем стандартные маркеры списка */
+    padding-left: 0;  /* Убираем стандартный отступ слева */
+    margin-bottom: 20px;
+}
+
+#onboarding .step ul.wallet-links li {
+    margin-bottom: 10px;
+}
+
+#onboarding .step ul.wallet-links a {
+    text-decoration: none;
+    color: #007bff; /* Пример цвета ссылок */
+}
+#onboarding .step ul.wallet-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* Стили для галереи скриншотов */
+#onboarding .screenshot-gallery {
+    display: flex;
+    gap: 10px; /* Промежуток между изображениями */
+    margin-bottom: 20px;
+    justify-content: center; /* Центрируем изображения, если их меньше двух или они не занимают всю ширину */
+}
+
+#onboarding .screenshot-gallery img {
+    max-width: 48%; /* Чтобы поместилось примерно два изображения в ряд */
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer; /* Указывает, что изображение кликабельно (для лайтбокса) */
+}
+
+/* Стили для кнопок "Next" и "Done" */
+#onboarding .step .btn-primary { /* Общий класс для кнопок */
+    /* margin-top: auto; /* Этот вариант прижимает кнопку к низу, если justify-content: space-between у .step не используется или если есть основной блок контента с flex-grow: 1 */
+    padding: 12px 25px;
+    font-size: 1em;
+    align-self: center; /* Центрирует кнопку, если она не растянута на всю ширину */
+    min-width: 150px;   /* Минимальная ширина кнопки */
+    margin-bottom: 10px; /* Небольшой отступ снизу, если кнопка последний элемент */
+}
