@@ -1,9 +1,17 @@
 // Глобальные переменные (объявляем один раз)
 let scrollPosition = 0;
 let currentStep = 0; // Используется для отслеживания текущего шага в онбординге
-let projectsShown = 0;
-let clickCount = 0;
 let steps = []; // Будет содержать шаги онбординга (NodeList)
+
+// Объект для хранения счетчиков проектов по категориям
+const projectTrackers = {
+  recommended: { shown: 0, clickCount: 0 },
+  browser: { shown: 0, clickCount: 0 },
+  free: { shown: 0, clickCount: 0 },
+  play: { shown: 0, clickCount: 0 },
+  nft: { shown: 0, clickCount: 0 },
+  testnet: { shown: 0, clickCount: 0 }
+};
 
 // Лайтбокс
 function openLightbox(src) {
@@ -115,7 +123,7 @@ function prevStep() {
 }
 
 // Task Modal (Модальное окно задачи)
-function openTask(taskId) {
+function openTask(taskId, categoryType = 'browser') {
   scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
   const taskModal = document.getElementById('task-modal');
   const taskContent = document.getElementById('task-content');
@@ -125,8 +133,33 @@ function openTask(taskId) {
     return false;
   }
 
-  if (typeof projects !== 'undefined') {
-    const project = projects.find(p => p.taskId === taskId);
+  // Выбираем нужный массив проектов в зависимости от категории
+  let projectsArray;
+  switch(categoryType) {
+    case 'recommended':
+      projectsArray = recommendedProjects;
+      break;
+    case 'browser':
+      projectsArray = browserProjects;
+      break;
+    case 'free':
+      projectsArray = freeProjects;
+      break;
+    case 'play':
+      projectsArray = playProjects;
+      break;
+    case 'nft':
+      projectsArray = nftProjects;
+      break;
+    case 'testnet':
+      projectsArray = testnetProjects;
+      break;
+    default:
+      projectsArray = browserProjects; // По умолчанию используем browserProjects
+  }
+
+  if (typeof projectsArray !== 'undefined') {
+    const project = projectsArray.find(p => p.taskId === taskId);
     if (project && project.instructions) {
       taskContent.innerHTML = `
         <h2>${project.instructions.title}</h2>
@@ -140,8 +173,8 @@ function openTask(taskId) {
       taskContent.innerHTML = `<p>Task details not available for ID: ${taskId}</p>`;
     }
   } else {
-    taskContent.innerHTML = `<p>Project data is not defined. Cannot open task.</p>`;
-    console.error("Projects array is not defined.");
+    taskContent.innerHTML = `<p>Project data is not defined for category: ${categoryType}. Cannot open task.</p>`;
+    console.error(`Projects array for category ${categoryType} is not defined.`);
   }
 
   taskModal.classList.add('active');
@@ -177,28 +210,49 @@ function copyReferralLink() {
 }
 
 // Project Cards (Карточки проектов)
-function initializeProjects() {
-  if (typeof projects === 'undefined' || projects.length === 0) {
-    console.error("Projects array is not defined or empty. Cannot initialize project cards.");
-    const container = document.getElementById('project-cards');
+function initializeAllProjects() {
+  // Инициализация всех категорий проектов
+  initializeProjects('recommended', recommendedProjects, 'recommended-cards');
+  initializeProjects('browser', browserProjects, 'project-cards');
+  initializeProjects('free', freeProjects, 'free-cards');
+  initializeProjects('play', playProjects, 'play-cards');
+  initializeProjects('nft', nftProjects, 'nft-cards');
+  initializeProjects('testnet', testnetProjects, 'testnet-cards');
+}
+
+function initializeProjects(category, projectsArray, containerId) {
+  if (typeof projectsArray === 'undefined' || projectsArray.length === 0) {
+    console.error(`Projects array for category ${category} is not defined or empty. Cannot initialize project cards.`);
+    const container = document.getElementById(containerId);
     if(container) container.innerHTML = "<p>No projects to display.</p>";
-    const showMoreBtn = document.getElementById('show-more-btn');
+    const showMoreBtn = document.getElementById(`show-more-${category}-btn`);
     if(showMoreBtn) showMoreBtn.style.display = 'none';
     return;
   }
-  // Сбрасываем счетчики перед первой загрузкой
-  projectsShown = 0;
-  clickCount = 0;
-  // Очищаем контейнер перед добавлением карточек (если это повторная инициализация)
-  const container = document.getElementById('project-cards');
+  
+  // Сбрасываем счетчики для этой категории
+  projectTrackers[category].shown = 0;
+  projectTrackers[category].clickCount = 0;
+  
+  // Очищаем контейнер перед добавлением карточек
+  const container = document.getElementById(containerId);
   if(container) container.innerHTML = '';
 
-  showMoreProjects(); // Показываем первую порцию проектов
+  // Показываем первую порцию проектов
+  showMoreProjects(category, projectsArray, containerId);
 }
 
-function createProjectCard(project) {
+function createProjectCard(project, category) {
+  // Валидация обязательных полей проекта
+  const requiredFields = ['icon', 'name', 'description', 'reward', 'btnText', 'taskId'];
+  const missingFields = requiredFields.filter(field => !project[field]);
+  
+  if (missingFields.length > 0) {
+    console.error(`Project is missing required fields: ${missingFields.join(', ')}`, project);
+    return null;
+  }
+
   const card = document.createElement('div');
-  // Добавляем общий класс 'project-card' для возможности стилизации или выбора всех карточек проектов
   card.className = 'offer-card project-card';
 
   card.innerHTML = `
@@ -213,52 +267,59 @@ function createProjectCard(project) {
     <p class="reward-range">${project.reward}</p>
     <button class="btn-primary join-btn">${project.btnText || 'Join Now'}</button>
   `;
-  // Привязываем событие к кнопке через JS, а не data-task-id + querySelector в openTask
-  card.querySelector(".join-btn").onclick = () => openTask(project.taskId);
+  
+  // Привязываем событие к кнопке для открытия модального окна с указанием категории
+  card.querySelector(".join-btn").onclick = () => openTask(project.taskId, category);
+  
   return card;
 }
 
-function showMoreProjects() {
-  const container = document.getElementById('project-cards');
-  const showMoreBtn = document.getElementById('show-more-btn');
-  const infoText = document.getElementById('info-text');
-  const actionButtons = document.getElementById('action-buttons');
+function showMoreProjects(category, projectsArray, containerId) {
+  const container = document.getElementById(containerId);
+  const showMoreBtn = document.getElementById(`show-more-${category}-btn`);
+  const infoText = document.getElementById(`${category}-info-text`);
+  const actionButtons = document.getElementById(`${category}-action-buttons`);
 
   if (!container) {
-    console.error("Project cards container not found.");
+    console.error(`Project cards container for ${category} not found.`);
     return;
   }
-  if (typeof projects === 'undefined') {
-    console.error("Projects array is not defined in showMoreProjects.");
+  
+  if (typeof projectsArray === 'undefined') {
+    console.error(`Projects array for category ${category} is not defined in showMoreProjects.`);
     return;
   }
 
-  if (projectsShown > 0) { // Не увеличиваем clickCount при первой загрузке (projectsShown === 0)
-      clickCount++;
+  // Увеличиваем clickCount только если уже показаны проекты
+  if (projectTrackers[category].shown > 0) {
+    projectTrackers[category].clickCount++;
   }
 
-  const start = projectsShown;
-  const end = Math.min(start + 3, projects.length);
+  const start = projectTrackers[category].shown;
+  const end = Math.min(start + 3, projectsArray.length);
 
   for (let i = start; i < end; i++) {
-    const card = createProjectCard(projects[i]);
-    // Класс hidden-project не используется в текущей логике `showMoreProjects` для пагинации
-    // Если он нужен для другой логики "показать все скрытые", это должно быть отдельно.
-    // if (i >= 3) card.classList.add('hidden-project'); // Удалено, т.к. пагинация обрабатывается иначе
-    container.appendChild(card);
-    projectsShown++;
+    const card = createProjectCard(projectsArray[i], category);
+    if (card) {
+      container.appendChild(card);
+      projectTrackers[category].shown++;
+    } else {
+      console.warn(`Skipping project card at index ${i} due to validation error`);
+    }
   }
 
-  if (infoText && clickCount === 2) { // Показываем текст после второго клика на "показать еще"
+  // Показываем информационный текст после второго клика, если он существует
+  if (infoText && projectTrackers[category].clickCount === 2) {
     infoText.style.display = 'block';
   }
 
-  if (projectsShown >= projects.length) {
+  // Управляем видимостью кнопки "показать еще" и кнопок действий
+  if (projectTrackers[category].shown >= projectsArray.length) {
     if (showMoreBtn) showMoreBtn.style.display = 'none';
-    if (actionButtons) actionButtons.style.display = 'flex'; // Показываем кнопки действий, когда все проекты отображены
+    if (actionButtons) actionButtons.style.display = 'flex';
   } else if (showMoreBtn) {
-    showMoreBtn.style.display = 'inline-block'; // Убедимся, что кнопка видима
-    const remaining = Math.min(3, projects.length - projectsShown);
+    showMoreBtn.style.display = 'inline-block';
+    const remaining = Math.min(3, projectsArray.length - projectTrackers[category].shown);
     showMoreBtn.textContent = `🔽 Show ${remaining} More Projects`;
   }
 }
@@ -296,91 +357,7 @@ function initEventHandlers() {
       }
     });
   }
-  // Дополнительные переключатели меню, если есть (например, кнопки внутри самого меню для его закрытия)
+  
+  // Дополнительные переключатели меню, если есть
   document.querySelectorAll(".menu-toggle").forEach(btn => {
-      if (btn.id !== 'menu-toggle-button') { // Чтобы не дублировать обработчик для основной кнопки
-          btn.addEventListener("click", toggleMenu);
-      }
-  });
-
-
-  // Кнопки онбординга
-  document.querySelectorAll('#onboarding .next-btn').forEach(btn => btn.addEventListener('click', nextStep));
-  document.querySelectorAll('#onboarding .prev-btn').forEach(btn => btn.addEventListener('click', prevStep));
-  document.querySelector('#onboarding .done-btn')?.addEventListener('click', function() {
-    closeOnboarding();
-    scrollToAirdropsSection();
-  });
-
-  // Кнопка "Показать еще проекты"
-  // HTML: <button id="show-more-btn" ... onclick="showMoreProjects()">...
-  // Если onclick атрибут убран из HTML, этот слушатель будет работать. Если onclick есть, он сработает первым.
-  // Для чистоты лучше убрать onclick из HTML и полагаться только на этот слушатель.
-  const showMoreProjectsBtn = document.getElementById('show-more-btn');
-  if (showMoreProjectsBtn && !showMoreProjectsBtn.hasAttribute('onclick')) { // Добавляем слушатель, только если нет onclick
-      showMoreProjectsBtn.addEventListener('click', showMoreProjects);
-  }
-
-
-  // Открытие модальных окон по data-атрибуту (если используется)
-  document.querySelectorAll('[data-modal]').forEach(btn => {
-    btn.addEventListener('click', function () {
-      const modalId = this.getAttribute('data-modal');
-      const modal = document.getElementById(modalId);
-      if (modal) modal.classList.add('active');
-    });
-  });
-
-  // Общие кнопки закрытия для всех модальных окон
-  document.querySelectorAll('.close-btn, .modal .close').forEach(btn => {
-    btn.addEventListener('click', function () {
-      const modal = this.closest('.modal');
-      if (modal) {
-        modal.classList.remove('active');
-        // Если это было модальное окно гайда, и оно было закрыто общей кнопкой,
-        // а не специальной onclick="closeGuideModal()", то также прокручиваем.
-        if (modal.id === 'guideModal') {
-            // scrollToAirdropsSection(); // Раскомментируйте, если нужно всегда скроллить при закрытии guideModal
-                                        // В HTML уже есть onclick="closeGuideModal()", которая это делает.
-        }
-      }
-    });
-  });
-
-  // Форма подписки по Email
-  const emailForm = document.querySelector('#email-modal .email-form'); // Уточненный селектор
-  if (emailForm) {
-    emailForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const emailInput = emailForm.querySelector('input[type="email"]');
-      if (emailInput && emailInput.value) {
-         // Здесь должна быть реальная логика отправки формы, например, fetch POST-запрос
-        console.log("Email for subscription:", emailInput.value);
-        alert('Subscription successful! You will receive alerts about top-paying nodes.'); // Заглушка
-        emailInput.value = ''; // Очистка поля
-        closeEmailModal();
-      } else {
-        alert('Please enter a valid email address.');
-      }
-    });
-  }
-
-  // Настройка закрытия модальных окон по клику вне их контентной части
-  setupModalEvents();
-}
-
-// Запуск всей логики после полной загрузки DOM
-document.addEventListener("DOMContentLoaded", function () {
-  // `projects` массив должен быть определен в HTML в inline <script> теге ПЕРЕД этим файлом.
-  if (typeof projects !== 'undefined' && projects.length > 0) {
-    initializeProjects(); // Инициализация и отображение карточек проектов
-  } else {
-    console.warn("Projects array is not defined or is empty. No project cards will be displayed.");
-    const container = document.getElementById('project-cards');
-    if(container) container.innerHTML = "<p>No projects to display at the moment.</p>";
-    const showMoreBtn = document.getElementById('show-more-btn');
-    if(showMoreBtn) showMoreBtn.style.display = 'none'; // Скрыть кнопку "показать еще", если проектов нет
-  }
-
-  initEventHandlers(); // Настройка всех остальных обработчиков событий
-});
+    if (btn.id !== 'menu-toggle-button') {
