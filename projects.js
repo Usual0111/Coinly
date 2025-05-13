@@ -19,27 +19,69 @@ const projectTrackers = {
 // Вам нужно будет заполнить эти массивы реальными данными проектов
 
 const recommendedProjects = [
-  // Пример рекомендованного проекта (добавьте свои)
-  // {
-  //   icon: "⭐",
-  //   name: "Super Recommended Project",
-  //   description: "This project is highly recommended for reasons X, Y, Z.",
-  //   reward: "+$100-$500 (Est.)",
-  //   btnText: "Explore",
-  //   hot: true,
-  //   taskId: "rec_super",
-  //   instructions: {
-  //     title: "🚀 Get Started with Super Recommended Project",
-  //     description: "Follow these steps to participate:",
-  //     steps: [
-  //       "Sign up on their platform.",
-  //       "Complete KYC if required.",
-  //       "Engage with the community."
-  //     ],
-  //     actionUrl: "https://example.com/super-recommended",
-  //     actionText: "Go to Project"
-  //   }
-  // }
+      {
+        icon: "🔥",
+        name: "FirEdge",
+        description: "New Layer 2 solution with huge airdrop potential.",
+        reward: "+$80-$350 (Est. avg. from past users. Results vary.)",
+        btnText: "Join",
+        hot: true,
+        taskId: "firedge",
+        instructions: {
+          title: "🔥 FirEdge - The Hottest Layer 2 Project",
+          description: "Top project of the week with significant growth potential:",
+          steps: [
+            "Create your FirEdge account and verify email",
+            "Bridge at least 0.01 ETH to FirEdge testnet",
+            "Complete at least 5 transactions on the testnet",
+            "Invite friends for bonus points"
+          ],
+          actionUrl: "#",
+          actionText: "Start Now"
+        }
+      },
+      {
+        icon: "🌊",
+        name: "WaveDAO",
+        description: "Governance token with instant staking rewards.",
+        reward: "+$65-$270 (Est. avg. from past users. Results vary.)",
+        btnText: "Claim",
+        hot: true,
+        taskId: "wavedao",
+        instructions: {
+          title: "🌊 WaveDAO - Join the Governance Revolution",
+          description: "Leading governance project with immediate benefits:",
+          steps: [
+            "Sign up for WaveDAO and verify your wallet",
+            "Participate in at least one governance vote",
+            "Stake your test tokens for rewards",
+            "Complete social media tasks for bonus points"
+          ],
+          actionUrl: "#",
+          actionText: "Join DAO"
+        }
+      },
+      {
+        icon: "💫",
+        name: "StarChain",
+        description: "Privacy-focused blockchain with early adopter bonuses.",
+        reward: "+$90-$320 (Est. avg. from past users. Results vary.)",
+        btnText: "Start",
+        hot: true,
+        taskId: "starchain",
+        instructions: {
+          title: "💫 StarChain - Privacy First, Rewards Second",
+          description: "Be an early adopter of this revolutionary privacy chain:",
+          steps: [
+            "Create your StarChain wallet",
+            "Complete the privacy protocol tutorial",
+            "Send at least 3 private transactions",
+            "Invite friends to build your node network"
+          ],
+          actionUrl: "#",
+          actionText: "Claim Spot"
+        }
+      }
 ];
 
 const browserProjects = [
@@ -268,99 +310,267 @@ const browserProjects = [
 ];
 
 const freeProjects = [
-  // Пример бесплатного проекта (добавьте свои)
-  // {
-  //   icon: "🎁",
-  //   name: "Freebie Coin",
-  //   description: "Earn crypto by completing simple social tasks.",
-  //   reward: "100-500 FREEBIE Tokens",
-  //   btnText: "Get Free",
-  //   hot: false,
-  //   taskId: "free_freebie",
-  //   instructions: {
-  //     title: "Claim Your Freebie Coins!",
-  //     description: "Easy tasks for free tokens:",
-  //     steps: [
-  //       "Join our Telegram group.",
-  //       "Follow us on Twitter.",
-  //       "Submit your wallet address."
-  //     ],
-  //     actionUrl: "https://example.com/freebie-coin",
-  //     actionText: "Claim Now"
-  //   }
-  // }
+      {
+        icon: "📝",
+        name: "LearnPad",
+        description: "Complete simple tasks and educational quizzes for tokens.",
+        reward: "+$30-$150 (Est. avg. from past users. Results vary.)",
+        btnText: "Learn",
+        hot: false,
+        taskId: "learnpad",
+        instructions: {
+          title: "📝 LearnPad - Knowledge is Crypto",
+          description: "Learn and earn with zero investment:",
+          steps: [
+            "Register your LearnPad account",
+            "Complete educational quizzes about blockchain",
+            "Participate in daily challenges",
+            "Share your knowledge for additional rewards"
+          ],
+          actionUrl: "#",
+          actionText: "Start Learning"
+        }
+      },
+      {
+        icon: "🔍",
+        name: "DataSeek",
+        description: "Share anonymized browsing data for ongoing rewards.",
+        reward: "+$40-$180 (Est. avg. from past users. Results vary.)",
+        btnText: "Share",
+        hot: true,
+        taskId: "dataseek",
+        instructions: {
+          title: "🔍 DataSeek - Your Data, Your Earnings",
+          description: "Earn by contributing anonymized browsing data:",
+          steps: [
+            "Install the DataSeek browser extension",
+            "Set your privacy preferences",
+            "Earn while you browse normally",
+            "Cash out rewards weekly"
+          ],
+          actionUrl: "#",
+          actionText: "Start Sharing"
+        }
+      },
+      {
+        icon: "🧩",
+        name: "TaskCube",
+        description: "Microtasks with instant crypto rewards.",
+        reward: "+$25-$130 (Est. avg. from past users. Results vary.)",
+        btnText: "Tasks",
+        hot: false,
+        taskId: "taskcube",
+        instructions: {
+          title: "🧩 TaskCube - Small Tasks, Real Crypto",
+          description: "Complete easy microtasks for immediate rewards:",
+          steps: [
+            "Create your TaskCube account",
+            "Choose from various task categories",
+            "Complete tasks at your own pace",
+            "Get paid instantly to your wallet"
+          ],
+          actionUrl: "#",
+          actionText: "View Tasks"
+        }
+      }
 ];
 
 const playProjects = [
-  // Пример Play-to-Earn проекта (добавьте свои)
-  // {
-  //   icon: "🎮",
-  //   name: "Crypto Raiders",
-  //   description: "Play an exciting RPG and earn NFTs and tokens.",
-  //   reward: "Varies (NFTs, Game Tokens)",
-  //   btnText: "Play Now",
-  //   hot: true,
-  //   taskId: "play_raiders",
-  //   instructions: {
-  //     title: "⚔️ Become a Crypto Raider!",
-  //     description: "Embark on adventures and earn rewards:",
-  //     steps: [
-  //       "Create an account and connect your wallet.",
-  //       "Choose your hero and start questing.",
-  //       "Win battles to earn items and tokens."
-  //     ],
-  //     actionUrl: "https://example.com/crypto-raiders",
-  //     actionText: "Enter Game"
-  //   }
-  // }
+      {
+        icon: "🎯",
+        name: "CryptoBlast",
+        description: "Fast-paced action game with token rewards.",
+        reward: "+$35-$175 (Est. avg. from past users. Results vary.)",
+        btnText: "Play",
+        hot: true,
+        taskId: "cryptoblast",
+        instructions: {
+          title: "🎯 CryptoBlast - Play and Earn Rewards",
+          description: "Have fun and earn crypto while playing:",
+          steps: [
+            "Download the CryptoBlast game app",
+            "Complete the tutorial levels",
+            "Participate in daily tournaments",
+            "Withdraw your earnings directly to your wallet"
+          ],
+          actionUrl: "#",
+          actionText: "Start Playing"
+        }
+      },
+      {
+        icon: "🏆",
+        name: "ArenaX",
+        description: "Competitive PvP games with weekly tournaments.",
+        reward: "+$40-$200 (Est. avg. from past users. Results vary.)",
+        btnText: "Compete",
+        hot: false,
+        taskId: "arenax",
+        instructions: {
+          title: "🏆 ArenaX - Compete and Earn",
+          description: "Test your skills against other players for rewards:",
+          steps: [
+            "Create your ArenaX account",
+            "Practice in free training mode",
+            "Enter weekly tournaments",
+            "Win rewards based on your ranking"
+          ],
+          actionUrl: "#",
+          actionText: "Join Arena"
+        }
+      },
+      {
+        icon: "🎮",
+        name: "MetaRealms",
+        description: "Open-world exploration with daily quests.",
+        reward: "+$50-$220 (Est. avg. from past users. Results vary.)",
+        btnText: "Explore",
+        hot: true,
+        taskId: "metarealms",
+        instructions: {
+          title: "🎮 MetaRealms - Explore to Earn",
+          description: "Immerse yourself in a crypto-powered virtual world:",
+          steps: [
+            "Create your MetaRealms character",
+            "Complete the onboarding quests",
+            "Participate in daily and weekly events",
+            "Trade your earnings for real crypto"
+          ],
+          actionUrl: "#",
+          actionText: "Start Adventure"
+        }
+      }
 ];
 
 const nftProjects = [
-  // Пример NFT проекта (добавьте свои)
-  // {
-  //   icon: "🖼️",
-  //   name: "PixelPunks",
-  //   description: "Mint unique pixel art NFTs with a chance for rare traits.",
-  //   reward: "1 Free Mint (Gas fees apply)",
-  //   btnText: "Mint NFT",
-  //   hot: false,
-  //   taskId: "nft_punks",
-  //   instructions: {
-  //     title: "🎨 Mint Your PixelPunk NFT",
-  //     description: "Get your hands on a unique digital collectible:",
-  //     steps: [
-  //       "Connect your wallet to the minting site.",
-  //       "Approve the transaction for minting.",
-  //       "Your NFT will appear in your wallet."
-  //     ],
-  //     actionUrl: "https://example.com/pixelpunks-mint",
-  //     actionText: "Go to Mint"
-  //   }
-  // }
+      {
+        icon: "🖼️",
+        name: "PixelVerse",
+        description: "Create and trade pixel art NFTs with zero gas fees.",
+        reward: "+$60-$280 (Est. avg. from past users. Results vary.)",
+        btnText: "Create",
+        hot: true,
+        taskId: "pixelverse",
+        instructions: {
+          title: "🖼️ PixelVerse - Create and Earn with NFTs",
+          description: "Zero-cost NFT creation with high earning potential:",
+          steps: [
+            "Sign up for PixelVerse",
+            "Create your first pixel art NFT (tools provided)",
+            "List your creation on the marketplace",
+            "Earn royalties from every sale"
+          ],
+          actionUrl: "#",
+          actionText: "Start Creating"
+        }
+      },
+      {
+        icon: "🎭",
+        name: "AvatarWorld",
+        description: "Free avatar NFTs with staking rewards.",
+        reward: "+$45-$190 (Est. avg. from past users. Results vary.)",
+        btnText: "Mint",
+        hot: false,
+        taskId: "avatarworld",
+        instructions: {
+          title: "🎭 AvatarWorld - Your Digital Identity",
+          description: "Get free avatar NFTs with real utility:",
+          steps: [
+            "Claim your free unique avatar NFT",
+            "Customize it with free traits",
+            "Stake your avatar for passive rewards",
+            "Use across multiple partner platforms"
+          ],
+          actionUrl: "#",
+          actionText: "Claim Avatar"
+        }
+      },
+      {
+        icon: "🃏",
+        name: "CardChain",
+        description: "Collectible card game with tradable NFT cards.",
+        reward: "+$55-$230 (Est. avg. from past users. Results vary.)",
+        btnText: "Collect",
+        hot: true,
+        taskId: "cardchain",
+        instructions: {
+          title: "🃏 CardChain - Collect, Play, Earn",
+          description: "Free starter pack with valuable NFT cards:",
+          steps: [
+            "Claim your free starter deck",
+            "Learn to play through tutorials",
+            "Compete in daily matches",
+            "Trade or sell your valuable cards"
+          ],
+          actionUrl: "#",
+          actionText: "Get Cards"
+        }
+      }
 ];
 
 const testnetProjects = [
-  // Пример Testnet проекта (добавьте свои)
-  // {
-  //   icon: "🧪",
-  //   name: "AlphaNet Explorer",
-  //   description: "Participate in our testnet and get rewarded for feedback.",
-  //   reward: "Potential Mainnet Tokens",
-  //   btnText: "Join Testnet",
-  //   hot: true,
-  //   taskId: "test_alpha",
-  //   instructions: {
-  //     title: "🔬 Explore AlphaNet Testnet",
-  //     description: "Help us test our new blockchain and earn potential rewards:",
-  //     steps: [
-  //       "Request testnet tokens from the faucet.",
-  //       "Perform transactions and test smart contracts.",
-  //       "Report bugs and provide feedback."
-  //     ],
-  //     actionUrl: "https://example.com/alphanet-testnet",
-  //     actionText: "Get Started"
-  //   }
-  // }
+       {
+        icon: "🧪",
+        name: "FusionDEX",
+        description: "Next-gen DEX testnet with confirmed airdrop.",
+        reward: "+$70-$300 (Est. avg. from past users. Results vary.)",
+        btnText: "Test",
+        hot: true,
+        taskId: "fusiondex",
+        instructions: {
+          title: "🧪 FusionDEX - Test the Future of Trading",
+          description: "Early access to revolutionary DEX with confirmed airdrop:",
+          steps: [
+            "Register for FusionDEX testnet",
+            "Get free testnet tokens",
+            "Complete at least 10 swaps",
+            "Provide feedback for bonus rewards"
+          ],
+          actionUrl: "#",
+          actionText: "Join Testnet"
+        }
+      },
+      {
+        icon: "🔐",
+        name: "ShieldPay",
+        description: "Privacy-focused payment protocol with incentivized testing.",
+        reward: "+$55-$240 (Est. avg. from past users. Results vary.)",
+        btnText: "Join",
+        hot: false,
+        taskId: "shieldpay",
+        instructions: {
+          title: "🔐 ShieldPay - Private Payments, Public Rewards",
+          description: "Test the future of private transactions:",
+          steps: [
+            "Create your ShieldPay account",
+            "Complete the privacy protocol tutorial",
+            "Send at least 5 private transactions",
+            "Report bugs for additional rewards"
+          ],
+          actionUrl: "#",
+          actionText: "Start Testing"
+        }
+      },
+      {
+        icon: "🔄",
+        name: "CrossBridge",
+        description: "Cross-chain bridge with testnet rewards.",
+        reward: "+$60-$260 (Est. avg. from past users. Results vary.)",
+        btnText: "Bridge",
+        hot: true,
+        taskId: "crossbridge",
+        instructions: {
+          title: "🔄 CrossBridge - Connect Chains, Collect Rewards",
+          description: "Test groundbreaking cross-chain technology:",
+          steps: [
+            "Create accounts on multiple test networks",
+            "Get free testnet tokens",
+            "Perform at least 5 cross-chain transfers",
+            "Report your experience for bonus points"
+          ],
+          actionUrl: "#",
+          actionText: "Start Bridging"
+        }
+      }
 ];
 
 
@@ -604,3 +814,203 @@ function showWalletHelp() {
 // export { initializeAllProjects, showMoreProjects, openTask, closeTaskModal, showWalletHelp, projectTrackers, recommendedProjects, browserProjects, freeProjects, playProjects, nftProjects, testnetProjects };
 // Однако, если вы просто подключаете его через <script>, то функции и переменные будут в глобальной области видимости (если не обернуты в IIFE или модуль).
 // Для простоты, предполагая классическое подключение <script>, экспорт не обязателен.
+// We'll add script to populate all sections
+    document.addEventListener('DOMContentLoaded', function() {
+      // Function to create project cards
+      function createProjectCard(project, containerId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        
+        const cardDiv = document.createElement('div');
+        cardDiv.className = 'project-card';
+        
+        let hotBadge = project.hot ? '<span class="hot-badge">🔥 HOT</span>' : '';
+        
+        cardDiv.innerHTML = `
+          <div class="project-icon">${project.icon}</div>
+          <div class="project-info">
+            <h3>${project.name}</h3>
+            <p>${project.description}</p>
+            ${hotBadge}
+            <p class="reward">${project.reward}</p>
+            <button class="btn-action" onclick="openTaskModal('${project.taskId}')">${project.btnText}</button>
+          </div>
+        `;
+        
+        container.appendChild(cardDiv);
+      }
+      
+      // Function to initially show only first 3 projects
+      function initializeProjectSection(projectsArray, containerId, showMoreBtnId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        
+        // Clear container first
+        container.innerHTML = '';
+        
+        // Show first 3 projects
+        for (let i = 0; i < Math.min(3, projectsArray.length); i++) {
+          createProjectCard(projectsArray[i], containerId);
+        }
+        
+        // Show "Show More" button only if there are more than 3 projects
+        const showMoreBtn = document.getElementById(showMoreBtnId);
+        if (showMoreBtn) {
+          showMoreBtn.style.display = projectsArray.length > 3 ? 'block' : 'none';
+        }
+      }
+      
+      // Initialize all project sections
+      initializeProjectSection(projects, 'project-cards', 'show-more-btn');
+      initializeProjectSection(recommendedProjects, 'recommended-cards', 'show-more-recommended-btn');
+      initializeProjectSection(freeToEarnProjects, 'free-earn-cards', 'show-more-free-btn');
+      initializeProjectSection(playToEarnProjects, 'play-earn-cards', 'show-more-play-btn');
+      initializeProjectSection(nftProjects, 'nft-cards', 'show-more-nft-btn');
+      initializeProjectSection(testnetProjects, 'testnet-cards', 'show-more-testnet-btn');
+    });
+
+    // Functions to show more projects in each section
+    function showMoreProjects() {
+      showMoreItems(projects, 'project-cards', 'show-more-btn');
+      document.getElementById('info-text').style.display = 'block';
+      document.getElementById('action-buttons').style.display = 'flex';
+    }
+    
+    function showMoreRecommended() {
+      showMoreItems(recommendedProjects, 'recommended-cards', 'show-more-recommended-btn');
+    }
+    
+    function showMoreFreeEarn() {
+      showMoreItems(freeToEarnProjects, 'free-earn-cards', 'show-more-free-btn');
+    }
+    
+    function showMorePlayEarn() {
+      showMoreItems(playToEarnProjects, 'play-earn-cards', 'show-more-play-btn');
+    }
+    
+    function showMoreNft() {
+      showMoreItems(nftProjects, 'nft-cards', 'show-more-nft-btn');
+    }
+    
+    function showMoreTestnets() {
+      showMoreItems(testnetProjects, 'testnet-cards', 'show-more-testnet-btn');
+    }
+    
+    // General function to show more items
+    function showMoreItems(itemsArray, containerId, btnId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      
+      // Clear container first
+      container.innerHTML = '';
+      
+      // Show all projects
+      for (let i = 0; i < itemsArray.length; i++) {
+        createProjectCard(itemsArray[i], containerId);
+      }
+      
+      // Hide the "Show More" button
+      const showMoreBtn = document.getElementById(btnId);
+      if (showMoreBtn) {
+        showMoreBtn.style.display = 'none';
+      }
+    }
+
+    // Modal functions
+    function openTaskModal(taskId) {
+      const modal = document.getElementById('task-modal');
+      const content = document.getElementById('task-content');
+      
+      // Find the project with the matching taskId
+      let project = findProjectByTaskId(taskId);
+      
+      if (project && project.instructions) {
+        // Create the task content
+        let stepsHtml = '';
+        if (project.instructions.steps && project.instructions.steps.length > 0) {
+          stepsHtml = '<ol class="task-steps">';
+          project.instructions.steps.forEach(step => {
+            stepsHtml += `<li>${step}</li>`;
+          });
+          stepsHtml += '</ol>';
+        }
+        
+        content.innerHTML = `
+          <h2>${project.instructions.title}</h2>
+          <p class="task-description">${project.instructions.description}</p>
+          ${stepsHtml}
+          <a href="${project.instructions.actionUrl}" target="_blank" class="btn-primary">${project.instructions.actionText}</a>
+        `;
+        
+        modal.style.display = 'block';
+      }
+    }
+    
+    function closeTaskModal() {
+      document.getElementById('task-modal').style.display = 'none';
+    }
+    
+    function findProjectByTaskId(taskId) {
+      // Check in all project arrays
+      const allProjects = [
+        ...projects,
+        ...recommendedProjects,
+        ...freeToEarnProjects,
+        ...playToEarnProjects,
+        ...nftProjects,
+        ...testnetProjects
+      ];
+      
+      return allProjects.find(p => p.taskId === taskId);
+    }
+    
+    function openGuideModal() {
+      document.getElementById('guideModal').style.display = 'block';
+    }
+    
+    function closeGuideModal() {
+      document.getElementById('guideModal').style.display = 'none';
+    }
+    
+    function startOnboarding() {
+      document.getElementById('onboarding').style.display = 'block';
+      currentStep = 0;
+      showStep(currentStep);
+    }
+    
+    function closeOnboarding() {
+      document.getElementById('onboarding').style.display = 'none';
+    }
+    
+    let currentStep = 0;
+    
+    function showStep(stepIndex) {
+      const steps = document.querySelectorAll('.step');
+      steps.forEach((step, index) => {
+        step.style.display = index === stepIndex ? 'block' : 'none';
+      });
+    }
+    
+    function nextStep() {
+      currentStep++;
+      showStep(currentStep);
+    }
+    
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = src;
+      lightbox.style.display = 'block';
+    }
+    
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+    
+    function openEmailForm() {
+      document.getElementById('email-modal').style.display = 'block';
+    }
+    
+    function closeEmailModal() {
+      document.getElementById('email-modal').style.display = 'none';
+    }
