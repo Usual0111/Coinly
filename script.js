@@ -1306,4 +1306,4 @@ document.querySelector('[data-onboarding-done]').addEventListener('click', funct
     function closeEmailModal() {
       document.getElementById('email-modal').style.display = 'none';
     }
- 
+ setupModalEvents();
