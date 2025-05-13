@@ -53,17 +53,46 @@ function toggleMenu() {
   if (navLinks) navLinks.classList.toggle("show");
 }
 
-// Модальные окна — закрытие при клике вне
+// Модальные окна — закрытие при клике вне И НА КРЕСТИК
 function setupModalEvents() {
-  window.onclick = function(event) {
-    ["lightbox", "guideModal", "task-modal", "email-modal", "onboarding"].forEach(id => {
+  const modalIds = ["lightbox", "guideModal", "task-modal", "email-modal", "onboarding"];
+
+  // 1. Закрытие при клике вне (на оверлей)
+  window.addEventListener('click', function(event) {
+    modalIds.forEach(id => {
       const modal = document.getElementById(id);
-      // Закрываем, если клик был непосредственно по оверлею модального окна
-      if (event.target === modal) {
-        modal?.classList.remove("active");
+      if (modal && modal.classList.contains('active') && event.target === modal) {
+        switch (id) {
+          case 'lightbox':    closeLightbox(); break;
+          case 'guideModal':  closeGuideModal(); break;
+          case 'task-modal':  closeTaskModal(); break;
+          case 'email-modal': closeEmailModal(); break;
+          case 'onboarding':  closeOnboarding(); break;
+          default:            modal.classList.remove("active");
+        }
       }
     });
-  };
+  });
+
+  // 2. Закрытие при клике на "крестик" (кнопку закрытия)
+  document.querySelectorAll('.close-button, .modal-close').forEach(button => {
+    button.addEventListener('click', function(event) {
+      event.stopPropagation(); 
+
+      const modalElement = this.closest('#lightbox.active, #guideModal.active, #task-modal.active, #email-modal.active, #onboarding.active');
+
+      if (modalElement) {
+        switch (modalElement.id) {
+          case 'lightbox':    closeLightbox(); break;
+          case 'guideModal':  closeGuideModal(); break;
+          case 'task-modal':  closeTaskModal(); break;
+          case 'email-modal': closeEmailModal(); break;
+          case 'onboarding':  closeOnboarding(); break;
+          default:            modalElement.classList.remove('active');
+        }
+      }
+    });
+  });
 }
 
 // Onboarding (Процесс адаптации)
