@@ -273,3 +273,10 @@ window.prevStep = prevStep;
 window.openEmailForm = openEmailForm;
 window.closeEmailModal = closeEmailModal;
 window.copyReferralLink = copyReferralLink;
+
+function startOnboarding() {
+  const section = document.getElementById('categories'); // или другой нужный ID
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+}
