@@ -57,7 +57,7 @@ function toggleMenu() {
 function setupModalEvents() {
   const modalIds = ["lightbox", "guideModal", "task-modal", "email-modal", "onboarding"];
 
-  // 1. Закрытие при клике вне (на оверлей)
+  // 1. Закрытие при клике вне (на оверлей) - оставляем как есть
   window.addEventListener('click', function(event) {
     modalIds.forEach(id => {
       const modal = document.getElementById(id);
@@ -74,22 +74,34 @@ function setupModalEvents() {
     });
   });
 
-  // 2. Закрытие при клике на "крестик" (кнопку закрытия)
-  document.querySelectorAll('.close-button, .modal-close, .close-btn').forEach(button => {
+  // 2. Закрытие при клике на "крестик" (кнопку закрытия) - ИЗМЕНЕННАЯ ЧАСТЬ
+  document.querySelectorAll('.js-modal-close').forEach(button => { // Используем новый общий класс
     button.addEventListener('click', function(event) {
-      event.stopPropagation(); 
+      event.stopPropagation(); // Предотвращаем "всплытие" события
 
-      const modalElement = this.closest('#lightbox.active, #guideModal.active, #task-modal.active, #email-modal.active, #onboarding.active');
+      // Находим ближайший родительский элемент модального окна
+      // Убедитесь, что ваши модальные окна имеют класс .modal или .lightbox в HTML
+      const modalElement = this.closest('.modal, .lightbox');
 
-      if (modalElement) {
+      if (modalElement && modalElement.id) { // Проверяем, что модальное окно найдено и у него есть ID
         switch (modalElement.id) {
           case 'lightbox':    closeLightbox(); break;
           case 'guideModal':  closeGuideModal(); break;
           case 'task-modal':  closeTaskModal(); break;
           case 'email-modal': closeEmailModal(); break;
           case 'onboarding':  closeOnboarding(); break;
-          default:            modalElement.classList.remove('active');
+          default:
+            // Если это какое-то другое модальное окно, у которого нет своей функции закрытия,
+            // просто убираем класс 'active' и/или добавляем 'hidden'
+            modalElement.classList.remove('active');
+            // Если вы используете класс 'hidden' для скрытия, добавьте его обратно:
+            // modalElement.classList.add('hidden');
+            break;
         }
+      } else if (modalElement) {
+          // Если у модального окна нет ID, но оно найдено, пытаемся закрыть общим способом
+          modalElement.classList.remove('active');
+          // modalElement.classList.add('hidden'); // если используете 'hidden'
       }
     });
   });
@@ -387,20 +399,7 @@ function closeEmailModal() {
 // Инициализация всех обработчиков событий
 function initEventHandlers() {
 // Добавить эти строки в функцию initEventHandlers() или initializePage()
-document.querySelectorAll('.close-button, .modal-close, .close').forEach(button => {
-  button.addEventListener('click', function() {
-    // Находим ближайшую модалку
-    const modal = this.closest('.modal, .lightbox');
-    if (modal) {
-      // Проверяем, какой способ закрытия используется
-      if (modal.classList.contains('active')) {
-        modal.classList.remove('active');
-      } else {
-        modal.style.display = 'none';
-      }
-    }
-  });
-});
+
   // Мобильное меню
   const menuButton = document.getElementById('menu-toggle-button');
   const navLinks = document.getElementById('nav-links');
@@ -497,16 +496,7 @@ document.querySelectorAll('button[data-modal-target="guideModal"]').forEach(butt
 
 // Для кнопок закрытия модальных окон:
 // <button class="close" data-dismiss="modal" aria-label="Close guide modal">&times;</button>
-document.querySelectorAll('[data-dismiss="modal"]').forEach(button => {
-    button.addEventListener('click', function() {
-        // Найти родительское модальное окно и скрыть его
-        const modal = this.closest('.modal, .lightbox'); // Находим ближайший родитель с классом .modal или .lightbox
-        if (modal) {
-            modal.classList.add('hidden');
-            // Дополнительно: вернуть фокус на элемент, который открыл модалку
-        }
-    });
-});
+
 
 // Для изображений в галерее, открывающих lightbox
 // <img src="airdrop1.png" class="lightbox-trigger">
