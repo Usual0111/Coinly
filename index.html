@@ -184,7 +184,7 @@
 
   <!-- Модальное окно Lightbox для изображений -->
   <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
-    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox-close js-modal-close" aria-label="Close lightbox">&times;</button>
     <img class="lightbox-content" id="lightbox-img" src="" alt="Enlarged screenshot">
     <div id="lightbox-caption" class="visually-hidden">Enlarged Image</div> <!-- Для aria-labelledby -->
   </div>
@@ -192,7 +192,7 @@
   <!-- Модальное окно Guide -->
   <div id="guideModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="guideModalTitle">
     <div class="modal-content">
-      <button class="close" data-dismiss="modal" aria-label="Close guide modal">&times;</button>
+      <button class="close js-modal-close" data-dismiss="modal" aria-label="Close guide modal">&times;</button>
       <h4 id="guideModalTitle">📘 How to Use Browser Nodes on Mobile</h4>
       <ol>
         <li>
@@ -211,7 +211,7 @@
   <!-- Модальное окно Onboarding -->
   <div id="onboarding" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="onboardingStepTitle">
     <div class="modal-content">
-      <button class="close-btn" data-dismiss="modal" aria-label="Close onboarding">✖</button>
+      <button class="close-btn js-modal-close" data-dismiss="modal" aria-label="Close onboarding">✖</button>
       <div class="step" id="step-0">
         <h2 id="onboardingStepTitle">🔐 Step 1/3: Set Up Your Wallet (Takes < 60 seconds)</h2>
         <p>To earn your first rewards, you'll need a Web3 wallet. It's fast and free — we'll show you how.</p>
@@ -249,7 +249,7 @@
   <!-- Модальное окно Task -->
   <div id="task-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="taskModalTitle">
     <div class="modal-content">
-      <button class="close-btn" data-dismiss="modal" aria-label="Close task modal">✖</button>
+      <button class="close-btn js-modal-close" data-dismiss="modal" aria-label="Close task modal">✖</button>
       <div id="task-content">
         <!-- Сюда будет загружаться контент задачи, включая <h2 id="taskModalTitle">...</h2> -->
       </div>
@@ -259,7 +259,7 @@
   <!-- Модальное окно Email -->
   <div id="email-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="emailModalTitle">
     <div class="modal-content">
-      <button class="close-btn" data-dismiss="modal" aria-label="Close email modal">✖</button>
+      <button class="close-btn js-modal-close" data-dismiss="modal" aria-label="Close email modal">✖</button>
       <h2 id="emailModalTitle">Get Alerts on Top Paying Nodes</h2>
       <p>We'll notify you when high-paying opportunities appear.</p>
       <form class="email-form" id="subscribe-form"> 
