@@ -36,105 +36,49 @@
     
     <div class="divider"></div>
     
-    <!-- BLOCK 1: Recommended / Top of the week -->
-    <section id="recommended" class="intro">
-      <h2><span class="money-bag">🚀</span> Recommended / Top of the week</h2>
-      <p class="section-subtitle">Highest potential rewards and newest opportunities.</p>
-      <div class="mobile-tip">
-        📱 <strong>On mobile?</strong> Tap here for the quick  
-        <a href="#" onclick="openGuideModal()">setup guide📘</a>
-      </div>
-    </section>
-    
-    <div class="offers" id="recommended-cards">
-      <!-- Cards will be populated by JavaScript -->
-    </div>
-    
-    <div class="show-more-container">
-      <button id="show-more-recommended-btn" class="btn-show-more" onclick="showMoreRecommended()">🔽 Show 3 More Projects</button>
-    </div>
-    
-    <!-- BLOCK 2: Browser Nodes (Already in your original code) -->
-    <section id="airdrops" class="intro">
-      <h2><span class="money-bag">💻</span> Start With Browser Nodes Now:</h2>
-      <p class="section-subtitle">Passive income from your browser.</p>
-      <div class="mobile-tip">
-        📱 <strong>On mobile?</strong> Tap here for the quick  
-        <a href="#" onclick="openGuideModal()">setup guide📘</a>
-      </div>
-    </section>
-    
-    <div class="offers" id="project-cards">
-      <!-- Cards populated by JavaScript in your original code -->
-    </div>
-    
-    <div class="show-more-container">
-      <button id="show-more-btn" class="btn-show-more" onclick="showMoreProjects()">🔽 Show 3 More Projects</button>
-    </div>
-    
-    <!-- BLOCK 3: No Investments / Free-to-Earn -->
-    <section id="free-to-earn" class="intro">
-      <h2><span class="money-bag">🆓</span> No Investments / Free-to-Earn</h2>
-      <p class="section-subtitle">Start earning with zero upfront costs.</p>
-      <div class="mobile-tip">
-        📱 <strong>On mobile?</strong> Tap here for the quick  
-        <a href="#" onclick="openGuideModal()">setup guide📘</a>
-      </div>
-    </section>
-    
-    <div class="offers" id="free-earn-cards">
-      <!-- Cards will be populated by JavaScript -->
-    </div>
-    
-    <div class="show-more-container">
-      <button id="show-more-free-btn" class="btn-show-more" onclick="showMoreFreeEarn()">🔽 Show 3 More Projects</button>
-    </div>
-    
-    <!-- BLOCK 4: Play and earn -->
-    <section id="play-to-earn" class="intro">
-      <h2><span class="money-bag">🎮</span> Play and earn</h2>
-      <p class="section-subtitle">Have fun while earning crypto rewards.</p>
-      <div class="mobile-tip">
-        📱 <strong>On mobile?</strong> Tap here for the quick  
-        <a href="#" onclick="openGuideModal()">setup guide📘</a>
-      </div>
-    </section>
-    
-    <div class="offers" id="play-earn-cards">
-      <!-- Cards will be populated by JavaScript -->
-    </div>
-    
-    <div class="show-more-container">
-      <button id="show-more-play-btn" class="btn-show-more" onclick="showMorePlayEarn()">🔽 Show 3 More Projects</button>
-    </div>
-    
-    <!-- BLOCK 5: NFT и коллекции -->
-    <section id="nft-collections" class="intro">
-      <h2><span class="money-bag">💎</span> NFT и коллекции</h2>
-      <p class="section-subtitle">Digital collectibles with real value potential.</p>
-      <div class="mobile-tip">
-        📱 <strong>On mobile?</strong> Tap here for the quick  
-        <a href="#" onclick="openGuideModal()">setup guide📘</a>
-      </div>
-    </section>
-    
-    <div class="offers" id="nft-cards">
-      <!-- Cards will be populated by JavaScript -->
-    </div>
-    
-    <div class="show-more-container">
-      <button id="show-more-nft-btn" class="btn-show-more" onclick="showMoreNft()">🔽 Show 3 More Projects</button>
-    </div>
-    
-    <!-- BLOCK 6: Testnets and DeFi drops -->
-    <section id="testnets-defi" class="intro">
-      <h2><span class="money-bag">🧪</span> Testnets and DeFi drops</h2>
-      <p class="section-subtitle">Test blockchain projects and earn airdrops.</p>
-      <div class="mobile-tip">
-        📱 <strong>On mobile?</strong> Tap here for the quick  
-        <a href="#" onclick="openGuideModal()">setup guide📘</a>
-      </div>
-    </section>
+    <section id="categories">
+  <!-- BLOCK 1: Recommended / Top of the week -->
+  <div class="category" id="recommended">
+    <h2>🚀 Recommended / Top of the Week</h2>
+    <div class="category-container" data-category="recommended"></div>
+  </div>
+
+  <!-- BLOCK 2: Browser Nodes -->
+  <div class="category" id="browser">
+    <h2>💻 Start With Browser Nodes Now</h2>
+    <div class="category-container" data-category="browser"></div>
+  </div>
+
+  <!-- BLOCK 3: No Investments / Free-to-Earn -->
+  <div class="category" id="free-to-earn">
+    <h2>🆓 No Investments / Free-to-Earn</h2>
+    <div class="category-container" data-category="free-to-earn"></div>
+  </div>
+
+  <!-- BLOCK 4: Play and Earn -->
+  <div class="category" id="play-to-earn">
+    <h2>🎮 Play and Earn</h2>
+    <div class="category-container" data-category="play-to-earn"></div>
+  </div>
+
+  <!-- BLOCK 5: NFT и коллекции -->
+  <div class="category" id="nft-collections">
+    <h2>💎 NFT и Коллекции</h2>
+    <div class="category-container" data-category="nft-collections"></div>
+  </div>
+
+  <!-- BLOCK 6: Testnets and DeFi drops -->
+  <div class="category" id="testnets-defi">
+    <h2>🧪 Testnets and DeFi Drops</h2>
+    <div class="category-container" data-category="testnets-defi"></div>
+  </div>
+
+  <!-- (Optional) BLOCK 7: Telegram Bots -->
+  <div class="category" id="telegram">
+    <h2>🤖 Start With Telegram Bots</h2>
+    <div class="category-container" data-category="telegram"></div>
+  </div>
+</section>
     
     <div class="offers" id="testnet-cards">
       <!-- Cards will be populated by JavaScript -->
