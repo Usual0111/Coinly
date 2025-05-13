@@ -274,9 +274,42 @@ window.openEmailForm = openEmailForm;
 window.closeEmailModal = closeEmailModal;
 window.copyReferralLink = copyReferralLink;
 
+function renderProjects() {
+  if (!Array.isArray(projects)) return;
+
+  projects.forEach(project => {
+    const container = document.querySelector(
+      `.category-container[data-category="${project.category}"]`
+    );
+
+    if (!container) return;
+
+    const card = document.createElement("div");
+    card.className = "project-card";
+
+    card.innerHTML = `
+      <div class="project-icon" style="background: ${project.iconBg || '#eee'}">
+        ${project.icon || '📦'}
+      </div>
+      <div class="project-content">
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <a href="${project.link}" target="_blank" class="btn-small">Start</a>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
 function startOnboarding() {
-  const section = document.getElementById('categories'); // или другой нужный ID
+  const section = document.getElementById("categories");
   if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
+    section.scrollIntoView({ behavior: "smooth" });
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderProjects();
+});
+
