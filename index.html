@@ -1,178 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Claimy - Your starting point for free cryptocurrency through airdrops, browser nodes, play-to-earn games, and exchange bonuses. No investment needed.">
-    <title>Claimy - Free Crypto Starts Here</title>
+    <meta name="description" content="Claimy - Your start into the world of free cryptocurrency through airdrops, browser nodes, play-to-earn games, and exchange bonuses. No investment needed.">
+    <title>Claimy - Free Cryptocurrency Starts Here</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
+    </head>
 <body>
   <header class="site-header">
     <nav class="navbar">
       <div class="site-logo">
-        <img src="logo.png" alt="Claimy Logo">
-      </div>
+        <img src="logo.png" alt="Claimy Logo"> </div>
       
       <button class="menu-toggle" id="menu-toggle-button" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">☰</button>
       
       <ul class="nav-links" id="nav-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="#airdrops">Claim Free Crypto</a></li>
-        <li><a href="#exchanges">Exchanges with Gifts</a></li>
+        <li><a href="#airdrops">Get Crypto</a></li>
+        <li><a href="#exchanges">Exchanges with Bonuses</a></li>
         <li><a href="#learning">Guides</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">Contacts</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="container">
     <div class="hero-section" id="home">
-      <h1>Your First $100 in Crypto</h1>
+      <h1>Your First $100 in Cryptocurrency</h1>
       <p class="subtitle">No investment. No stress. Just simple tasks.</p>
-      <p class="stats">👥 23K+ earning passively  ⭐ Top-rated projects  📈 +3.4K joined last month</p>
-      <button class="btn-primary pulse" id="get-started-onboarding-btn">Get Started</button>
+      <p class="stats">👥 23K+ already earning passively ⭐ High-rated projects 📈 +3.4K joined last month</p>
+      <button class="btn-primary pulse" id="get-started-onboarding-btn">Start!</button>
     </div>
     
     <div class="divider"></div>
     
-    <!-- BLOCK 1: Recommended / Top of the week -->
     <section id="recommended" class="intro">
-      <h2><span class="money-bag">🚀</span> Recommended / Top of the week</h2>
-      <p class="section-subtitle">Highest potential rewards and newest opportunities.</p>
+      <h2><span class="section-icon">🚀</span> Recommended / Top of the week</h2>
+      <p class="section-subtitle">Highest potential rewards and new opportunities.</p>
       <div class="mobile-tip">
-        📱 <strong>On mobile?</strong> Tap here for the quick  
-        <button type="button" class="link-like-button" data-modal-target="guideModal">setup guide📘</button>
-        <!-- или если это ссылка на якорь на странице: <a href="#mobile-setup-guide">setup guide📘</a> -->
+        📱 <strong>On mobile?</strong> Click for a quick
+        <button type="button" class="link-like-button" data-modal-target="guideModal">setup guide 📘</button>
       </div>
     </section>
     
     <div class="offers" id="recommended-cards">
-      <!-- Cards will be populated by JavaScript -->
-    </div>
+      </div>
     
     <div class="show-more-container">
-      <button id="show-more-recommended-btn" class="btn-show-more">🔽 Show 3 More Projects</button>
+      <button id="show-more-recommended-btn" class="btn-show-more">🔽 Show 3 more projects</button>
     </div>
     
-    <!-- BLOCK 2: Browser Nodes -->
+    <div class="section-divider"></div>
+
     <section id="airdrops" class="intro">
-      <h2><span class="money-bag">💻</span> Start With Browser Nodes Now:</h2>
-      <p class="section-subtitle">Passive income from your browser.</p>
+      <h2><span class="section-icon">💻</span> Start With Browser Nodes:</h2>
+      <p class="section-subtitle">Passive income directly from your browser.</p>
       <div class="mobile-tip">
-        📱 <strong>On mobile?</strong> Tap here for the quick  
-        <button type="button" class="link-like-button" data-modal-target="guideModal">setup guide📘</button>
+        📱 <strong>On mobile?</strong> Click for a quick
+        <button type="button" class="link-like-button" data-modal-target="guideModal">setup guide 📘</button>
       </div>
     </section>
     
     <div class="offers" id="project-cards">
-      <!-- Cards populated by JavaScript -->
-    </div>
+      </div>
     
     <div class="show-more-container">
-      <button id="show-more-btn" class="btn-show-more">🔽 Show 3 More Projects</button>
+      <button id="show-more-browser-btn" class="btn-show-more">🔽 Show 3 more projects</button> </div>
+    <div id="browser-info-text" class="info-text hidden">
+        <p>🧠 You are exploring the top 40 browser node projects available in 2025. Each can provide passive income just by keeping your browser open.</p>
     </div>
+    <div id="browser-action-buttons" class="action-buttons hidden">
+        <a href="#" class="btn-secondary">View all in table</a>
+        <button class="btn-primary" id="open-email-form-btn-browser">Top 5 Nodes by Profitability – Get Alerts</button>
+    </div>
+
+    <div class="section-divider"></div>
     
-    <!-- BLOCK 3: No Investments / Free-to-Earn -->
     <section id="free-to-earn" class="intro">
-      <h2><span class="money-bag">🆓</span> No Investments / Free-to-Earn</h2>
-      <p class="section-subtitle">Start earning with zero upfront costs.</p>
-      <div class="mobile-tip">
-        📱 <strong>On mobile?</strong> Tap here for the quick  
-        <button type="button" class="link-like-button" data-modal-target="guideModal">setup guide📘</button>
-      </div>
+      <h2><span class="section-icon">🆓</span> No Investment / Free-to-Earn</h2>
+      <p class="section-subtitle">Start earning without startup costs.</p>
     </section>
     
-    <div class="offers" id="free-earn-cards">
-      <!-- Cards will be populated by JavaScript -->
-    </div>
+    <div class="offers" id="free-cards"> </div>
     
     <div class="show-more-container">
-      <button id="show-more-free-btn" class="btn-show-more">🔽 Show 3 More Projects</button>
+      <button id="show-more-free-btn" class="btn-show-more">🔽 Show 3 more projects</button>
     </div>
+
+    <div class="section-divider"></div>
     
-    <!-- BLOCK 4: Play and earn -->
     <section id="play-to-earn" class="intro">
-      <h2><span class="money-bag">🎮</span> Play and earn</h2>
-      <p class="section-subtitle">Have fun while earning crypto rewards.</p>
-      <div class="mobile-tip">
-        📱 <strong>On mobile?</strong> Tap here for the quick  
-        <button type="button" class="link-like-button" data-modal-target="guideModal">setup guide📘</button>
-      </div>
+      <h2><span class="section-icon">🎮</span> Play and Earn (Play-to-Earn)</h2>
+      <p class="section-subtitle">Have fun while receiving crypto rewards.</p>
     </section>
     
-    <div class="offers" id="play-earn-cards">
-      <!-- Cards will be populated by JavaScript -->
-    </div>
+    <div class="offers" id="play-cards"> </div>
     
     <div class="show-more-container">
-      <button id="show-more-play-btn" class="btn-show-more">🔽 Show 3 More Projects</button>
+      <button id="show-more-play-btn" class="btn-show-more">🔽 Show 3 more projects</button>
     </div>
+
+    <div class="section-divider"></div>
     
-    <!-- BLOCK 5: NFT и коллекции -->
     <section id="nft-collections" class="intro">
-      <h2><span class="money-bag">💎</span> NFT и коллекции</h2>
+      <h2><span class="section-icon">💎</span> NFTs and Collections</h2>
       <p class="section-subtitle">Digital collectibles with real value potential.</p>
-      <div class="mobile-tip">
-        📱 <strong>On mobile?</strong> Tap here for the quick  
-        <button type="button" class="link-like-button" data-modal-target="guideModal">setup guide📘</button>
-      </div>
     </section>
     
     <div class="offers" id="nft-cards">
-      <!-- Cards will be populated by JavaScript -->
-    </div>
+      </div>
     
     <div class="show-more-container">
-      <button id="show-more-nft-btn" class="btn-show-more">🔽 Show 3 More Projects</button>
+      <button id="show-more-nft-btn" class="btn-show-more">🔽 Show 3 more projects</button>
     </div>
+
+    <div class="section-divider"></div>
     
-    <!-- BLOCK 6: Testnets and DeFi drops -->
     <section id="testnets-defi" class="intro">
-      <h2><span class="money-bag">🧪</span> Testnets and DeFi drops</h2>
-      <p class="section-subtitle">Test blockchain projects and earn airdrops.</p>
-      <div class="mobile-tip">
-        📱 <strong>On mobile?</strong> Tap here for the quick  
-        <button type="button" class="link-like-button" data-modal-target="guideModal">setup guide📘</button>
-      </div>
+      <h2><span class="section-icon">🧪</span> Testnets and DeFi Drops</h2>
+      <p class="section-subtitle">Test blockchain projects and receive airdrops.</p>
     </section>
     
     <div class="offers" id="testnet-cards">
-      <!-- Cards will be populated by JavaScript -->
-    </div>
+      </div>
     
     <div class="show-more-container">
-      <button id="show-more-testnet-btn" class="btn-show-more">🔽 Show 3 More Projects</button>
+      <button id="show-more-testnet-btn" class="btn-show-more">🔽 Show 3 more projects</button>
     </div>
     
-    <div id="info-text" class="info-text hidden"> <!-- Добавлен класс hidden -->
-      <p>🧠 You're exploring the top 40 browser-node projects available in 2025. Each can pay passively just for keeping your browser open.</p>
-    </div>
-    
-    <div id="action-buttons" class="action-buttons hidden"> <!-- Добавлен класс hidden -->
-      <a href="#" class="btn-secondary">See All in Table View</a>
-      <button class="btn-primary" id="open-email-form-btn">Top 5 Paying Nodes – Get Alerts</button>
-    </div>
+    <div class="section-divider"></div>
 
     <section id="exchanges">
-      <h2>🎁 Exchange bonuses</h2>
+      <h2><span class="section-icon">🎁</span> Exchange Bonuses</h2>
       <ul>
-        <li><a href="https://okx.com/join/41160648" target="_blank" rel="noopener noreferrer">OKX – 🔥 Sign up and receive a welcome bonus of ✅ 100 USDT!</a></li>
-        <li><a href="https://www.bybit.com/invite?ref=GKKVQYP" target="_blank" rel="noopener noreferrer">Bybit – 🔥 Limited-Time Offers: ✅ $50 Instant Rewards – including a BTC airdrop!</a></li>
-        <li><a href="https://www.bitget.com/ru/referral/register?clacCode=4B3UHATJ&from=%2Fru%2Fevents%2Freferral-all-program&source=events&utmSource=PremierInviter" target="_blank" rel="noopener noreferrer">Bitget – 🔥 Current Promotions: ✅ 10% Welcome Bonus – Get up to 100 USDT on your first deposit</a></li>
+        <li><a href="https://okx.com/join/41160648" target="_blank" rel="noopener noreferrer">OKX – 🔥 Sign up and receive a welcome bonus ✅ 100 USDT!</a></li>
+        <li><a href="https://www.bybit.com/invite?ref=GKKVQYP" target="_blank" rel="noopener noreferrer">Bybit – 🔥 Limited-time offer: ✅ Instant rewards of $50 – including a BTC airdrop!</a></li>
+        <li><a href="https://www.bitget.com/ru/referral/register?clacCode=4B3UHATJ&from=%2Fru%2Fevents%2Freferral-all-program&source=events&utmSource=PremierInviter" target="_blank" rel="noopener noreferrer">Bitget – 🔥 Current promotions: ✅ 10% Welcome Bonus – get up to 100 USDT on your first deposit</a></li>
       </ul>
-      <!-- Добавил rel="noopener noreferrer" для ссылок с target="_blank" для безопасности -->
     </section>
 
+    <div class="section-divider"></div>
+
     <section id="learning">
-      <h2>📘 Learning & Guides</h2>
+      <h2><span class="section-icon">📘</span> Learning and Guides</h2>
       <p>Subscribe to our Telegram channel to get useful materials.</p>
-      <a href="https://t.me/your_channel" target="_blank" rel="noopener noreferrer">Join the channel</a>
+      <a href="https://t.me/your_channel" target="_blank" rel="noopener noreferrer" class="btn-secondary">Join Channel</a>
     </section>
     
+    <div class="section-divider"></div>
+
     <section id="contact">
-      <h2>📬 Contacts & Partnerships</h2>
+      <h2><span class="section-icon">📬</span> Contacts and Collaboration</h2>
       <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
       <p>Telegram: <a href="https://t.me/your_bot" target="_blank" rel="noopener noreferrer">@your_bot</a></p>
     </section>
@@ -182,92 +161,93 @@
     <p>© 2025 Claimy. All rights reserved.</p>
   </footer>
 
-  <!-- Модальное окно Lightbox для изображений -->
-  <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
-    <button class="lightbox-close js-modal-close" aria-label="Close lightbox">&times;</button>
+  <div id="lightbox" class="lightbox modal hidden" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
+    <button class="lightbox-close js-modal-close" aria-label="Close image">&times;</button>
     <img class="lightbox-content" id="lightbox-img" src="" alt="Enlarged screenshot">
-    <div id="lightbox-caption" class="visually-hidden">Enlarged Image</div> <!-- Для aria-labelledby -->
+    <div id="lightbox-caption" class="visually-hidden">Enlarged Image</div>
   </div>
 
-  <!-- Модальное окно Guide -->
   <div id="guideModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="guideModalTitle">
     <div class="modal-content">
-      <button class="close js-modal-close" data-dismiss="modal" aria-label="Close guide modal">&times;</button>
-      <h4 id="guideModalTitle">📘 How to Use Browser Nodes on Mobile</h4>
+      <button class="close js-modal-close" aria-label="Close guide">&times;</button> <h4 id="guideModalTitle">📘 How to Use Browser Nodes on Mobile</h4>
       <ol>
         <li>
           Install 
           <strong><a href="https://play.google.com/store/apps/details?id=com.kiwibrowser.browser" target="_blank" rel="noopener noreferrer">Kiwi Browser</a></strong> or 
-          <strong><a href="https://play.google.com/store/apps/details?id=com.misses.browser" target="_blank" rel="noopener noreferrer">Mises Browser</a></strong>
+          <strong><a href="https://play.google.com/store/apps/details?id=com.misses.browser" target="_blank" rel="noopener noreferrer">Mises Browser</a></strong>.
         </li>
-        <li>Open this site inside that browser</li>
-        <li>Select a project from the catalog, tap "Start Earning," sign up, and install the node in your mobile browser</li>
-        <li>Done! Earn passively while you scroll, play, or relax</li>
+        <li>Open this site in one of these browsers.</li>
+        <li>Select a project from the catalog, click "Start Earning," sign up, and install the node in your mobile browser.</li>
+        <li>Done! Earn passively while you scroll, play, or relax.</li>
       </ol>
-      <p><em>Note: Both browsers are supported on iOS and Android</em></p>
+      <p><em>Note: Both browsers are supported on iOS and Android.</em></p>
     </div>
   </div>
 
-  <!-- Модальное окно Onboarding -->
-  <div id="onboarding" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="onboardingStepTitle">
-    <div class="modal-content">
-      <button class="close-btn js-modal-close" data-dismiss="modal" aria-label="Close onboarding">✖</button>
-      <div class="step" id="step-0">
-        <h2 id="onboardingStepTitle">🔐 Step 1/3: Set Up Your Wallet (Takes < 60 seconds)</h2>
-        <p>To earn your first rewards, you'll need a Web3 wallet. It's fast and free — we'll show you how.</p>
-        <p>We recommend starting with <strong>OKX Wallet:</strong> it's trusted, easy to use, and works with most airdrops.</p>
+  <div id="onboarding" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="onboardingStepTitle-0"> <div class="modal-content">
+      <button class="close-btn js-modal-close" aria-label="Close onboarding">✖</button> <div class="step" id="step-0"> <h2 id="onboardingStepTitle-0">🔐 Step 1/3: Set Up Your Wallet (takes < 60 seconds)</h2>
+        <p>To get your first rewards, you'll need a Web3 wallet. It's fast and free — we'll show you how.</p>
+        <p>We recommend starting with <strong>OKX Wallet:</strong> it's reliable, easy to use, and works with most airdrops.</p>
         <ul class="wallet-links">
           <li><a href="https://okx.com/join/41160648" target="_blank" rel="noopener noreferrer">🌐 OKX Web3 Wallet</a></li>
           <li><a href="https://okx.com/join/41160648" target="_blank" rel="noopener noreferrer">🧩 OKX Chrome Extension</a></li>
           <li><a href="https://okx.com/join/41160648" target="_blank" rel="noopener noreferrer">📱 OKX Mobile App (iOS / Android)</a></li>
         </ul>
-        <p style="margin-top: 20px;">Prefer other wallets? You can also use Metamask, Phantom, or Trust Wallet. Links coming soon.</p>
-        <button class="btn-primary" data-onboarding-next>Next</button> 
+        <p style="margin-top: 20px;">Prefer other wallets? You can also use Metamask, Phantom, or Trust Wallet.</p>
+        <div class="onboarding-nav">
+            <button class="btn-primary" data-onboarding-next>Next</button> 
+        </div>
       </div>
-      <div class="step hidden" id="step-1"> <!-- Добавлен класс hidden -->
-        <h2>🧩 Step 2/3 Complete a Quest</h2>
-        <p>Ready to explore? Below is a hand-picked list of <strong> promising airdrop campaigns</strong> No investment required. No investment needed.</p>
+      
+      <div class="step hidden" id="step-1">
+        <h2 id="onboardingStepTitle-1">🧩 Step 2/3: Complete a Quest</h2>
+        <p>Ready to explore? Below is a curated list of <strong>promising airdrop campaigns.</strong> No investment required.</p>
         <p>Just <strong>follow, like, sign up, or invite friends</strong> — and collect XP points.</p>
-        <p>💡 Some users have received <strong>$50–$500</strong> worth of tokens in earlier events. Individual results vary.</p>
-        <button class="btn-primary" data-onboarding-next>Next</button> 
+        <p>💡 Some users have received tokens worth <strong>$50–$500</strong> in previous events. Results vary.</p>
+        <div class="onboarding-nav">
+            <button class="btn-secondary" data-onboarding-prev>Back</button>
+            <button class="btn-primary" data-onboarding-next>Next</button> 
+        </div>
       </div>
-      <div class="step hidden" id="step-2"> <!-- Добавлен класс hidden -->
-        <h2>🏆 Step 3/3: Connect & Track Your Rewards</h2>
-        <p>After completing your quest, connect your wallet to receive participation-based rewards from the project.</p>
+      
+      <div class="step hidden" id="step-2">
+        <h2 id="onboardingStepTitle-2">🏆 Step 3/3: Connect and Track Your Rewards</h2>
+        <p>After completing the quest, connect your wallet to receive participation-based rewards from the project.</p>
         <p>⏳ Most projects distribute rewards during Season 1 or 2 — we'll keep you informed.</p>
         <p><strong>📸 Real users have reported receiving:</strong></p>
         <div class="screenshot-gallery">
-          <img src="airdrop1.png" alt="Airdrop payment proof" class="lightbox-trigger">
-          <img src="airdrop2.jpg" alt="Airdrop payment proof2" class="lightbox-trigger">
+          <img src="airdrop1.png" alt="Airdrop payment proof 1" class="lightbox-trigger">
+          <img src="airdrop2.jpg" alt="Airdrop payment proof 2" class="lightbox-trigger">
         </div>
         <p>Note: Rewards may vary and are not guaranteed. Participation is free.</p>
-        <button class="btn-primary done-btn" data-onboarding-done>Explore Projects</button> 
+        <div class="onboarding-nav">
+            <button class="btn-secondary" data-onboarding-prev>Back</button>
+            <button class="btn-primary" data-onboarding-done>Explore Projects</button> 
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Модальное окно Task -->
-  <div id="task-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="taskModalTitle">
+  <div id="task-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="taskModalGeneratedTitle">
     <div class="modal-content">
-      <button class="close-btn js-modal-close" data-dismiss="modal" aria-label="Close task modal">✖</button>
-      <div id="task-content">
-        <!-- Сюда будет загружаться контент задачи, включая <h2 id="taskModalTitle">...</h2> -->
-      </div>
+      <button class="close-btn js-modal-close" aria-label="Close task">✖</button> <div id="task-content">
+        </div>
     </div>
   </div>
 
-  <!-- Модальное окно Email -->
   <div id="email-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="emailModalTitle">
     <div class="modal-content">
-      <button class="close-btn js-modal-close" data-dismiss="modal" aria-label="Close email modal">✖</button>
-      <h2 id="emailModalTitle">Get Alerts on Top Paying Nodes</h2>
-      <p>We'll notify you when high-paying opportunities appear.</p>
+      <button class="close-btn js-modal-close" aria-label="Close email form">✖</button> <h2 id="emailModalTitle">Get Alerts on the Most Profitable Nodes</h2>
+      <p>We'll notify you when high-yield opportunities appear.</p>
       <form class="email-form" id="subscribe-form"> 
-        <input type="email" placeholder="Your email address" required>
+        <input type="email" name="email" placeholder="Your email address" required>
         <button type="submit" class="btn-primary">Subscribe</button>
       </form>
     </div>
   </div>
-  <script src="script.js" defer></script> <!-- Подключение JS в конце body, defer для улучшения загрузки -->
+
+  <style>.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }</style>
+  
+  <script src="script.js" defer></script>
 </body>
 </html>
