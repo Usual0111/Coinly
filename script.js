@@ -339,6 +339,21 @@ function closeEmailModal() {
 
 // Инициализация всех обработчиков событий
 function initEventHandlers() {
+// Добавить эти строки в функцию initEventHandlers() или initializePage()
+document.querySelectorAll('.close-button, .modal-close, .close').forEach(button => {
+  button.addEventListener('click', function() {
+    // Находим ближайшую модалку
+    const modal = this.closest('.modal, .lightbox');
+    if (modal) {
+      // Проверяем, какой способ закрытия используется
+      if (modal.classList.contains('active')) {
+        modal.classList.remove('active');
+      } else {
+        modal.style.display = 'none';
+      }
+    }
+  });
+});
   // Мобильное меню
   const menuButton = document.getElementById('menu-toggle-button');
   const navLinks = document.getElementById('nav-links');
