@@ -99,10 +99,13 @@ function setupModalEvents() {
 function startOnboarding() {
   const onboardingModal = document.getElementById('onboarding');
   if (onboardingModal) {
+    onboardingModal.classList.remove('hidden'); // <--- ДОБАВЬТЕ ЭТО
     onboardingModal.classList.add('active');
     // Инициализируем или обновляем NodeList шагов онбординга
     steps = document.querySelectorAll('#onboarding .step');
     if (steps.length > 0) {
+      // Также убедимся, что у первого шага нет 'hidden', если он используется для шагов
+      steps.forEach(step => step.classList.remove('hidden')); // Если шаги тоже используют 'hidden'
       showStep(0);
     } else {
       console.error("Onboarding steps not found inside #onboarding element.");
@@ -114,25 +117,40 @@ function closeOnboarding() {
   const onboardingModal = document.getElementById('onboarding');
   if (onboardingModal) {
     onboardingModal.classList.remove('active');
+    // onboardingModal.classList.add('hidden'); // <--- ОПЦИОНАЛЬНО: если хотите вернуть начальное состояние HTML
+                                             // Обычно достаточно убрать 'active',
+                                             // если CSS для .modal без .active его скрывает.
+                                             // Но если вы хотите строго соответствовать исходному HTML,
+                                             // где был класс 'hidden', то добавьте его обратно.
+
     // Скрываем все шаги, если они были инициализированы
     if (steps && steps.length > 0) {
-      steps.forEach(step => step.classList.remove('active'));
+      steps.forEach(step => {
+        step.classList.remove('active');
+        // step.classList.add('hidden'); // <--- ОПЦИОНАЛЬНО: если шаги тоже используют 'hidden'
+      });
     } else {
       // Запасной вариант, если `steps` не был корректно заполнен
-      document.querySelectorAll('#onboarding .step').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('#onboarding .step').forEach(s => {
+        s.classList.remove('active');
+        // s.classList.add('hidden'); // <--- ОПЦИОНАЛЬНО
+      });
     }
     currentStep = 0;
   }
 }
 
 function showStep(stepIndex) {
-  // `steps` должен быть NodeList шагов онбординга, установленный в startOnboarding
   if (!steps || steps.length === 0) {
     console.error("Onboarding steps not available in showStep.");
     return;
   }
-  steps.forEach(step => step.classList.remove('active'));
+  steps.forEach(step => {
+    step.classList.remove('active');
+    step.classList.add('hidden'); // Скрываем неактивные шаги
+  });
   if (steps[stepIndex]) {
+    steps[stepIndex].classList.remove('hidden'); // Показываем текущий шаг
     steps[stepIndex].classList.add('active');
     currentStep = stepIndex;
   }
