@@ -424,6 +424,7 @@ document.querySelectorAll('.close-button, .modal-close, .close').forEach(button 
         navLinks.classList.remove('show');
       }
     }
+    setupModalEvents();
   });
 }
 
