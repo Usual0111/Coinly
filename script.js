@@ -75,7 +75,7 @@ function setupModalEvents() {
   });
 
   // 2. Закрытие при клике на "крестик" (кнопку закрытия)
-  document.querySelectorAll('.close-button, .modal-close').forEach(button => {
+  document.querySelectorAll('.close-button, .modal-close, .close-btn').forEach(button => {
     button.addEventListener('click', function(event) {
       event.stopPropagation(); 
 
