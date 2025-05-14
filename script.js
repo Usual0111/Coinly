@@ -402,7 +402,6 @@ if (getCryptoLink && getCryptoDropdownItem) {
     }
 
     // ... rest of your existing event listeners
-}
 
 // Make sure setupGlobalEventListeners is called on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {
