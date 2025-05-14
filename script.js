@@ -336,7 +336,6 @@ function initializeAllProjectSections() {
 
 // --- Настройка обработчиков событий ---
 function setupGlobalEventListeners() {
-function setupGlobalEventListeners() {
     // ... existing event listeners
 
     // Dropdown Menu for Get Crypto
