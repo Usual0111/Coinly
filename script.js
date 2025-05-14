@@ -499,7 +499,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
-}
 
 
 // --- Инициализация страницы ---
