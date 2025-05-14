@@ -337,13 +337,7 @@ function initializeAllProjectSections() {
 // --- Настройка обработчиков событий ---
 function setupGlobalEventListeners() {
     // ... existing event listeners
-getCryptoLink.addEventListener('click', function(event) {
-    console.log('Get Crypto link clicked!'); // Добавьте эту строку
-    event.preventDefault();
-    event.stopPropagation();
-
-    // ... остальной код обработчика
-});
+  
     // Dropdown Menu for Get Crypto
     const getCryptoLink = document.getElementById('get-crypto-dropdown-link');
     const getCryptoDropdownItem = getCryptoLink ? getCryptoLink.closest('.nav-item-dropdown') : null;
