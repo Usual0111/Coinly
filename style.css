@@ -794,3 +794,63 @@ footer {
     #onboarding .step:last-child .onboarding-nav .btn-primary[data-onboarding-next] { display: none !important; } /* Точно скрываем "Далее" */
 
 }
+/* Style for the dropdown container */
+.nav-item-dropdown {
+    position: relative; /* Needed for absolute positioning of the dropdown content */
+    display: inline-block; /* Or block, depending on your layout */
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #f9f9f9; /* Background color for the dropdown */
+    min-width: 250px; /* Minimum width */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add a subtle shadow */
+    z-index: 1001; /* Ensure it appears above other content */
+    border-radius: 8px;
+    padding: 10px 0;
+    top: 100%; /* Position below the link */
+    left: 0; /* Align to the left of the link */
+}
+
+.dropdown-content a {
+    color: #333; /* Link color */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Make links block elements for padding */
+    font-weight: 400; /* Adjust font weight */
+    transition: background-color 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: #e9ecef; /* Highlight on hover */
+}
+
+/* Class added by JavaScript to show the dropdown */
+.nav-item-dropdown.active .dropdown-content {
+    display: block;
+}
+
+/* Adjust mobile menu styling if needed */
+@media (max-width: 768px) {
+    .nav-links {
+        /* Ensure mobile menu handles dropdowns correctly */
+        /* flex-direction: column; already set, this should help */
+    }
+     .nav-links.show .nav-item-dropdown .dropdown-content {
+        position: static; /* Reset positioning for mobile */
+        box-shadow: none;
+        border-bottom: 1px solid #f1f3f5; /* Add separator */
+        padding: 0; /* Remove horizontal padding */
+        min-width: auto;
+    }
+     .nav-links.show .nav-item-dropdown a {
+        padding: 10px 20px; /* Adjust padding for mobile links */
+     }
+     .nav-links.show .nav-item-dropdown .dropdown-content a {
+         padding-left: 30px; /* Indent dropdown links slightly */
+     }
+     .nav-links.show .nav-item-dropdown .dropdown-content a:last-child {
+         border-bottom: none;
+     }
+}
