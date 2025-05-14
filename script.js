@@ -343,6 +343,16 @@ function setupGlobalEventListeners() {
     const getCryptoDropdownItem = getCryptoLink ? getCryptoLink.closest('.nav-item-dropdown') : null;
 
     if (getCryptoLink && getCryptoDropdownItem) {
+
+if (getCryptoLink && getCryptoDropdownItem) {
+    console.log('Found Get Crypto link and parent item, attempting to add event listener.'); // Добавьте эту строку
+    getCryptoLink.addEventListener('click', function(event) {
+        // ...
+    });
+    // ...
+} else {
+    console.log('Get Crypto link or parent item not found!'); // И эту строку для отладки
+}
         getCryptoLink.addEventListener('click', function(event) {
             event.preventDefault(); // Prevent default link behavior (scrolling)
             event.stopPropagation(); // Prevent this click from immediately closing the dropdown via the document listener
