@@ -336,6 +336,63 @@ function initializeAllProjectSections() {
 
 // --- Настройка обработчиков событий ---
 function setupGlobalEventListeners() {
+function setupGlobalEventListeners() {
+    // ... existing event listeners
+
+    // Dropdown Menu for Get Crypto
+    const getCryptoLink = document.getElementById('get-crypto-dropdown-link');
+    const getCryptoDropdownItem = getCryptoLink ? getCryptoLink.closest('.nav-item-dropdown') : null;
+
+    if (getCryptoLink && getCryptoDropdownItem) {
+        getCryptoLink.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior (scrolling)
+            event.stopPropagation(); // Prevent this click from immediately closing the dropdown via the document listener
+
+            // Close other dropdowns if any (optional)
+            document.querySelectorAll('.nav-item-dropdown.active').forEach(item => {
+                if (item !== getCryptoDropdownItem) {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Toggle the 'active' class on the parent li
+            getCryptoDropdownItem.classList.toggle('active');
+
+            // Close mobile menu if open after showing dropdown on mobile
+             const navLinks = document.getElementById('nav-links');
+             if (navLinks && navLinks.classList.contains('show') && window.innerWidth <= 768) {
+                 // Don't close the mobile menu immediately, the dropdown is part of it now
+             }
+        });
+
+        // Close the dropdown when clicking outside of it
+        document.addEventListener('click', function(event) {
+            if (getCryptoDropdownItem.classList.contains('active')) {
+                const isClickInsideDropdown = getCryptoDropdownItem.contains(event.target);
+                if (!isClickInsideDropdown) {
+                    getCryptoDropdownItem.classList.remove('active');
+                }
+            }
+        });
+
+        // Close dropdown when a link inside is clicked (and scroll to section)
+         getCryptoDropdownItem.querySelectorAll('.dropdown-content a').forEach(link => {
+             link.addEventListener('click', function() {
+                 getCryptoDropdownItem.classList.remove('active'); // Close dropdown
+                 // Allow default link behavior (scrolling to section)
+             });
+         });
+    }
+
+    // ... rest of your existing event listeners
+}
+
+// Make sure setupGlobalEventListeners is called on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+  initializeAllProjectSections();
+  setupGlobalEventListeners();
+  // ... rest of DOMContentLoaded
+});
   // Мобильное меню
   const menuButton = document.getElementById('menu-toggle-button');
   if (menuButton) {
