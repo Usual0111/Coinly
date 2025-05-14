@@ -352,7 +352,11 @@ getCryptoLink.addEventListener('click', function(event) {
 
 if (getCryptoLink && getCryptoDropdownItem) {
     console.log('Found Get Crypto link and parent item, attempting to add event listener.'); // Добавьте эту строку
-    getCryptoLink.addEventListener('click', function(event) {
+    
+  getCryptoLink.addEventListener('click', function(event) {
+    console.log('Get Crypto link clicked!'); // Эта строка тоже ПОСЛЕ объявления const
+            event.preventDefault();
+            event.stopPropagation();
         // ...
     });
     // ...
