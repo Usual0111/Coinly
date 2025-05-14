@@ -348,8 +348,6 @@ getCryptoLink.addEventListener('click', function(event) {
     const getCryptoLink = document.getElementById('get-crypto-dropdown-link');
     const getCryptoDropdownItem = getCryptoLink ? getCryptoLink.closest('.nav-item-dropdown') : null;
 
-    if (getCryptoLink && getCryptoDropdownItem) {
-
 if (getCryptoLink && getCryptoDropdownItem) {
     console.log('Found Get Crypto link and parent item, attempting to add event listener.'); // Добавьте эту строку
     
