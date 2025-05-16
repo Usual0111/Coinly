@@ -56,10 +56,28 @@ actionText: "Start now — early users have the highest earning potential!" }},
 projectTrackers.browser.data = browserNodesProjectsData;
 
 const recommendedProjectsData = [
-  { icon: "🔥", name: "FirEdge", description: "New Layer 2 solution with huge airdrop potential.", reward: "+$80-$350 (Est. avg.)", btnText: "Join", hot: true, taskId: "firedge", instructions: { title: "🔥 FirEdge - The Hottest Layer 2 Project", description: "Top project of the week with significant growth potential:", steps: ["Create your FirEdge account and verify email", "Bridge at least 0.01 ETH to FirEdge testnet", "Complete at least 5 transactions on the testnet", "Invite friends for bonus points"], actionUrl: "#", actionText: "Start Now" }},
-  { icon: "🌊", name: "WaveDAO", description: "Governance token with instant staking rewards.", reward: "+$65-$270 (Est. avg.)", btnText: "Claim", hot: true, taskId: "wavedao", instructions: { title: "🌊 WaveDAO - Join the Governance Revolution", description: "Leading governance project with immediate benefits:", steps: ["Sign up for WaveDAO and verify your wallet", "Participate in at least one governance vote", "Stake your test tokens for rewards", "Complete social media tasks for bonus points"], actionUrl: "#", actionText: "Join DAO" }},
-  { icon: "💫", name: "StarChain", description: "Privacy-focused blockchain with early adopter bonuses.", reward: "+$90-$320 (Est. avg.)", btnText: "Start", hot: true, taskId: "starchain", instructions: { title: "💫 StarChain - Privacy First, Rewards Second", description: "Be an early adopter of this revolutionary privacy chain:", steps: ["Create your StarChain wallet", "Complete the privacy protocol tutorial", "Send at least 3 private transactions", "Invite friends to build your node network"], actionUrl: "#", actionText: "Claim Spot" }}
-];
+  { icon: "🛡️", name: "Solix", description: "Maximize your browser's potential for crypto.", reward: "+$50-$250 (Est. avg.)", btnText: "Join", hot: true, taskId: "solix", instructions: { title: "💰 Earn with Solix — just for being online", description: "No investment. Just turn it on — and start getting points.", steps: ["Create a Solix account", "Add the Solix extension", "Do simple tasks"], actionUrl: "https://dashboard.solixdepin.net/sign-up?ref=LzDVGhu7", actionText: "Start Earning" }},
+  
+{ icon: "🔮", name: "Fleek", 
+description: "Here you can easily create and launch AI agents, websites, and applications.", 
+reward: "+$40-$90 (Est. avg.)", btnText: "Share", hot: true, taskId: "Newton", 
+instructions: { title: "📦 Fleek Airdrop Mini-Guide", 
+description: "Earn Points for the Upcoming Fleek Airdrop", 
+steps: ["Sign up at Fleek with your email & verify your account", 
+"Use Fleek to launch sites, apps, or AI tools — real usage = more points.",  
+"Join the Fleek Affiliate Program, share your link & earn from referrals.",
+"Complete quests on Galxe to boost your airdrop score." ], 
+actionUrl: "https://fleek.xyz/?ref=semenl2", actionText: "Start Now" }},
+   
+{ icon: "🎲", name: "Newton", 
+description: "Seamless cross-chain access powered by Polygon’s AggLayer — no more switching networks.", 
+reward: "+$40-$180 (Est. avg.)", btnText: "Share", hot: true, taskId: "Newton", 
+instructions: { title: "📦 Newton Airdrop Mini-Guide", 
+description: "🎯 Earn Free Credits Daily by Completing Simple Quests on Newton", 
+steps: ["Sign Up & Get 150 Credits. Go to newtonproject.io, register or connect your wallet — get instant signup rewards.", 
+"Complete Social & Main Quests. Start with “Side Quests” (follows), then move to Explore Quests for more credits.",  
+"Log In Daily for Bonuses. Roll the dice every day for extra credits and check for new tasks."], 
+actionUrl: "https://magicnewton.com/portal?referral=6xs7ffo1kx2nfhfm", actionText: "Start Sharing Now" }},
 projectTrackers.recommended.data = recommendedProjectsData;
 
 const freeToEarnProjectsData = [
@@ -368,14 +386,14 @@ function displayProjectBatch(categoryKey) {
   } else if (showMoreBtn) {
     showMoreBtn.classList.remove('hidden');
     const remaining = Math.min(ITEMS_PER_LOAD, tracker.data.length - tracker.shown);
-    showMoreBtn.textContent = `🔽 Показать еще ${remaining} ${getProjectWord(remaining)}`;
+    showMoreBtn.textContent = `🔽 Show more ${remaining} ${getProjectWord(remaining)}`;
   }
 }
 
 function getProjectWord(number) { // Для правильного склонения слова "проект"
-    if (number === 1) return 'проект';
-    if (number >= 2 && number <= 4) return 'проекта';
-    return 'проектов';
+    if (number === 1) return 'project';
+    if (number >= 2 && number <= 4) return 'projects';
+    return 'projects';
 }
 
 
