@@ -26,11 +26,22 @@ description: "Join the Solana-based (FREE-VPN) network that keeps your data safe
 reward: "+$50-$300 (Est. avg.)", 
 btnText: "Join", hot: true, taskId: "ping", 
 instructions: { title: "📦 Ping Network Mini-Guide", description: "🛜 Earn Free Crypto Just by Staying Online with Ping", 
-steps: ["1. Install & Sign Up. Add the Ping Chrome extension, register, and use referral code WOFZ0F for a point boost.", 
-"2. Activate & Stay Connected. Turn on the VPN in the app — earn 1 point every 10 minutes you're online.", 
-"3. Boost Earnings with Tasks & Referrals. Complete simple in-app tasks and invite friends to earn 15% of their points too."], 
+steps: ["Install & Sign Up. Add the Ping Chrome extension, register, and use referral code WOFZ0F for a point boost.", 
+"Activate & Stay Connected. Turn on the VPN in the app — earn 1 point every 10 minutes you're online.", 
+"Boost Earnings with Tasks & Referrals. Complete simple in-app tasks and invite friends to earn 15% of their points too."], 
 actionUrl: "https://chromewebstore.google.com/detail/ping-network-vpn/geeedmdpncfeomhgbjeafcahepjelimg?pli=1 ", 
 actionText: "Stay connected — the longer you're online, the more you earn!" }},
+
+{ icon: "🦾", name: "3DOS", 
+description: "Upload, earn, and manufacture on-demand through a global decentralized network.", 
+reward: "+$50-$300 (Est. avg.)", 
+btnText: "Join", hot: true, taskId: "3dos", 
+instructions: { title: "📦 3DOS Airdrop Mini-Guide", description: "💻 Earn Free $3DOS Tokens by Just Installing a Chrome Extension", 
+steps: ["Sign Up & Get Your API Key. Register at 3dos.io, verify your email, and generate your API key.", 
+"Install & Activate. Add the 3DOS Chrome extension, log in, and connect it using your API key.", 
+"Earn Daily & Invite Friends. Claim daily rewards, complete simple social tasks, and share your referral link for bonus points."], 
+actionUrl: "https://dashboard.3dos.ioregister?ref_code=5d1a7f", 
+actionText: "Start now — early users have the highest earning potential!" }},
 
   { icon: "🌱", name: "Grass", description: "Passive income from your browser tab", reward: "+$50-$300 (Est. avg.)", btnText: "Join", hot: true, taskId: "grass", instructions: { title: "💰 Start Earning Free Crypto with Grass", description: "No money needed • Simple setup • Rewards are live", steps: ["Sign up on the Grass website. Create an account with your email and click Connect.", "Install the browser extension, or desktop extension", "Verify and connect wallet, Confirm your email and link your Solana wallet."], actionUrl: "https://app.grass.io/register/?referralCode=i4m1wvXSIPONluY", actionText: "Start Earning" }},
   { icon: "🔮", name: "Navigate", description: "Browser mining & simple daily tasks", reward: "+$75-$250 (Est. avg.)", btnText: "Claim", hot: false, taskId: "navigate", instructions: { title: "🎉 Get Free Rewards with Navigate", description: "No money needed • Just be online • Rewards are already coming", steps: ["Sign up and set up your profile. Use your email and confirm it to get started.", "Install the Chrome extension. It helps you earn points while you browse. ", "Boost your points. Fill out a short form and connect your email, wallet, and social accounts. ", "Earn while you browse"], actionUrl: "https://dataquest.nvg8.io//signup?ref=2496861", actionText: "Start Mining" }},
@@ -52,30 +63,77 @@ const recommendedProjectsData = [
 projectTrackers.recommended.data = recommendedProjectsData;
 
 const freeToEarnProjectsData = [
-  { icon: "📝", name: "LearnPad", description: "Complete simple tasks and educational quizzes for tokens.", reward: "+$30-$150 (Est. avg.)", btnText: "Learn", hot: false, taskId: "learnpad", instructions: { title: "📝 LearnPad - Knowledge is Crypto", description: "Learn and earn with zero investment:", steps: ["Register your LearnPad account", "Complete educational quizzes about blockchain", "Participate in daily challenges", "Share your knowledge for additional rewards"], actionUrl: "#", actionText: "Start Learning" }},
-  { icon: "🔍", name: "DataSeek", description: "Share anonymized Browse data for ongoing rewards.", reward: "+$40-$180 (Est. avg.)", btnText: "Share", hot: true, taskId: "dataseek", instructions: { title: "🔍 DataSeek - Your Data, Your Earnings", description: "Earn by contributing anonymized Browse data:", steps: ["Install the DataSeek browser extension", "Set your privacy preferences", "Earn while you browse normally", "Cash out rewards weekly"], actionUrl: "#", actionText: "Start Sharing" }},
-  { icon: "🧩", name: "TaskCube", description: "Microtasks with instant crypto rewards.", reward: "+$25-$130 (Est. avg.)", btnText: "Tasks", hot: false, taskId: "taskcube", instructions: { title: "🧩 TaskCube - Small Tasks, Real Crypto", description: "Complete easy microtasks for immediate rewards:", steps: ["Create your TaskCube account", "Choose from various task categories", "Complete tasks at your own pace", "Get paid instantly to your wallet"], actionUrl: "#", actionText: "View Tasks" }}
+  { icon: "📝", name: "Mirra", 
+description: "Help build a smarter, fairer AI by curating content — powered by the Web3 community.", 
+reward: "+$30-$150 (Est. avg.)", 
+btnText: "Learn", hot: false, taskId: "learnpad", 
+instructions: { title: "📦 Mirra Airdrop Mini-Guide", 
+description: "🧠 Share Smart Content on X & Earn Free $NLP Tokens with Mirra", 
+steps: ["Connect Your X Account. Go to mirra.xyz, link your X account, and follow @Mirra_Terminal + @mirra_agent.", 
+"Scout & Create Web3 Content. Tag @Mirra_Terminal under great crypto posts or share your own insights to earn tokens.", 
+"Use Referrals to Boost Rewards. Get your referral link and invite friends to earn extra $NLP."], 
+actionUrl: "#", actionText: "Start Sharing Now" }},
+
+  { icon: "🎲", name: "Newton", 
+description: "Seamless cross-chain access powered by Polygon’s AggLayer — no more switching networks.", 
+reward: "+$40-$180 (Est. avg.)", btnText: "Share", hot: true, taskId: "Newton", 
+instructions: { title: "📦 Newton Airdrop Mini-Guide", 
+description: "🎯 Earn Free Credits Daily by Completing Simple Quests on Newton", 
+steps: ["Sign Up & Get 150 Credits. Go to newtonproject.io, register or connect your wallet — get instant signup rewards.", 
+"Complete Social & Main Quests. Start with “Side Quests” (follows), then move to Explore Quests for more credits.",  
+"Log In Daily for Bonuses. Roll the dice every day for extra credits and check for new tasks."], 
+actionUrl: "https://magicnewton.com/portal?referral=6xs7ffo1kx2nfhfm", actionText: "Start Sharing Now" }},
+
+  { icon: "📡", name: "Theoriq", 
+description: "Join a new wave where AI meets blockchain — no tech skills needed, just your curiosity to start.", 
+reward: "+$25-$130 (Est. avg.)", btnText: "Tasks", hot: false, taskId: "taskcube", 
+instructions: { title: "📦 Theoriq Airdrop Mini-Guide", description: "🧠 Earn Free XP Daily by Exploring AI & Inviting Friends with Theoriq", 
+steps: ["Connect Wallet & Socials. Go to theoriq.xyz, link your wallet + socials, and complete simple quests to earn 100 XP.", 
+"Chat with AI Daily. Use Theoriq’s Infinity Studio — get 50 XP/day for interacting with AI Agents and extra for giving feedback.", 
+"Invite & Earn More. Share your referral link — earn 50 XP per friend who joins."], actionUrl: "https://quests.theoriq.ai?r=cWPZh2xM", actionText: "Start Now" }},
+
+  { icon: "🔮", name: "Bitsolara", 
+description: "Experience secure and private DeFi on Solana — fast, free, and built for your freedom.", 
+reward: "+$40-$90 (Est. avg.)", btnText: "Share", hot: true, taskId: "Newton", 
+instructions: { title: "📦 Bitsolara Airdrop Mini-Guide", 
+description: "🎮 Chat, Level Up & Claim Free Crypto with Bitsolara", 
+steps: ["Start the Bot & Register. Open the Bitsolara bot on Telegram, tap “Start”, then “Play now” to enter the mini app and register (connect your TON wallet if needed).", 
+"Complete Quests & Earn XP. Do social tasks, quizzes, and in-app actions to level up and unlock more rewards.",  
+"Invite Friends & Track Rewards. Use your referral link to earn more — check your status and claim airdrops in the mini app."], 
+actionUrl: "https://t.me/BitsolaraMiniApp_Bot/app?startapp=29257130", actionText: "Start Now" }},
+
+  { icon: "🔮", name: "Fleek", 
+description: "Here you can easily create and launch AI agents, websites, and applications.", 
+reward: "+$40-$90 (Est. avg.)", btnText: "Share", hot: true, taskId: "Newton", 
+instructions: { title: "📦 Fleek Airdrop Mini-Guide", 
+description: "Earn Points for the Upcoming Fleek Airdrop", 
+steps: ["Sign up at Fleek with your email & verify your account", 
+"Use Fleek to launch sites, apps, or AI tools — real usage = more points.",  
+"Join the Fleek Affiliate Program, share your link & earn from referrals.",
+"Complete quests on Galxe to boost your airdrop score." ], 
+actionUrl: "https://fleek.xyz/?ref=semenl2", actionText: "Start Now" }},
+
 ];
 projectTrackers.free.data = freeToEarnProjectsData;
 
 const playToEarnProjectsData = [
-  { icon: "🎯", name: "CryptoBlast", description: "Fast-paced action game with token rewards.", reward: "+$35-$175 (Est. avg.)", btnText: "Play", hot: true, taskId: "cryptoblast", instructions: { title: "🎯 CryptoBlast - Play and Earn Rewards", description: "Have fun and earn crypto while playing:", steps: ["Download the CryptoBlast game app", "Complete the tutorial levels", "Participate in daily tournaments", "Withdraw your earnings directly to your wallet"], actionUrl: "#", actionText: "Start Playing" }},
-  { icon: "🏆", name: "ArenaX", description: "Competitive PvP games with weekly tournaments.", reward: "+$40-$200 (Est. avg.)", btnText: "Compete", hot: false, taskId: "arenax", instructions: { title: "🏆 ArenaX - Compete and Earn", description: "Test your skills against other players for rewards:", steps: ["Create your ArenaX account", "Practice in free training mode", "Enter weekly tournaments", "Win rewards based on your ranking"], actionUrl: "#", actionText: "Join Arena" }},
-  { icon: "🎮", name: "MetaRealms", description: "Open-world exploration with daily quests.", reward: "+$50-$220 (Est. avg.)", btnText: "Explore", hot: true, taskId: "metarealms", instructions: { title: "🎮 MetaRealms - Explore to Earn", description: "Immerse yourself in a crypto-powered virtual world:", steps: ["Create your MetaRealms character", "Complete the onboarding quests", "Participate in daily and weekly events", "Trade your earnings for real crypto"], actionUrl: "#", actionText: "Start Adventure" }}
+  { icon: "🎯", name: "Comiing soon..", description: "Fast-paced action game with token rewards.", reward: "+$35-$175 (Est. avg.)", btnText: "Play", hot: true, taskId: "cryptoblast", instructions: { title: "🎯 CryptoBlast - Play and Earn Rewards", description: "Have fun and earn crypto while playing:", steps: ["Download the CryptoBlast game app", "Complete the tutorial levels", "Participate in daily tournaments", "Withdraw your earnings directly to your wallet"], actionUrl: "#", actionText: "Start Playing" }},
+  { icon: "🏆", name: "Comiing soon..", description: "Competitive PvP games with weekly tournaments.", reward: "+$40-$200 (Est. avg.)", btnText: "Compete", hot: false, taskId: "arenax", instructions: { title: "🏆 ArenaX - Compete and Earn", description: "Test your skills against other players for rewards:", steps: ["Create your ArenaX account", "Practice in free training mode", "Enter weekly tournaments", "Win rewards based on your ranking"], actionUrl: "#", actionText: "Join Arena" }},
+  { icon: "🎮", name: "Comiing soon..", description: "Open-world exploration with daily quests.", reward: "+$50-$220 (Est. avg.)", btnText: "Explore", hot: true, taskId: "metarealms", instructions: { title: "🎮 MetaRealms - Explore to Earn", description: "Immerse yourself in a crypto-powered virtual world:", steps: ["Create your MetaRealms character", "Complete the onboarding quests", "Participate in daily and weekly events", "Trade your earnings for real crypto"], actionUrl: "#", actionText: "Start Adventure" }}
 ];
 projectTrackers.play.data = playToEarnProjectsData;
 
 const nftProjectsData = [
-  { icon: "🖼️", name: "PixelVerse", description: "Create and trade pixel art NFTs with zero gas fees.", reward: "+$60-$280 (Est. avg.)", btnText: "Create", hot: true, taskId: "pixelverse", instructions: { title: "🖼️ PixelVerse - Create and Earn with NFTs", description: "Zero-cost NFT creation with high earning potential:", steps: ["Sign up for PixelVerse", "Create your first pixel art NFT (tools provided)", "List your creation on the marketplace", "Earn royalties from every sale"], actionUrl: "#", actionText: "Start Creating" }},
-  { icon: "🎭", name: "AvatarWorld", description: "Free avatar NFTs with staking rewards.", reward: "+$45-$190 (Est. avg.)", btnText: "Mint", hot: false, taskId: "avatarworld", instructions: { title: "🎭 AvatarWorld - Your Digital Identity", description: "Get free avatar NFTs with real utility:", steps: ["Claim your free unique avatar NFT", "Customize it with free traits", "Stake your avatar for passive rewards", "Use across multiple partner platforms"], actionUrl: "#", actionText: "Claim Avatar" }},
-  { icon: "🃏", name: "CardChain", description: "Collectible card game with tradable NFT cards.", reward: "+$55-$230 (Est. avg.)", btnText: "Collect", hot: true, taskId: "cardchain", instructions: { title: "🃏 CardChain - Collect, Play, Earn", description: "Free starter pack with valuable NFT cards:", steps: ["Claim your free starter deck", "Learn to play through tutorials", "Compete in daily matches", "Trade or sell your valuable cards"], actionUrl: "#", actionText: "Get Cards" }}
+  { icon: "🖼️", name: "Comiing soon..", description: "Create and trade pixel art NFTs with zero gas fees.", reward: "+$60-$280 (Est. avg.)", btnText: "Create", hot: true, taskId: "pixelverse", instructions: { title: "🖼️ PixelVerse - Create and Earn with NFTs", description: "Zero-cost NFT creation with high earning potential:", steps: ["Sign up for PixelVerse", "Create your first pixel art NFT (tools provided)", "List your creation on the marketplace", "Earn royalties from every sale"], actionUrl: "#", actionText: "Start Creating" }},
+  { icon: "🎭", name: "Comiing soon..", description: "Free avatar NFTs with staking rewards.", reward: "+$45-$190 (Est. avg.)", btnText: "Mint", hot: false, taskId: "avatarworld", instructions: { title: "🎭 AvatarWorld - Your Digital Identity", description: "Get free avatar NFTs with real utility:", steps: ["Claim your free unique avatar NFT", "Customize it with free traits", "Stake your avatar for passive rewards", "Use across multiple partner platforms"], actionUrl: "#", actionText: "Claim Avatar" }},
+  { icon: "🃏", name: "Comiing soon..", description: "Collectible card game with tradable NFT cards.", reward: "+$55-$230 (Est. avg.)", btnText: "Collect", hot: true, taskId: "cardchain", instructions: { title: "🃏 CardChain - Collect, Play, Earn", description: "Free starter pack with valuable NFT cards:", steps: ["Claim your free starter deck", "Learn to play through tutorials", "Compete in daily matches", "Trade or sell your valuable cards"], actionUrl: "#", actionText: "Get Cards" }}
 ];
 projectTrackers.nft.data = nftProjectsData;
 
 const testnetProjectsData = [
-  { icon: "🧪", name: "FusionDEX", description: "Next-gen DEX testnet with confirmed airdrop.", reward: "+$70-$300 (Est. avg.)", btnText: "Test", hot: true, taskId: "fusiondex", instructions: { title: "🧪 FusionDEX - Test the Future of Trading", description: "Early access to revolutionary DEX with confirmed airdrop:", steps: ["Register for FusionDEX testnet", "Get free testnet tokens", "Complete at least 10 swaps", "Provide feedback for bonus rewards"], actionUrl: "#", actionText: "Join Testnet" }},
-  { icon: "🔐", name: "ShieldPay", description: "Privacy-focused payment protocol with incentivized testing.", reward: "+$55-$240 (Est. avg.)", btnText: "Join", hot: false, taskId: "shieldpay", instructions: { title: "🔐 ShieldPay - Private Payments, Public Rewards", description: "Test the future of private transactions:", steps: ["Create your ShieldPay account", "Complete the privacy protocol tutorial", "Send at least 5 private transactions", "Report bugs for additional rewards"], actionUrl: "#", actionText: "Start Testing" }},
-  { icon: "🔄", name: "CrossBridge", description: "Cross-chain bridge with testnet rewards.", reward: "+$60-$260 (Est. avg.)", btnText: "Bridge", hot: true, taskId: "crossbridge", instructions: { title: "🔄 CrossBridge - Connect Chains, Collect Rewards", description: "Test groundbreaking cross-chain technology:", steps: ["Create accounts on multiple test networks", "Get free testnet tokens", "Perform at least 5 cross-chain transfers", "Report your experience for bonus points"], actionUrl: "#", actionText: "Start Bridging" }}
+  { icon: "🧪", name: "Comiing soon..", description: "Next-gen DEX testnet with confirmed airdrop.", reward: "+$70-$300 (Est. avg.)", btnText: "Test", hot: true, taskId: "fusiondex", instructions: { title: "🧪 FusionDEX - Test the Future of Trading", description: "Early access to revolutionary DEX with confirmed airdrop:", steps: ["Register for FusionDEX testnet", "Get free testnet tokens", "Complete at least 10 swaps", "Provide feedback for bonus rewards"], actionUrl: "#", actionText: "Join Testnet" }},
+  { icon: "🔐", name: "Comiing soon..", description: "Privacy-focused payment protocol with incentivized testing.", reward: "+$55-$240 (Est. avg.)", btnText: "Join", hot: false, taskId: "shieldpay", instructions: { title: "🔐 ShieldPay - Private Payments, Public Rewards", description: "Test the future of private transactions:", steps: ["Create your ShieldPay account", "Complete the privacy protocol tutorial", "Send at least 5 private transactions", "Report bugs for additional rewards"], actionUrl: "#", actionText: "Start Testing" }},
+  { icon: "🔄", name: "Comiing soon..", description: "Cross-chain bridge with testnet rewards.", reward: "+$60-$260 (Est. avg.)", btnText: "Bridge", hot: true, taskId: "crossbridge", instructions: { title: "🔄 CrossBridge - Connect Chains, Collect Rewards", description: "Test groundbreaking cross-chain technology:", steps: ["Create accounts on multiple test networks", "Get free testnet tokens", "Perform at least 5 cross-chain transfers", "Report your experience for bonus points"], actionUrl: "#", actionText: "Start Bridging" }}
 ];
 projectTrackers.testnet.data = testnetProjectsData;
 
