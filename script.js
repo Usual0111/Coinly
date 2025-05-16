@@ -77,7 +77,8 @@ description: "🎯 Earn Free Credits Daily by Completing Simple Quests on Newton
 steps: ["Sign Up & Get 150 Credits. Go to newtonproject.io, register or connect your wallet — get instant signup rewards.", 
 "Complete Social & Main Quests. Start with “Side Quests” (follows), then move to Explore Quests for more credits.",  
 "Log In Daily for Bonuses. Roll the dice every day for extra credits and check for new tasks."], 
-actionUrl: "https://magicnewton.com/portal?referral=6xs7ffo1kx2nfhfm", actionText: "Start Sharing Now" }},
+actionUrl: "https://magicnewton.com/portal?referral=6xs7ffo1kx2nfhfm", actionText: "Start Sharing Now" }}
+];
 projectTrackers.recommended.data = recommendedProjectsData;
 
 const freeToEarnProjectsData = [
@@ -129,7 +130,7 @@ steps: ["Sign up at Fleek with your email & verify your account",
 "Use Fleek to launch sites, apps, or AI tools — real usage = more points.",  
 "Join the Fleek Affiliate Program, share your link & earn from referrals.",
 "Complete quests on Galxe to boost your airdrop score." ], 
-actionUrl: "https://fleek.xyz/?ref=semenl2", actionText: "Start Now" }},
+actionUrl: "https://fleek.xyz/?ref=semenl2", actionText: "Start Now" }}
 
 ];
 projectTrackers.free.data = freeToEarnProjectsData;
