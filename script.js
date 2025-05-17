@@ -235,7 +235,7 @@ function openTaskModal(taskId, categoryKey) {
       <ol class="task-steps">${project.instructions.steps.map(step => `<li>${step}</li>`).join('')}</ol>
       <div class="task-buttons">
         <a href="${project.instructions.actionUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary">${project.instructions.actionText}</a>
-        <button class="btn-secondary js-show-wallet-help">Нужен кошелек?</button>
+        <button class="btn-secondary js-show-wallet-help">Need Wallet?</button>
       </div>`;
       // Добавляем обработчик для кнопки "Нужен кошелек?" уже после создания контента
       const walletHelpBtn = taskContent.querySelector('.js-show-wallet-help');
