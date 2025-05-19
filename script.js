@@ -70,13 +70,13 @@ actionUrl: "https://fleek.xyz/?ref=semenl2", actionText: "Start Now" }},
    
 { icon: "🎲", name: "Newton", 
 description: "Seamless cross-chain access powered by Polygon’s AggLayer — no more switching networks.", 
-reward: "+$40-$180 (Est. avg.)", btnText: "Share", hot: true, taskId: "Newton", 
+reward: "+$40-$180 (Est. avg.)", btnText: "Start", hot: true, taskId: "Newton", 
 instructions: { title: "📦 Newton Airdrop Mini-Guide", 
 description: "🎯 Earn Free Credits Daily by Completing Simple Quests on Newton", 
 steps: ["Sign Up & Get 150 Credits. Go to newtonproject.io, register or connect your wallet — get instant signup rewards.", 
 "Complete Social & Main Quests. Start with “Side Quests” (follows), then move to Explore Quests for more credits.",  
 "Log In Daily for Bonuses. Roll the dice every day for extra credits and check for new tasks."], 
-actionUrl: "https://magicnewton.com/portal?referral=6xs7ffo1kx2nfhfm", actionText: "Start Sharing Now" }}
+actionUrl: "https://magicnewton.com/portal?referral=6xs7ffo1kx2nfhfm", actionText: "Start Earning Now" }}
 ];
 projectTrackers.recommended.data = recommendedProjectsData;
 
@@ -84,7 +84,7 @@ const freeToEarnProjectsData = [
   { icon: "📝", name: "Mirra", 
 description: "Help build a smarter, fairer AI by curating content — powered by the Web3 community.", 
 reward: "+$30-$150 (Est. avg.)", 
-btnText: "Learn", hot: false, taskId: "learnpad", 
+btnText: "Start", hot: false, taskId: "learnpad", 
 instructions: { title: "📦 Mirra Airdrop Mini-Guide", 
 description: "🧠 Share Smart Content on X & Earn Free $NLP Tokens with Mirra", 
 steps: ["Connect Your X Account. Go to mirra.xyz, link your X account, and follow @Mirra_Terminal + @mirra_agent.", 
@@ -94,7 +94,7 @@ actionUrl: "#", actionText: "Start Sharing Now" }},
 
   { icon: "🎲", name: "Newton", 
 description: "Seamless cross-chain access powered by Polygon’s AggLayer — no more switching networks.", 
-reward: "+$40-$180 (Est. avg.)", btnText: "Share", hot: true, taskId: "Newton", 
+reward: "+$40-$180 (Est. avg.)", btnText: "Start", hot: true, taskId: "Newton", 
 instructions: { title: "📦 Newton Airdrop Mini-Guide", 
 description: "🎯 Earn Free Credits Daily by Completing Simple Quests on Newton", 
 steps: ["Sign Up & Get 150 Credits. Go to newtonproject.io, register or connect your wallet — get instant signup rewards.", 
@@ -104,7 +104,7 @@ actionUrl: "https://magicnewton.com/portal?referral=6xs7ffo1kx2nfhfm", actionTex
 
   { icon: "📡", name: "Theoriq", 
 description: "Join a new wave where AI meets blockchain — no tech skills needed, just your curiosity to start.", 
-reward: "+$25-$130 (Est. avg.)", btnText: "Tasks", hot: false, taskId: "taskcube", 
+reward: "+$25-$130 (Est. avg.)", btnText: "Start", hot: false, taskId: "taskcube", 
 instructions: { title: "📦 Theoriq Airdrop Mini-Guide", description: "🧠 Earn Free XP Daily by Exploring AI & Inviting Friends with Theoriq", 
 steps: ["Connect Wallet & Socials. Go to theoriq.xyz, link your wallet + socials, and complete simple quests to earn 100 XP.", 
 "Chat with AI Daily. Use Theoriq’s Infinity Studio — get 50 XP/day for interacting with AI Agents and extra for giving feedback.", 
@@ -112,7 +112,7 @@ steps: ["Connect Wallet & Socials. Go to theoriq.xyz, link your wallet + socials
 
   { icon: "🔮", name: "Bitsolara", 
 description: "Experience secure and private DeFi on Solana — fast, free, and built for your freedom.", 
-reward: "+$40-$90 (Est. avg.)", btnText: "Share", hot: true, taskId: "Newton", 
+reward: "+$40-$90 (Est. avg.)", btnText: "Start", hot: true, taskId: "Newton", 
 instructions: { title: "📦 Bitsolara Airdrop Mini-Guide", 
 description: "🎮 Chat, Level Up & Claim Free Crypto with Bitsolara", 
 steps: ["Start the Bot & Register. Open the Bitsolara bot on Telegram, tap “Start”, then “Play now” to enter the mini app and register (connect your TON wallet if needed).", 
@@ -122,7 +122,7 @@ actionUrl: "https://t.me/BitsolaraMiniApp_Bot/app?startapp=29257130", actionText
 
   { icon: "🔮", name: "Fleek", 
 description: "Here you can easily create and launch AI agents, websites, and applications.", 
-reward: "+$40-$90 (Est. avg.)", btnText: "Share", hot: true, taskId: "Newton", 
+reward: "+$40-$90 (Est. avg.)", btnText: "Start", hot: true, taskId: "Newton", 
 instructions: { title: "📦 Fleek Airdrop Mini-Guide", 
 description: "Earn Points for the Upcoming Fleek Airdrop", 
 steps: ["Sign up at Fleek with your email & verify your account", 
