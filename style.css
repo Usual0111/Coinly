@@ -752,7 +752,6 @@ footer {
         padding-left: 2rem; /* Увеличьте левый отступ для упорядоченного списка */
     }
     /* ... остальные стили для мобильных ... */
-}
 
     .nav-links.show { display: flex !important; }
     .nav-links li { width: 100%; text-align: left; } /* Выравнивание по левому краю */
