@@ -742,6 +742,18 @@ footer {
         border-top: 1px solid #e9ecef;
         z-index: 999; /* Чуть ниже .menu-toggle, если он абсолютно позиционирован */
     }
+
+ .modal-content {
+        padding: 1.5rem 1.25rem; /* Адаптивные паддинги */
+        max-height: 85vh; /* Чуть меньше места на мобильных */
+    }
+    /* Добавьте это правило для списка внутри модального окна гайда */
+    #guideModal .modal-content ol {
+        padding-left: 2rem; /* Увеличьте левый отступ для упорядоченного списка */
+    }
+    /* ... остальные стили для мобильных ... */
+}
+
     .nav-links.show { display: flex !important; }
     .nav-links li { width: 100%; text-align: left; } /* Выравнивание по левому краю */
     .nav-links li a {
