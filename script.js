@@ -55,19 +55,6 @@ actionText: "Start now — early users have the highest earning potential!" }},
 projectTrackers.browser.data = browserNodesProjectsData;
 
 const recommendedProjectsData = [
-  { icon: "🛡️", name: "Solix", description: "Maximize your browser's potential for crypto.", reward: "+$50-$250 (Est. avg.)", btnText: "Join", hot: true, taskId: "solix", instructions: { title: "💰 Earn with Solix — just for being online", description: "No investment. Just turn it on — and start getting points.", steps: ["Create a Solix account", "Add the Solix extension", "Do simple tasks"], actionUrl: "https://dashboard.solixdepin.net/sign-up?ref=LzDVGhu7", actionText: "Start Earning" }},
-  
-{ icon: "🔮", name: "Fleek", 
-description: "Here you can easily create and launch AI agents, websites, and applications.", 
-reward: "+$40-$90 (Est. avg.)", btnText: "Start", hot: true, taskId: "Fleek", 
-instructions: { title: "📦 Fleek Airdrop Mini-Guide", 
-description: "Earn Points for the Upcoming Fleek Airdrop", 
-steps: ["Sign up at Fleek with your email & verify your account", 
-"Use Fleek to launch sites, apps, or AI tools — real usage = more points.",  
-"Join the Fleek Affiliate Program, share your link & earn from referrals.",
-"Complete quests on Galxe to boost your airdrop score." ], 
-actionUrl: "https://fleek.xyz/?ref=semenl2", actionText: "Start Now" }},
-   
 { icon: "🎲", name: "Newton", 
 description: "Seamless cross-chain access powered by Polygon’s AggLayer — no more switching networks.", 
 reward: "+$40-$180 (Est. avg.)", btnText: "Start", hot: true, taskId: "Newton", 
@@ -76,7 +63,16 @@ description: "🎯 Earn Free Credits Daily by Completing Simple Quests on Newton
 steps: ["Sign Up & Get 150 Credits. Go to newtonproject.io, register or connect your wallet — get instant signup rewards.", 
 "Complete Social & Main Quests. Start with “Side Quests” (follows), then move to Explore Quests for more credits.",  
 "Log In Daily for Bonuses. Roll the dice every day for extra credits and check for new tasks."], 
-actionUrl: "https://magicnewton.com/portal?referral=6xs7ffo1kx2nfhfm", actionText: "Start Earning Now" }}
+actionUrl: "https://magicnewton.com/portal?referral=6xs7ffo1kx2nfhfm", actionText: "Start Earning Now" }},
+
+  { icon: "🛡️", name: "Solix", description: "Maximize your browser's potential for crypto.", reward: "+$50-$250 (Est. avg.)", btnText: "Start", hot: true, taskId: "solix", instructions: { title: "💰 Earn with Solix — just for being online", description: "No investment. Just turn it on — and start getting points.", steps: ["Create a Solix account", "Add the Solix extension", "Do simple tasks"], actionUrl: "https://dashboard.solixdepin.net/sign-up?ref=LzDVGhu7", actionText: "Start Earning" }},
+  
+ { icon: "🌀", name: "Stork", description: "Browser extension for passive income", 
+reward: "+$55-$210 (Est. avg.)", btnText: "Start", hot: false, taskId: "stork", 
+instructions: { title: "🎁 Earn Free Rewards with Stork — It's Easy!", 
+description: "No money needed • Simple setup • Rewards are live", 
+steps: ["Install the Stork Extension. Download it from the Chrome Web Store and open it.", "2. Sign Up and Use Code. Create an account and enter code `ITYO9FF9K4`", "3. Keep It Running. Let the extension stay active to earn rewards automatically."], 
+actionUrl: "https://chromewebstore.google.com/detail/stork-verify/knnliglhgkmlblppdejchidfihjnockl", actionText: "Start Mining" }}
 ];
 projectTrackers.recommended.data = recommendedProjectsData;
 
