@@ -594,12 +594,14 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-document.querySelectorAll('.lightbox-trigger').forEach(img => {
-  img.addEventListener('click', function () {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    lightboxImg.src = this.src;
-    lightbox.style.display = 'flex';
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.lightbox-trigger').forEach(img => {
+    img.addEventListener('click', function () {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = this.src;
+      lightbox.style.display = 'flex';
+    });
   });
 });
 
