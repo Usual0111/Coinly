@@ -156,14 +156,8 @@ actionUrl: "https://fleek.xyz/?ref=semenl2", actionText: "Start Now" }}
 projectTrackers.free.data = freeToEarnProjectsData;
 
 const playToEarnProjectsData = [
-  { icon: "🎯", name: "Comiing soon..", description: "Fast-paced action game with token rewards.", reward: "+$0 (Est. avg.)", btnText: "Play", hot: true, taskId: "cryptoblast", instructions: { title: "🎯 CryptoBlast - Play and Earn Rewards", description: "Have fun and earn crypto while playing:", steps: ["Download the CryptoBlast game app", "Complete the tutorial levels", "Participate in daily tournaments", "Withdraw your earnings directly to your wallet"], actionUrl: "#", actionText: "Start Playing" }},
-  { icon: "🏆", name: "Comiing soon..", description: "Competitive PvP games with weekly tournaments.", reward: "+$0 (Est. avg.)", btnText: "Compete", hot: false, taskId: "arenax", instructions: { title: "🏆 ArenaX - Compete and Earn", description: "Test your skills against other players for rewards:", steps: ["Create your ArenaX account", "Practice in free training mode", "Enter weekly tournaments", "Win rewards based on your ranking"], actionUrl: "#", actionText: "Join Arena" }},
-  { icon: "🎮", name: "Comiing soon..", description: "Open-world exploration with daily quests.", reward: "+$0 (Est. avg.)", btnText: "Explore", hot: true, taskId: "metarealms", instructions: { title: "🎮 MetaRealms - Explore to Earn", description: "Immerse yourself in a crypto-powered virtual world:", steps: ["Create your MetaRealms character", "Complete the onboarding quests", "Participate in daily and weekly events", "Trade your earnings for real crypto"], actionUrl: "#", actionText: "Start Adventure" }}
-];
-projectTrackers.play.data = playToEarnProjectsData;
-
-const nftProjectsData = [
-  {
+  
+{
   icon: "🐧",
   name: "Gacha Peng",
   description: "Summon pixel Penguins, earn up to 500% back in crypto — all while having fun.",
@@ -184,14 +178,14 @@ const nftProjectsData = [
   }
 },
 
-  { icon: "🎭", name: "Comiing soon..", description: "Free avatar NFTs with staking rewards.", reward: "+$0 (Est. avg.)", btnText: "Mint", hot: false, taskId: "avatarworld", instructions: { title: "🎭 AvatarWorld - Your Digital Identity", description: "Get free avatar NFTs with real utility:", steps: ["Claim your free unique avatar NFT", "Customize it with free traits", "Stake your avatar for passive rewards", "Use across multiple partner platforms"], actionUrl: "#", actionText: "Claim Avatar" }},
-  { icon: "🃏", name: "Comiing soon..", description: "Collectible card game with tradable NFT cards.", reward: "+$0 (Est. avg.)", btnText: "Collect", hot: true, taskId: "cardchain", instructions: { title: "🃏 CardChain - Collect, Play, Earn", description: "Free starter pack with valuable NFT cards:", steps: ["Claim your free starter deck", "Learn to play through tutorials", "Compete in daily matches", "Trade or sell your valuable cards"], actionUrl: "#", actionText: "Get Cards" }}
+  { icon: "🏆", name: "Comiing soon..", description: "Competitive PvP games with weekly tournaments.", reward: "+$0 (Est. avg.)", btnText: "Compete", hot: false, taskId: "arenax", instructions: { title: "🏆 ArenaX - Compete and Earn", description: "Test your skills against other players for rewards:", steps: ["Create your ArenaX account", "Practice in free training mode", "Enter weekly tournaments", "Win rewards based on your ranking"], actionUrl: "#", actionText: "Join Arena" }},
+  { icon: "🎮", name: "Comiing soon..", description: "Open-world exploration with daily quests.", reward: "+$0 (Est. avg.)", btnText: "Explore", hot: true, taskId: "metarealms", instructions: { title: "🎮 MetaRealms - Explore to Earn", description: "Immerse yourself in a crypto-powered virtual world:", steps: ["Create your MetaRealms character", "Complete the onboarding quests", "Participate in daily and weekly events", "Trade your earnings for real crypto"], actionUrl: "#", actionText: "Start Adventure" }}
 ];
-projectTrackers.nft.data = nftProjectsData;
+projectTrackers.play.data = playToEarnProjectsData;
 
-const testnetProjectsData = [
+const nftProjectsData = [
  
- {
+{
   icon: "🪞",
   name: "Black Mirror",
   description: "Claim a FREE NFT pass that gives access to future crypto airdrops and immersive digital experiences.",
@@ -212,6 +206,14 @@ const testnetProjectsData = [
   }
 },
 
+  { icon: "🎭", name: "Comiing soon..", description: "Free avatar NFTs with staking rewards.", reward: "+$0 (Est. avg.)", btnText: "Mint", hot: false, taskId: "avatarworld", instructions: { title: "🎭 AvatarWorld - Your Digital Identity", description: "Get free avatar NFTs with real utility:", steps: ["Claim your free unique avatar NFT", "Customize it with free traits", "Stake your avatar for passive rewards", "Use across multiple partner platforms"], actionUrl: "#", actionText: "Claim Avatar" }},
+  { icon: "🃏", name: "Comiing soon..", description: "Collectible card game with tradable NFT cards.", reward: "+$0 (Est. avg.)", btnText: "Collect", hot: true, taskId: "cardchain", instructions: { title: "🃏 CardChain - Collect, Play, Earn", description: "Free starter pack with valuable NFT cards:", steps: ["Claim your free starter deck", "Learn to play through tutorials", "Compete in daily matches", "Trade or sell your valuable cards"], actionUrl: "#", actionText: "Get Cards" }}
+];
+projectTrackers.nft.data = nftProjectsData;
+
+const testnetProjectsData = [
+ 
+ { icon: "🔐", name: "Comiing soon..", description: "Privacy-focused payment protocol with incentivized testing.", reward: "+$0 (Est. avg.)", btnText: "Join", hot: false, taskId: "shieldpay", instructions: { title: "🔐 ShieldPay - Private Payments, Public Rewards", description: "Test the future of private transactions:", steps: ["Create your ShieldPay account", "Complete the privacy protocol tutorial", "Send at least 5 private transactions", "Report bugs for additional rewards"], actionUrl: "#", actionText: "Start Testing" }},
   { icon: "🔐", name: "Comiing soon..", description: "Privacy-focused payment protocol with incentivized testing.", reward: "+$0 (Est. avg.)", btnText: "Join", hot: false, taskId: "shieldpay", instructions: { title: "🔐 ShieldPay - Private Payments, Public Rewards", description: "Test the future of private transactions:", steps: ["Create your ShieldPay account", "Complete the privacy protocol tutorial", "Send at least 5 private transactions", "Report bugs for additional rewards"], actionUrl: "#", actionText: "Start Testing" }},
   { icon: "🔄", name: "Comiing soon..", description: "Cross-chain bridge with testnet rewards.", reward: "+$0 (Est. avg.)", btnText: "Bridge", hot: true, taskId: "crossbridge", instructions: { title: "🔄 CrossBridge - Connect Chains, Collect Rewards", description: "Test groundbreaking cross-chain technology:", steps: ["Create accounts on multiple test networks", "Get free testnet tokens", "Perform at least 5 cross-chain transfers", "Report your experience for bonus points"], actionUrl: "#", actionText: "Start Bridging" }}
 ];
