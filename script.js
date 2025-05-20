@@ -17,9 +17,34 @@ const ITEMS_PER_LOAD = 3;
 // --- Данные проектов (ПЕРЕМЕЩЕНЫ В НАЧАЛО) ---
 // Project data for original browser nodes
 const browserNodesProjectsData = [
-  { icon: "⬛", name: "Gradient", description: "Get paid in crypto for using your browser.", reward: "+$50-$250 (Est. avg.)", btnText: "Start", hot: true, taskId: "gradient", instructions: { title: "🪙 Gradient Airdrop — no investment needed!", description: "Complete these simple steps to earn your Gradient Airdrop:", steps: ["Set up a node (right from your browser)", "Earn XP for uptime & inviting friends", "Claim rewards in Season 1"], actionUrl: "https://app.gradient.network/signup?code=744DX2", actionText: "Start Earning" }},
-  { icon: "🔷", name: "BlockMesh", description: "Earn Crypto by Sharing Internet — Help Build Ethical AI.", reward: "+$50-$250 (Est. avg.)", btnText: "Start", hot: true, taskId: "blockmesh", instructions: { title: "🎁 Free Crypto Just by Being Online", description: "No money needed • Simple setup • Rewards are live", steps: ["Sign up on Blockmesh and confirm your email.", "Add the Chrome extension. Install it, log in, and keep it running.", "Connect your wallet + Twitter. Get points for easy tasks like captchas and follows."], actionUrl: "https://app.blockmesh.xyz/register?invite_code=5b614ab7-bad2-47f9-ae66-282004203f4a", actionText: "Start Earning" }},
-  { icon: "🛡️", name: "Solix", description: "Maximize your browser's potential for crypto.", reward: "+$50-$250 (Est. avg.)", btnText: "Start", hot: true, taskId: "solix", instructions: { title: "💰 Earn with Solix — just for being online", description: "No investment. Just turn it on — and start getting points.", steps: ["Create a Solix account", "Add the Solix extension", "Do simple tasks"], actionUrl: "https://dashboard.solixdepin.net/sign-up?ref=LzDVGhu7", actionText: "Start Earning" }},
+  
+
+{ icon: "⬛", name: "Gradient", description: "Get paid in crypto for using your browser.", reward: "+$50-$250 (Est. avg.)", btnText: "Start", hot: true, taskId: "gradient", instructions: { title: "🪙 Gradient Airdrop — no investment needed!", description: "Complete these simple steps to earn your Gradient Airdrop:", steps: ["Set up a node (right from your browser)", "Earn XP for uptime & inviting friends", "Claim rewards in Season 1"], actionUrl: "https://app.gradient.network/signup?code=744DX2", actionText: "Start Earning" }},
+
+{
+  icon: "🧠",
+  name: "Chakra",
+  description: "Earn free crypto by simply browsing with the Chakra Scout extension — no effort required.",
+  reward: "+$40–$400 (Est. avg. if airdrop confirmed)",
+  btnText: "Start Earning",
+  hot: true,
+  taskId: "chakra",
+  instructions: {
+    title: "📦 Chakra Scout Mini-Guide",
+    description: "🧭 Earn Points for Future Crypto Rewards — Just Keep Your Browser Open",
+    steps: [
+      "Install Scout Extension. Add Chakra's Scout to your Chrome browser.",
+      "Sign Up with Bonus. Register and use referral code RAVYPC to get a 5% boost on your points.",
+      "Stay Online & Farm. Keep Scout running in the background — earn points just by browsing normally."
+    ],
+    actionUrl: "https://app.chakra.dev/?ref=RAVYPC",
+    actionText: "Farm points now — the earlier you join, the more you may earn!"
+  }
+},
+  
+{ icon: "🔷", name: "BlockMesh", description: "Earn Crypto by Sharing Internet — Help Build Ethical AI.", reward: "+$50-$250 (Est. avg.)", btnText: "Start", hot: true, taskId: "blockmesh", instructions: { title: "🎁 Free Crypto Just by Being Online", description: "No money needed • Simple setup • Rewards are live", steps: ["Sign up on Blockmesh and confirm your email.", "Add the Chrome extension. Install it, log in, and keep it running.", "Connect your wallet + Twitter. Get points for easy tasks like captchas and follows."], actionUrl: "https://app.blockmesh.xyz/register?invite_code=5b614ab7-bad2-47f9-ae66-282004203f4a", actionText: "Start Earning" }},
+  
+{ icon: "🛡️", name: "Solix", description: "Maximize your browser's potential for crypto.", reward: "+$50-$250 (Est. avg.)", btnText: "Start", hot: true, taskId: "solix", instructions: { title: "💰 Earn with Solix — just for being online", description: "No investment. Just turn it on — and start getting points.", steps: ["Create a Solix account", "Add the Solix extension", "Do simple tasks"], actionUrl: "https://dashboard.solixdepin.net/sign-up?ref=LzDVGhu7", actionText: "Start Earning" }},
   
 { icon: "🌐", name: "Ping", 
 description: "Join the Solana-based (FREE-VPN) network that keeps your data safe and rewards you for it.", 
@@ -138,14 +163,55 @@ const playToEarnProjectsData = [
 projectTrackers.play.data = playToEarnProjectsData;
 
 const nftProjectsData = [
-  { icon: "🖼️", name: "Comiing soon..", description: "Create and trade pixel art NFTs with zero gas fees.", reward: "+$0 (Est. avg.)", btnText: "Create", hot: true, taskId: "pixelverse", instructions: { title: "🖼️ PixelVerse - Create and Earn with NFTs", description: "Zero-cost NFT creation with high earning potential:", steps: ["Sign up for PixelVerse", "Create your first pixel art NFT (tools provided)", "List your creation on the marketplace", "Earn royalties from every sale"], actionUrl: "#", actionText: "Start Creating" }},
+  {
+  icon: "🐧",
+  name: "Gacha Peng",
+  description: "Summon pixel Penguins, earn up to 500% back in crypto — all while having fun.",
+  reward: "+$50–$500 (Est. avg. ROI)",
+  btnText: "Summon & Earn",
+  hot: true,
+  taskId: "gachapeng",
+  instructions: {
+    title: "📦 Gacha Peng Mini-Guide",
+    description: "🎮 Earn Crypto by Summoning Cute Pixel Penguins — Each One Pays You Back",
+    steps: [
+      "Connect Wallet & Add ETH. Use MetaMask or another wallet and fund it with at least 0.01 ETH.",
+      "Summon Penguins. Visit Gacha Peng, connect your wallet, and summon Penguins using ETH.",
+      "Earn $PENG Tokens. Each Penguin gives you crypto rewards after 2–10 days — up to 500% ROI!"
+    ],
+    actionUrl: "https://app.gachapeng.xyz/0xCFfcA02aeD864F55DBC36aB7beaA238Cf25c8762",
+    actionText: "Summon early — higher levels mean bigger rewards!"
+  }
+},
+
   { icon: "🎭", name: "Comiing soon..", description: "Free avatar NFTs with staking rewards.", reward: "+$0 (Est. avg.)", btnText: "Mint", hot: false, taskId: "avatarworld", instructions: { title: "🎭 AvatarWorld - Your Digital Identity", description: "Get free avatar NFTs with real utility:", steps: ["Claim your free unique avatar NFT", "Customize it with free traits", "Stake your avatar for passive rewards", "Use across multiple partner platforms"], actionUrl: "#", actionText: "Claim Avatar" }},
   { icon: "🃏", name: "Comiing soon..", description: "Collectible card game with tradable NFT cards.", reward: "+$0 (Est. avg.)", btnText: "Collect", hot: true, taskId: "cardchain", instructions: { title: "🃏 CardChain - Collect, Play, Earn", description: "Free starter pack with valuable NFT cards:", steps: ["Claim your free starter deck", "Learn to play through tutorials", "Compete in daily matches", "Trade or sell your valuable cards"], actionUrl: "#", actionText: "Get Cards" }}
 ];
 projectTrackers.nft.data = nftProjectsData;
 
 const testnetProjectsData = [
-  { icon: "🧪", name: "Comiing soon..", description: "Next-gen DEX testnet with confirmed airdrop.", reward: "+$0 (Est. avg.)", btnText: "Test", hot: true, taskId: "fusiondex", instructions: { title: "🧪 FusionDEX - Test the Future of Trading", description: "Early access to revolutionary DEX with confirmed airdrop:", steps: ["Register for FusionDEX testnet", "Get free testnet tokens", "Complete at least 10 swaps", "Provide feedback for bonus rewards"], actionUrl: "#", actionText: "Join Testnet" }},
+ 
+ {
+  icon: "🪞",
+  name: "Black Mirror",
+  description: "Claim a FREE NFT pass that gives access to future crypto airdrops and immersive digital experiences.",
+  reward: "+$50–$500 (Est. future value)",
+  btnText: "Claim NFT",
+  hot: true,
+  taskId: "blackmirror",
+  instructions: {
+    title: "📦 Black Mirror Mini-Guide",
+    description: "🧬 Claim Your Free NFT Pass & Unlock Airdrops + Exclusive Web3 Experiences",
+    steps: [
+      "Connect Wallets. Visit the official Black Mirror site and connect both your EVM (MetaMask) and Solana (Phantom) wallets.",
+      "Link X Account. Connect your Twitter (X) profile to complete your digital identity.",
+      "Secure Your NFT. Once registered, you’re set to receive your FREE Social ID NFT — your pass to future airdrops and perks."
+    ],
+    actionUrl: "https://blackmirror.ultimet.io/",
+    actionText: "Join early — free NFT now, guaranteed rewards later!"
+  }
+},
+
   { icon: "🔐", name: "Comiing soon..", description: "Privacy-focused payment protocol with incentivized testing.", reward: "+$0 (Est. avg.)", btnText: "Join", hot: false, taskId: "shieldpay", instructions: { title: "🔐 ShieldPay - Private Payments, Public Rewards", description: "Test the future of private transactions:", steps: ["Create your ShieldPay account", "Complete the privacy protocol tutorial", "Send at least 5 private transactions", "Report bugs for additional rewards"], actionUrl: "#", actionText: "Start Testing" }},
   { icon: "🔄", name: "Comiing soon..", description: "Cross-chain bridge with testnet rewards.", reward: "+$0 (Est. avg.)", btnText: "Bridge", hot: true, taskId: "crossbridge", instructions: { title: "🔄 CrossBridge - Connect Chains, Collect Rewards", description: "Test groundbreaking cross-chain technology:", steps: ["Create accounts on multiple test networks", "Get free testnet tokens", "Perform at least 5 cross-chain transfers", "Report your experience for bonus points"], actionUrl: "#", actionText: "Start Bridging" }}
 ];
