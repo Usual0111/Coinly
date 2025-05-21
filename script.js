@@ -18,8 +18,33 @@ const ITEMS_PER_LOAD = 3;
 // Project data for original browser nodes
 const browserNodesProjectsData = [
   
-
-{ icon: "⬛", name: "Gradient", description: "Get paid in crypto for using your browser.", reward: "+$50-$250 (Est. avg.)", btnText: "Start", hot: true, taskId: "gradient", instructions: { title: "🪙 Gradient Airdrop — no investment needed!", description: "Complete these simple steps to earn your Gradient Airdrop:", steps: ["Set up a node (right from your browser)", "Earn XP for uptime & inviting friends", "Claim rewards in Season 1"], actionUrl: "https://app.gradient.network/signup?code=744DX2", actionText: "Start Earning" }},
+{
+  "icon": "💻",
+  "name": "Hivello",
+  "description": "Get paid in crypto for sharing your internet — earn passively with just your device.",
+  "reward": "+$100-$500 (Est. avg.)",
+  "btnText": "Start Mining",
+  "hot": true,
+  "taskId": "hivello",
+  "instructions": {
+    "title": "📦 Hivello Mini-Guide",
+    "description": "⚡️ Free, easy, and passive — earn crypto by running a simple app on your PC.",
+    "steps": [
+      "Sign Up & Download. Create an account at Hivello.com and install the app for Windows, macOS, or Linux.",
+      "Run the App 24/7. Let it use your unused internet and hardware — start earning points and USDT right away.",
+      "Invite & Earn More. Get 500 points for every friend you refer from your dashboard."
+    ],
+    "actionUrl": "https://dashboard.hivello.com/referrals?code=E9C2195981",
+    "actionText": "⏳ Get in early — earn while airdrop slots are still open!"
+  }
+},
+  
+{ icon: "⬛", name: "Gradient", description: "Get paid in crypto for using your browser.", 
+ reward: "+$50-$250 (Est. avg.)", btnText: "Start", hot: true, taskId: "gradient", 
+ instructions: { title: "🪙 Gradient Airdrop — no investment needed!", 
+ description: "Complete these simple steps to earn your Gradient Airdrop:", 
+ steps: ["Set up a node (right from your browser)", "Earn XP for uptime & inviting friends", "Claim rewards in Season 1"], 
+ actionUrl: "https://app.gradient.network/signup?code=744DX2", actionText: "Start Earning" }},
 
 {
   icon: "🧠",
@@ -39,6 +64,27 @@ const browserNodesProjectsData = [
     ],
     actionUrl: "https://app.chakra.dev/?ref=RAVYPC",
     actionText: "Farm points now — the earlier you join, the more you may earn!"
+  }
+},
+
+{
+  "icon": "🌐",
+  "name": "Meganet",
+  "description": "Get paid in crypto just for staying online and sharing your unused internet — it's simple and rewarding.",
+  "reward": "+$50-$500 (Est. avg.)",
+  "btnText": "Start",
+  "hot": true,
+  "taskId": "meganet",
+  "instructions": {
+    "title": "📦 Meganet Testnet Mini-Guide",
+    "description": "💻 Earn Crypto by Sharing Your Internet — No Tech Skills Needed, Just Stay Connected!",
+    "steps": [
+      "Get Your Passport. Mint a free or paid Meganet Passport to join the testnet.",
+      "Connect & Stay Online. Keep your device connected to the network to earn points every hour.",
+      "Boost with Tasks & Referrals. Complete social quests and invite friends to earn even more."
+    ],
+    "actionUrl": "https://meganet.app/login?refcode=XQ54JJ",
+    "actionText": "Join now — free, simple, and you’re still early!"
   }
 },
   
@@ -102,6 +148,408 @@ actionUrl: "https://chromewebstore.google.com/detail/stork-verify/knnliglhgkmlbl
 projectTrackers.recommended.data = recommendedProjectsData;
 
 const freeToEarnProjectsData = [
+
+{
+  "icon": "🚀",
+  "name": "Polyester",
+  "description": "Get paid in crypto for trying the next-gen trading platform — no KYC, no fees, no risk.",
+  "reward": "+$100-$500 (Est. avg.)",
+  "btnText": "Join Waitlist",
+  "hot": true,
+  "taskId": "polyester",
+  "instructions": {
+    "title": "📦 Polyester Mini-Guide",
+    "description": "🪙 Get paid in crypto for using a secure browser-based exchange. Free, simple, fast.",
+    "steps": [
+      "Sign Up. Go to the waitlist page and join with your email — no wallet needed yet.",
+      "Follow & Join. Follow Polyester, Fabric, and Zipper on Twitter. Then join their Discord to boost your spot.",
+      "Share & Earn. Share your unique referral link — every new signup pushes you up the list!"
+    ],
+    "actionUrl": "https://polyester.com/?ref=Z2EAEZG8",
+    "actionText": "⏳ Join early — get rewarded in the first wave of token drops!"
+  }
+},
+
+{
+  icon: "🧠",
+  name: "X365.ai",
+  description: "Earn crypto every 3 hours by simply verifying your email and staying active — no mining gear needed.",
+  reward: "+$100–$800 (Est. future value)",
+  btnText: "Start Mining",
+  hot: true,
+  taskId: "x365ai",
+  instructions: {
+    title: "📦 X365.ai Mini-Guide",
+    description: "⚡️ Get Free Crypto Every 3 Hours with AI-Powered Quantum Mining",
+    steps: [
+      "Sign Up & Verify. Go to the X365.ai site, enter your email, and confirm it through the link in your inbox.",
+      "Enter Referral Code. Use code '384193878' during signup to boost your rewards.",
+      "Start Quantum Mining. Claim your 50 free tokens every 3 hours — stay active to keep earning!"
+    ],
+    actionUrl: "https://x365.ai/airdrop/384193878",
+    actionText: "Join now — earn free crypto just by showing up!"
+  }
+},
+
+{
+  "icon": "🧠",
+  "name": "ByteNova (ClustroAI)",
+  "description": "Earn free crypto for checking in daily and completing simple tasks — no tech skills needed.",
+  "reward": "+$50-$400 (Est. avg.)",
+  "btnText": "Start",
+  "hot": true,
+  "taskId": "bytenova",
+  "instructions": {
+    "title": "📦 ByteNova Airdrop Mini-Guide",
+    "description": "💸 Get Paid in Crypto for Just a Few Clicks a Day — It’s Free and You're Early!",
+    "steps": [
+      "Sign Up & Connect. Visit ByteNova, connect your wallet (BSC or EVM) and X account.",
+      "Do Simple Tasks. Follow, like, and share on social media to earn points.",
+      "Check In Daily. Return each day to check in and boost your airdrop chances."
+    ],
+    "actionUrl": "https://bytenova.ai/rewards?invite_code=fHjzFmrXC",
+    "actionText": "Join now — free, fast, and early rewards await!"
+  }
+},
+  
+{
+  "icon": "🆔",
+  "name": "Gen-O",
+  "description": "Secure your unique Web3 identity and join an early community that might reward you with future airdrops.",
+  "reward": "+$50-$200 (Speculative Airdrop)",
+  "btnText": "Claim ID",
+  "hot": true,
+  "taskId": "geno",
+  "instructions": {
+    "title": "📦 Gen-O Mini-Guide",
+    "description": "🧬 Claim Your Free Web3 Identity & Earn Early Airdrop Rewards",
+    "steps": [
+      "Register Your Gen-O ID. Visit the site and create your unique [Gen0XXXXXXX] identity.",
+      "Connect Your Wallet. Enter your Solana address and basic info to secure your spot.",
+      "Invite & Share. Add your ID to your X bio and use your referral link to grow your Gen-O circle."
+    ],
+    "actionUrl": "https://gen-o.xyz/ids/TUrM4RHHAN?ref=TUrM4RHHAN ",
+    "actionText": "🚀 Join Early — Claim Your Identity Before It’s Gone!"
+  }
+},
+
+{
+  "icon": "🧠",
+  "name": "ChainGPT",
+  "description": "Earn free crypto by creating AI NFTs and sharing them with the world — no experience needed.",
+  "reward": "+$20–$500 (Est. avg.)",
+  "btnText": "Start",
+  "hot": true,
+  "taskId": "chaingpt",
+  "instructions": {
+    "title": "📦 ChainGPT $50K Airdrop Mini-Guide",
+    "description": "🎨 Get Paid in Crypto for Creating and Sharing AI NFTs — It's Free and Fun!",
+    "steps": [
+      "Join the Campaign. Connect your wallet on the official ChainGPT page.",
+      "Create & Mint AI NFTs. Generate cool NFT art with AI and mint your favorites to earn points.",
+      "Share & Refer. Post your NFTs on X and invite friends — earn big bonuses for every referral."
+    ],
+    "actionUrl": "https://nft.chaingpt.org/?referralcode=ed9df5d29f",
+    "actionText": "Get started now — earn free GTAI tokens before April 16!"
+  }
+},
+  
+{
+  "icon": "🤖",
+  "name": "AGNT Hub",
+  "description": "Turn your Twitter scroll into crypto rewards with AI-powered Web3 tools. Free, fun, and future-focused.",
+  "reward": "+$150-$500 (Est. avg. at TGE)",
+  "btnText": "Join Now",
+  "hot": false,
+  "taskId": "agnthub",
+  "instructions": {
+    "title": "📦 AGNT Hub Mini-Guide",
+    "description": "🚀 Earn Free Crypto by Exploring Web3 with Your Twitter Feed",
+    "steps": [
+      "Register & Connect. Visit AGNT.Hub, start the game, connect your X (Twitter), and use invite code: Z7US for 2x XP.",
+      "Complete Quests. Upload a meme, play the prediction game, and finish social/Galxe tasks to earn XP.",
+      "Mint Free Pass. Get your AGNT Connect Pass (limited-time free), join Discord, and start checking in daily for points."
+    ],
+    "actionUrl": "https://join.agnthub.ai/?ref=Z7US",
+    "actionText": "🎯 Start now — earn XP daily and secure your airdrop spot!"
+  }
+},
+
+{ 
+  "icon": "🚀", 
+  "name": "Coresky", 
+  "description": "Support fun crypto projects, join the hype, and earn potential rewards for simple daily actions.",
+  "reward": "🔮 Future Airdrop (Est.)",
+  "btnText": "Join Now", 
+  "hot": false, 
+  "taskId": "coresky", 
+  "instructions": { 
+    "title": "📦 Coresky Mini-Guide", 
+    "description": "💰 Get Paid in Crypto for Using Your Browser — It's Free, Fun, and You’re Still Early", 
+    "steps": [
+      "Sign Up & Connect Wallet. Visit Coresky, create an account, and link your crypto wallet.",
+      "Earn Daily Points. Check in daily, follow on social media, and invite friends — it's super easy!",
+      "Stay Active & Vote. Use your points to vote on meme projects and watch your rewards stack up."
+    ], 
+    "actionUrl": "https://share.coresky.com/pc2tcs/tasks-rewards", 
+    "actionText": "🔥 Earn Free Crypto — Don’t Miss Season One!" 
+  }
+},
+
+{ 
+  icon: "🔥", 
+  name: "Linera", 
+  description: "Earn crypto by engaging with Linera — a fast, next-gen blockchain. No tech skills needed.",
+  reward: "+$100-$500 (Est. avg.)", 
+  btnText: "Start", 
+  hot: true, 
+  taskId: "linera", 
+  instructions: { 
+    title: "📦 Linera Mini-Guide", 
+    description: "🚀 Get Paid in Crypto for Using Social Media — Fast, Easy, and Free",
+    steps: [
+      "Create Your Account. Sign up on the Linera Drops page with your email and set up your profile.",
+      "Complete Simple Tasks. Join Discord, follow Linera on X, like & reply to posts — all tracked automatically.",
+      "Enter the Drop. Confirm your participation and keep engaging to earn more points."
+    ],
+    actionUrl: "https://drops.linera.io/invite?code=XCECUKBLCH&ext_id=5oqo4TUSG", 
+    actionText: "Earn free crypto for your social activity — don’t miss Season 1!" 
+  } 
+},
+
+{ 
+  icon: "🖥", 
+  name: "GPU.net", 
+  description: "Get paid in crypto for tapping into the power of your browser — no tech skills needed.",
+  reward: "+$100-$500 (Est. avg.)",
+  btnText: "Start", 
+  hot: true, 
+  taskId: "gpu-net",
+  instructions: { 
+    title: "📦 GPU.net Mini-Guide", 
+    description: "🧠 Earn Free Crypto by Completing Simple Tasks on GPU.net",
+    steps: [
+      "🔗 Join the Campaign. Go to GPU.net’s Road to TGE page, connect your MetaMask wallet, and use referral code 877VSB ",
+      "✅ Complete Easy Quests. Follow their social media, join Discord/Telegram, and interact with the platform to earn GXP points.",
+      "👥 Invite Friends. Refer others and earn even more points automatically from their activity."
+    ],
+    actionUrl: "https://token.gpu.net?ref=877VSB", 
+    actionText: "Start now — free, easy, and still early!" 
+  }
+},
+
+{
+  "icon": "🛡",
+  "name": "Billions Network",
+  "description": "Earn crypto by verifying your identity — no biometrics, just privacy-first Web3 tools.",
+  "reward": "+$15–$100 (Est. avg.)",
+  "btnText": "Start",
+  "hot": true,
+  "taskId": "billions",
+  "instructions": {
+    "title": "📦 Billions Network Airdrop Mini-Guide",
+    "description": "🔐 Get Paid in Crypto for Verifying Your Identity — Safe, Fast & Private",
+    "steps": [
+      "Sign Up & Verify Email. Visit the Billions site, sign up with your email, and confirm it.",
+      "Connect Wallet. Link your Ethereum wallet securely to start earning POWER points.",
+      "Follow & Refer. Follow them on X and invite friends to boost your rewards easily."
+    ],
+    "actionUrl": "https://signup.billions.network?rc=5TGPOVKD",
+    "actionText": "Join now — earn POWER points early and be ready for the token drop!"
+  }
+},
+
+{
+  icon: "🎮",
+  name: "Play Solana",
+  description: "Earn free crypto by completing simple tasks — no gaming skills or crypto needed.",
+  reward: "+$100-$500 (Est. avg.)",
+  btnText: "Start Farming XP",
+  hot: true,
+  taskId: "playsolana",
+  instructions: {
+    title: "📦 Play Solana Airdrop Mini-Guide",
+    description: "🎯 Get Paid in Crypto for Supporting the Future of Web3 Gaming",
+    steps: [
+      "🚀 Sign Up & Connect. Go to PlayDEX, sign in with Matricia, and connect your social accounts (X, Discord, Telegram).",
+      "✅ Complete Free Tasks. Follow Play Solana on socials, like & repost their content to start earning XP.",
+      "🔥 Track & Grow XP. Stake SOL, invite friends, or pre-order the PSG1 device to boost your XP and airdrop share."
+    ],
+    actionUrl: "http://playsolana.com/products?code=OSLMSLMOO",
+    actionText: "Start now — it's free, simple, and you're still early!"
+  }
+},
+
+{
+  "icon": "🧸",
+  "name": "Plushie AI",
+  "description": "Get paid in crypto for using your browser — chat, play, and earn in a few clicks.",
+  "reward": "+$20-$100 (Est. avg.)",
+  "btnText": "Join Airdrop",
+  "hot": true,
+  "taskId": "plushie-ai",
+  "instructions": {
+    "title": "📦 Plushie AI Mini-Guide",
+    "description": "🎉 Free, fun, and fast — earn crypto just by being online and active.",
+    "steps": [
+      "Connect Your Wallet. Head to the Plushie Airdrop page and link your MetaMask or other wallet.",
+      "Join & Engage. Follow Plushie on X, Telegram, and Discord — be active and spin the Lucky Wheel daily.",
+      "Enter Bonus Code. In the Telegram bot, enter code 566AF2C2 to get a reward boost and start faster.",
+      "Earn More with Referrals. Invite friends and complete quizzes to boost your $PLSH rewards."
+    ],
+    "actionUrl": "https://airdrop.plushie.ai/",
+    "actionText": "🚀 Use the code early — boost your rewards while slots are open!"
+  }
+},
+
+{
+  "icon": "🤖",
+  "name": "Zo",
+  "description": "Get rewarded for exploring AI — earn XP now, get ahead for future crypto drops.",
+  "reward": "+XP now, potential token later",
+  "btnText": "Join Zo",
+  "hot": true,
+  "taskId": "zo-platform",
+  "instructions": {
+    "title": "📦 Zo Mini-Guide",
+    "description": "🚀 Free, simple, and future-ready — earn XP now and get ahead of the curve.",
+    "steps": [
+      "Sign Up on Zo. Go to the platform and register using your email or wallet.",
+      "Enter Code - usua745 - Use this during sign-up to instantly get 100 XP.",
+      "Explore & Refer. Use bots, join group chats, and invite friends for extra XP."
+    ],
+    "actionUrl": "https://zo.me/usual413",
+    "actionText": "⏳ Earn XP early — be ready for the first token drop!"
+  }
+},
+  
+{ 
+  icon: "🎯", 
+  name: "Opinion Labs", 
+  description: "Predict the future, earn crypto, and become an early mover — all without spending a cent.", 
+  reward: "+$100-$500 (Est. avg.)", 
+  btnText: "Start Earning", 
+  hot: true, 
+  taskId: "olab", 
+  instructions: { 
+    title: "📦 Opinion Labs Mini-Guide", 
+    description: "🧠 Get Paid in Crypto for Using Your Browser", 
+    steps: [
+      "🎁 Enter Code 'SmeNyGpF'. When signing up, use this referral code to unlock bonus points.",
+      "🔗 Connect Your Wallet. Go to the O.LAB app and link your Web3 wallet (like MetaMask).",
+      "📊 Make a Daily Trade. Join prediction markets and earn 50 points daily — it’s free!",
+      "✅ Complete Simple Tasks. Check in, follow on socials, and invite friends to earn more points.",
+    ], 
+    actionUrl: "https://app.olab.xyz/home", 
+    actionText: "Start now — it’s free, simple, and you're still early!" 
+  } 
+},
+  
+{
+  "icon": "🚀",
+  "name": "LiftOff Monster (LOX)",
+  "description": "Join a fair airdrop with real rewards — earn LOX tokens by completing simple tasks and inviting friends.",
+  "reward": "+Free LOX Tokens (223M Pool)",
+  "btnText": "Join Airdrop",
+  "hot": false,
+  "taskId": "lox",
+  "instructions": {
+    "title": "📦 Cosmic Monster Airdrop Mini-Guide",
+    "description": "💸 Earn Free LOX Tokens for Simple Actions & Referrals",
+    "steps": [
+      "Visit LiftOff.Monster and connect your Phantom wallet.",
+      "Complete whitelist tasks (follow, post, join Discord, etc.).",
+      "Share your referral link to earn more tickets — more tickets, bigger rewards!"
+    ],
+    "actionUrl": "https://airdrop.liftoff.monster/tasks?ref=93NLSPNR",
+    "actionText": "🎯 Complete tasks now — the earlier you join, the more LOX you can earn!"
+  }
+},
+
+{
+  "icon": "🔗",
+  "name": "Switchboard",
+  "description": "Join a future-ready oracle network and earn crypto for simple community tasks — no coding needed!",
+  "reward": "🎁 Potential Airdrop (Est.)",
+  "btnText": "Join Tasks", 
+  "hot": true, 
+  "taskId": "switchboard", 
+  "instructions": {
+    "title": "📦 Switchboard Mini-Guide",
+    "description": "💸 Get Paid in Crypto for Simple Online Tasks — No Experience Needed, You’re Still Early!", 
+    "steps": [
+      "Join & Connect. Sign up on Zealy, link your wallet, and connect Discord & Twitter.",
+      "Complete Easy Tasks. Follow on socials, verify invites, and join Discord to earn XP.",
+      "Level Up & Earn. Prioritize high-XP tasks like fragSOL staking and content creation for bigger rewards!"
+    ],
+    "actionUrl": "https://zealy.io/cw/switchboard/invite/YXcU-xX3aUqIu2yr__JLn", 
+    "actionText": "🎯 Earn Free Crypto — Join Early & Start Stacking XP!"
+  }
+},
+
+{
+  icon: "🎮",
+  name: "Moonveil",
+  description: "Play, earn, and get in early on a top-tier Web3 gaming airdrop — all for free.",
+  reward: "+$100-$400 (Est. avg.)",
+  btnText: "Join Airdrop",
+  hot: true,
+  taskId: "moonveil",
+  instructions: {
+    title: "📦 Moonveil Airdrop Mini-Guide",
+    description: "🚀 Get Paid in Crypto for Playing Games — No Experience Needed",
+    steps: [
+      "🌟 Claim Your Free Badge. Go to Moonveil, connect your wallet, and claim the 'Novice Notch' badge to start.",
+      "🧩 Complete Tasks for Points. Earn Moon Beams by finishing simple tasks in the Loyalty Program.",
+      "🎯 Stay Active & Earn More. Check in daily, complete pre-season events, and track your progress."
+    ],
+    actionUrl: "https://moonveil.gg?invite_code=U93MURB3",
+    actionText: "Earn free crypto — Season 1 is live, don't miss it!"
+  }
+},
+  
+{ 
+  icon: "🧠", 
+  name: "Recall Network",
+  description: "Earn crypto by helping shape the future of decentralized AI. No tech skills needed — just show up, explore, and get rewarded.",
+  reward: "+$50-$500 (Est. future airdrop)",
+  btnText: "Join Now", 
+  hot: true, 
+  taskId: "recall",
+  instructions: { 
+    title: "📦 Recall Network Mini-Guide", 
+    description: "🚀 Get Paid in Crypto for Exploring the AI-Powered Web3",
+    steps: [
+      "Join the Zealy campaign — [Click here to start](https://zealy.io/cw/recallnetwork/invite/UJkZ81u-8a0E74n0zu-AP). Connect your wallet and complete simple tasks to earn XP.",
+      "Visit the Boost Absinthe page — Connect your wallet using code 8c734c7d and complete extra tasks to boost your score.",
+      "Follow & share on social — Stay active on social media, invite friends, and claim community bonuses like the Discord OG role if eligible."
+    ],
+    actionUrl: "https://boost.absinthe.network/recall/account",
+    actionText: "⏳ Be early — earn Fragments now, get rewarded later!" 
+  }
+},
+  
+{
+  "icon": "📊",
+  "name": "Kiyotaka",
+  "description": "Explore cutting-edge trading tools — join early and boost your chances for future crypto rewards.",
+  "reward": "+Possible Airdrop (Speculative)",
+  "btnText": "Join Early",
+  "hot": false,
+  "taskId": "kiyotaka",
+  "instructions": {
+    "title": "📦 Kiyotaka Early Access Mini-Guide",
+    "description": "🧠 Join a Smart Trading Community & Get Ready for Future Airdrops",
+    "steps": [
+      "Sign up on kiyotaka.ai and create your account.",
+      "Join the Discord server and stay active — help others, share insights.",
+      "Share your referral link to grow your rank and work toward the Orderbook Wizard role."
+    ],
+    "actionUrl": "https://kiyotaka.ai/ref=6lPD98KILZ",
+    "actionText": "🚀 Act now — early users may be first in line for rewards!"
+  }
+},
+  
   { icon: "📝", name: "Mirra", 
 description: "Help build a smarter, fairer AI by curating content — powered by the Web3 community.", 
 reward: "+$30-$150 (Est. avg.)", 
@@ -122,7 +570,7 @@ steps: ["Sign Up & Get 150 Credits. Go to newtonproject.io, register or connect 
 "Complete Social & Main Quests. Start with “Side Quests” (follows), then move to Explore Quests for more credits.",  
 "Log In Daily for Bonuses. Roll the dice every day for extra credits and check for new tasks."], 
 actionUrl: "https://magicnewton.com/portal?referral=6xs7ffo1kx2nfhfm", actionText: "Start Sharing Now" }},
-
+  
   { icon: "📡", name: "Theoriq", 
 description: "Join a new wave where AI meets blockchain — no tech skills needed, just your curiosity to start.", 
 reward: "+$25-$130 (Est. avg.)", btnText: "Start", hot: false, taskId: "taskcube", 
@@ -131,6 +579,69 @@ steps: ["Connect Wallet & Socials. Go to theoriq.xyz, link your wallet + socials
 "Chat with AI Daily. Use Theoriq’s Infinity Studio — get 50 XP/day for interacting with AI Agents and extra for giving feedback.", 
 "Invite & Earn More. Share your referral link — earn 50 XP per friend who joins."], actionUrl: "https://quests.theoriq.ai?r=cWPZh2xM", actionText: "Start Now" }},
 
+{
+  "icon": "🤖",
+  "name": "Ispolink",
+  "description": "Earn free crypto by helping Web3 projects find talent using a smart AI-powered platform.",
+  "reward": "+$25-$200 (Est. avg.)",
+  "btnText": "Start",
+  "hot": true,
+  "taskId": "ispolink",
+  "instructions": {
+    "title": "📦 Ispolink Airdrop Mini-Guide",
+    "description": "💼 Get Paid in Crypto for Using a Web3 Job Matching Platform",
+    "steps": [
+      "Sign Up & Connect Wallet. Join the waitlist on the Ispolink site and connect your crypto wallet.",
+      "Complete Simple Tasks. Earn points by setting up your profile, doing daily actions, quizzes, and social tasks.",
+      "Invite & Earn More. Share your referral link — get bonus points every time your friends join and complete tasks."
+    ],
+    "actionUrl": "https://dashboard.ispolink.com/?referral=FBZ80D",
+    "actionText": "Earn points early — be ready for the GIANT AI token drop!"
+  }
+},
+
+  {
+  "icon": "🎰",
+  "name": "Goated",
+  "description": "Play games, refer friends, and earn crypto rewards on this next-gen Web3 betting platform.",
+  "reward": "+$50-$500 (Est. avg.)",
+  "btnText": "Start",
+  "hot": true,
+  "taskId": "goated",
+  "instructions": {
+    "title": "📦 Goated Airdrop Mini-Guide",
+    "description": "🎯 Get Paid in Crypto While You Play and Refer on Goated",
+    "steps": [
+      "Create an Account. Sign up on Goated and verify your email.",
+      "Play to Earn Points. Start betting on games or sports — you earn points win or lose.",
+      "Refer and Multiply. Share your referral link to earn 5% of your friends' points too."
+    ],
+    "actionUrl": "https://www.goated.com/r/34BFJF",
+    "actionText": "Earn while you play — join early and secure your share of $GOATED!"
+  }
+},
+
+  {
+  "icon": "🧱",
+  "name": "Aergo",
+  "description": "Complete simple quests and earn crypto while exploring a powerful Web3 infrastructure platform.",
+  "reward": "+$20-$80 (Est. avg.)",
+  "btnText": "Start",
+  "hot": true,
+  "taskId": "aergo",
+  "instructions": {
+    "title": "📦 Aergo Zealy Campaign Mini-Guide",
+    "description": "🎯 Get Paid in Crypto for Completing Fun Daily Tasks with Aergo",
+    "steps": [
+      "Sign Up on Zealy. Create a free Zealy account and join the Aergo campaign.",
+      "Complete Daily Quests. Earn XP by following Aergo on socials, sharing content, and inviting friends.",
+      "Track Your Progress. Climb the leaderboard before the April 5 deadline to win real AERGO tokens."
+    ],
+    "actionUrl": "https://zealy.io/cw/aergo/invite/EgaW6Njs0fkJIKMcJXN1c",
+    "actionText": "Complete tasks daily — earn XP and win AERGO before the deadline!"
+  }
+},
+  
   { icon: "🔮", name: "Bitsolara", 
 description: "Experience secure and private DeFi on Solana — fast, free, and built for your freedom.", 
 reward: "+$40-$90 (Est. avg.)", btnText: "Start", hot: true, taskId: "Newton", 
@@ -156,6 +667,27 @@ actionUrl: "https://fleek.xyz/?ref=semenl2", actionText: "Start Now" }}
 projectTrackers.free.data = freeToEarnProjectsData;
 
 const playToEarnProjectsData = [
+
+  {
+  "icon": "👾",
+  "name": "Monsters.fun",
+  "description": "Train, battle, and earn with AI-powered monsters on a futuristic Web3 gaming platform.",
+  "reward": "+Early Access & Airdrop Potential",
+  "btnText": "Join Now",
+  "hot": true,
+  "taskId": "monstersfun",
+  "instructions": {
+    "title": "📦 Monsters.fun Mini-Guide",
+    "description": "🎮 Create Your AI Monster & Earn Rewards for Early Participation",
+    "steps": [
+      "Log in on Monsters.fun using your X (Twitter) account and follow @monstersdotfun.",
+      "Enter referral code 9FMT1LO8 to secure early access and track your rank.",
+      "Invite friends & join Discord for whitelist perks and exclusive roles."
+    ],
+    "actionUrl": "https://www.monsters.fun/ref/9FMT1LO8",
+    "actionText": "⏳ Be Early — Capsule Holders Get First Access to Tokens!"
+  }
+},
   
 {
   icon: "🐧",
@@ -184,6 +716,48 @@ const playToEarnProjectsData = [
 projectTrackers.play.data = playToEarnProjectsData;
 
 const nftProjectsData = [
+
+{
+  "icon": "⚔️",
+  "name": "Infinity Warlords",
+  "description": "Play idle missions, earn crypto rewards, and climb the leaderboard in this Solana-based game world.",
+  "reward": "+XP = Higher Airdrop Potential",
+  "btnText": "Play Now",
+  "hot": true,
+  "taskId": "infinitywarlords",
+  "instructions": {
+    "title": "📦 Infinity Warlords Mini-Guide",
+    "description": "🎮 Level Up & Earn Airdrop Rewards by Playing and Engaging",
+    "steps": [
+      "Log in with Discord. Visit the site and sign in to start your journey.",
+      "Play Missions & Earn XP. Complete expeditions, social tasks, and chat daily in Discord.",
+      "Create Your Warlord. Customize your NFT hero and climb the leaderboard."
+    ],
+    "actionUrl": "https://infinitywarlords.com?ref_id=521037791120064512",
+    "actionText": "⚡️ Act Fast — Earn XP Early to Boost Airdrop Chances!"
+  }
+},
+  
+  {
+  "icon": "🪄",
+  "name": "Marble & Magic-Fi",
+  "description": "Get paid in crypto and NFTs for completing simple social tasks in a next-gen DeFi game.",
+  "reward": "+$100-$900 (Est. avg. + NFTs)",
+  "btnText": "Join Airdrop",
+  "hot": true,
+  "taskId": "marble",
+  "instructions": {
+    "title": "📦 Marble & Magic-Fi Mini-Guide",
+    "description": "🎯 Earn free tokens and premium NFTs — no fees, no experience needed.",
+    "steps": [
+      "Connect Your Wallet. Visit the Marble site and connect your crypto wallet — no signup needed.",
+      "Complete Social Tasks. Follow, like, and join Marble’s Twitter, Discord, Telegram, and YouTube to earn points.",
+      "Withdraw Tokens & NFTs. Redeem your points for $MARBLE tokens. First 10,000 get valuable NFTs too!"
+    ],
+    "actionUrl": "https://game.marblefi.io/",
+    "actionText": "🚨 Only 50,000 spots — join now before it’s gone!"
+  }
+},
  
 {
   icon: "🪞",
@@ -206,6 +780,27 @@ const nftProjectsData = [
   }
 },
 
+{
+  "icon": "💨",
+  "name": "TheVapeLabs",
+  "description": "Track your habits, support health research, and earn crypto while you vape.",
+  "reward": "+$MIST Airdrop (Live)",
+  "btnText": "Start Earning",
+  "hot": true,
+  "taskId": "vapetolabs",
+  "instructions": {
+    "title": "📦 TheVapeLabs Mini-Guide",
+    "description": "💰 Vape, Check In, Earn — It’s That Simple with TheVapeLabs",
+    "steps": [
+      "Open TheVapeLabs Telegram Mini-App and log in to start.",
+      "Check in daily to earn 100 $MIST — just a few clicks.",
+      "Complete social tasks and invite friends for extra rewards!"
+    ],
+    "actionUrl": "https://app.thevapelabs.io/login?ref=9875af68-9efb-4a39-9db0-e0509bed2342",
+    "actionText": "⏳ Don’t miss the early airdrop — earn while you vape!"
+  }
+},
+  
   { icon: "🎭", name: "Comiing soon..", description: "Free avatar NFTs with staking rewards.", reward: "+$0 (Est. avg.)", btnText: "Mint", hot: false, taskId: "avatarworld", instructions: { title: "🎭 AvatarWorld - Your Digital Identity", description: "Get free avatar NFTs with real utility:", steps: ["Claim your free unique avatar NFT", "Customize it with free traits", "Stake your avatar for passive rewards", "Use across multiple partner platforms"], actionUrl: "#", actionText: "Claim Avatar" }},
   { icon: "🃏", name: "Comiing soon..", description: "Collectible card game with tradable NFT cards.", reward: "+$0 (Est. avg.)", btnText: "Collect", hot: true, taskId: "cardchain", instructions: { title: "🃏 CardChain - Collect, Play, Earn", description: "Free starter pack with valuable NFT cards:", steps: ["Claim your free starter deck", "Learn to play through tutorials", "Compete in daily matches", "Trade or sell your valuable cards"], actionUrl: "#", actionText: "Get Cards" }}
 ];
