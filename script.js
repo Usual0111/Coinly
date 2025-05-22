@@ -126,24 +126,36 @@ actionText: "Start now — early users have the highest earning potential!" }},
 projectTrackers.browser.data = browserNodesProjectsData;
 
 const recommendedProjectsData = [
-{ icon: "🎲", name: "Newton", 
-description: "Seamless cross-chain access powered by Polygon’s AggLayer — no more switching networks.", 
-reward: "+$40-$180 (Est. avg.)", btnText: "Start", hot: true, taskId: "Newton", 
-instructions: { title: "📦 Newton Airdrop Mini-Guide", 
-description: "🎯 Earn Free Credits Daily by Completing Simple Quests on Newton", 
-steps: ["Sign Up & Get 150 Credits. Go to newtonproject.io, register or connect your wallet — get instant signup rewards.", 
-"Complete Social & Main Quests. Start with “Side Quests” (follows), then move to Explore Quests for more credits.",  
-"Log In Daily for Bonuses. Roll the dice every day for extra credits and check for new tasks."], 
-actionUrl: "https://magicnewton.com/portal?referral=6xs7ffo1kx2nfhfm", actionText: "Start Earning Now" }},
-
-  { icon: "🛡️", name: "Solix", description: "Maximize your browser's potential for crypto.", reward: "+$50-$250 (Est. avg.)", btnText: "Start", hot: true, taskId: "solix", instructions: { title: "💰 Earn with Solix — just for being online", description: "No investment. Just turn it on — and start getting points.", steps: ["Create a Solix account", "Add the Solix extension", "Do simple tasks"], actionUrl: "https://dashboard.solixdepin.net/sign-up?ref=LzDVGhu7", actionText: "Start Earning" }},
   
- { icon: "🌀", name: "Stork", description: "Browser extension for passive income", 
-reward: "+$55-$210 (Est. avg.)", btnText: "Start", hot: false, taskId: "stork", 
-instructions: { title: "🎁 Earn Free Rewards with Stork — It's Easy!", 
-description: "No money needed • Simple setup • Rewards are live", 
-steps: ["Install the Stork Extension. Download it from the Chrome Web Store and open it.", "2. Sign Up and Use Code. Create an account and enter code `ITYO9FF9K4`", "3. Keep It Running. Let the extension stay active to earn rewards automatically."], 
-actionUrl: "https://chromewebstore.google.com/detail/stork-verify/knnliglhgkmlblppdejchidfihjnockl", actionText: "Start Mining" }}
+{
+  "icon": "💻",
+  "name": "Hivello",
+  "description": "Get paid in crypto for sharing your internet — earn passively with just your device.",
+  "reward": "+$100-$500 (Est. avg.)",
+  "btnText": "Start Mining",
+  "hot": true,
+  "taskId": "hivello",
+  "instructions": {
+    "title": "📦 Hivello Mini-Guide",
+    "description": "⚡️ Free, easy, and passive — earn crypto by running a simple app on your PC.",
+    "steps": [
+      "Sign Up & Download. Create an account at Hivello.com and install the app for Windows, macOS, or Linux.",
+      "Run the App 24/7. Let it use your unused internet and hardware — start earning points and USDT right away.",
+      "Invite & Earn More. Get 500 points for every friend you refer from your dashboard."
+    ],
+    "actionUrl": "https://dashboard.hivello.com/referrals?code=E9C2195981",
+    "actionText": "⏳ Get in early — earn while airdrop slots are still open!"
+  }
+},
+
+  { icon: "⬛", name: "Gradient", description: "Get paid in crypto for using your browser.", 
+ reward: "+$50-$250 (Est. avg.)", btnText: "Start", hot: true, taskId: "gradient", 
+ instructions: { title: "🪙 Gradient Airdrop — no investment needed!", 
+ description: "Complete these simple steps to earn your Gradient Airdrop:", 
+ steps: ["Set up a node (right from your browser)", "Earn XP for uptime & inviting friends", "Claim rewards in Season 1"], 
+ actionUrl: "https://app.gradient.network/signup?code=744DX2", actionText: "Start Earning" }},
+  
+ { icon: "🔷", name: "BlockMesh", description: "Earn Crypto by Sharing Internet — Help Build Ethical AI.", reward: "+$50-$250 (Est. avg.)", btnText: "Start", hot: true, taskId: "blockmesh", instructions: { title: "🎁 Free Crypto Just by Being Online", description: "No money needed • Simple setup • Rewards are live", steps: ["Sign up on Blockmesh and confirm your email.", "Add the Chrome extension. Install it, log in, and keep it running.", "Connect your wallet + Twitter. Get points for easy tasks like captchas and follows."], actionUrl: "https://app.blockmesh.xyz/register?invite_code=5b614ab7-bad2-47f9-ae66-282004203f4a", actionText: "Start Earning" }}
 ];
 projectTrackers.recommended.data = recommendedProjectsData;
 
