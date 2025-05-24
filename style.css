@@ -722,9 +722,9 @@ h2 {
     flex-wrap: wrap;
 }
 #onboarding .screenshot-gallery img {
-    width: clamp(80px, 35%, 120px); /* УМЕНЬШЕНА ширина */
-    height: clamp(60px, 25vw, 90px); /* ДОБАВЛЕНА фиксированная высота */
-    max-height: 120px; /* ДОБАВЛЕНО ограничение высоты */
+   width: clamp(70px, 40%, 100px); /* УМЕНЬШЕНА ширина для мобильных */
+        height: clamp(50px, 20vw, 75px); /* ДОБАВЛЕНА фиксированная высота */
+        max-height: 100px; /* ДОБАВЛЕНО ограничение высоты */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1098,4 +1098,69 @@ footer a:hover {
         background-color: rgba(197, 255, 0, 0.05);
         padding-left: 45px;
      }
+}
+
+/* ДОБАВЛЕНИЕ 4: Мини-эмодзи для hero секции на мобильных */
+@media (max-width: 768px) {
+    /* Создаем контейнер для мини-эмодзи в hero секции */
+    .hero-section {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Добавляем мини-эмодзи через псевдоэлементы */
+    .hero-section::before {
+        content: '💎';
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        font-size: 2em;
+        opacity: 0.3;
+        animation: gentleFloat 8s infinite ease-in-out;
+        pointer-events: none;
+        z-index: 1;
+    }
+    
+    .hero-section::after {
+        content: '💰';
+        position: absolute;
+        top: 60%;
+        right: 15%;
+        font-size: 2.2em;
+        opacity: 0.25;
+        animation: gentleFloat 10s infinite ease-in-out reverse;
+        pointer-events: none;
+        z-index: 1;
+    }
+    
+    /* Третий эмодзи через дополнительный элемент */
+    .hero-section .hero-emoji-3 {
+        content: '🚀';
+        position: absolute;
+        top: 10%;
+        right: 10%;
+        font-size: 1.8em;
+        opacity: 0.2;
+        animation: gentleFloat 12s infinite ease-in-out;
+        pointer-events: none;
+        z-index: 1;
+    }
+    
+    /* Обеспечиваем что текст поверх эмодзи */
+    .hero-section > * {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+/* Простая анимация для мобильных эмодзи */
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+        opacity: 0.4;
+    }
 }
