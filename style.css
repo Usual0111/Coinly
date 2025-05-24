@@ -772,8 +772,8 @@ h2 {
 }
 .lightbox img.lightbox-image-display { /* The actual image */
     display: block;
-    max-width: 80vw;
-    max-height: 80vh; /* Was 85vh in modal-content context, now relative to wrapper */
+    max-width: 800px;
+    max-height: 600px; /* Was 85vh in modal-content context, now relative to wrapper */
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
     animation: fadeInLightbox 0.4s ease-in-out;
