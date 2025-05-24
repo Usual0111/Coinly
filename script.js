@@ -1274,4 +1274,3 @@ document.querySelectorAll('.lightbox-trigger').forEach(img => {
     openLightbox(this.src); // Call the correct function to open the first lightbox modal
   });
 });
-
