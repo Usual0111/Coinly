@@ -856,7 +856,7 @@ function closeModal(modalId) {
 
 // Специализированные функции открытия/закрытия
 function openLightbox(src) {
-  const img = document.getElementById("lightbox-img");
+  const img = document.getElementById("lightbox-image");
   if (img) img.src = src;
   openModal("lightbox");
 }
