@@ -63,12 +63,13 @@ body {
 /* --- Decorative Header Background with Emojis --- */
 /* --- Decorative Header Background with Emojis --- */
 /* --- Decorative Header Background with Emojis --- */
+/* --- Decorative Header Background with Emojis --- */
 .decorative-header-bg {
     position: fixed;
     top: 80px; /* Начинается сразу под хедером */
     left: 0;
     width: 100%;
-    height: 600px; /* Сильно увеличенная высота для максимального рассеивания */
+    height: 600px; /* Высота для максимального рассеивания на десктопе */
     z-index: 0;
     pointer-events: none;
     overflow: hidden;
@@ -79,32 +80,34 @@ body {
 .decorative-header-bg .emoji {
     position: absolute;
     opacity: 0;
-    animation: driftAndFade 50s infinite ease-in-out; /* <--- ИЗМЕНЕНИЕ: Ещё дольше для очень медленного и текучего эффекта с большим количеством элементов */
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 8px var(--glow-accent-medium);
+    /* Уменьшена длительность анимации для лучшей производительности на десктопе, но она все еще долгая */
+    animation: driftAndFade 60s infinite ease-in-out; /* <--- ИЗМЕНЕНИЕ: УВЕЛИЧЕНО до 60с для ОПТИМИЗАЦИИ */
+    /* Уменьшены значения тени для лучшей производительности */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2), 0 0 4px var(--glow-accent-medium); /* <--- ИЗМЕНЕНИЕ: УМЕНЬШЕНА тень */
     pointer-events: none;
 }
 
 /* Определяем позиции, размеры и задержки анимации для каждого смайла */
-/* Теперь top и left будут еще более разнообразными для максимального заполнения */
-.decorative-header-bg .emoji-1 { top: -10%; left: 5%; font-size: 5em; animation-delay: 0s; } /* Левая сторона */
-.decorative-header-bg .emoji-2 { top: 70%; left: 90%; font-size: 4.5em; animation-delay: -4s; } /* Правая сторона */
-.decorative-header-bg .emoji-3 { top: -20%; left: 18%; font-size: 5.5em; animation-delay: -8s; } /* Левая сторона */
-.decorative-header-bg .emoji-4 { top: 50%; left: 78%; font-size: 4em; animation-delay: -12s; } /* Правая сторона */
-.decorative-header-bg .emoji-5 { top: -5%; left: 10%; font-size: 4.8em; animation-delay: -16s; } /* Левая сторона */
-.decorative-header-bg .emoji-6 { top: 80%; left: 85%; font-size: 5.2em; animation-delay: -20s; } /* Правая сторона */
-.decorative-header-bg .emoji-7 { top: 30%; left: 2%; font-size: 4.2em; animation-delay: -24s; } /* Левая сторона */
-.decorative-header-bg .emoji-8 { top: -15%; left: 93%; font-size: 4.7em; animation-delay: -28s; } /* Правая сторона */
-.decorative-header-bg .emoji-9 { top: 60%; left: 13%; font-size: 5.3em; animation-delay: -32s; } /* Левая сторона */
-.decorative-header-bg .emoji-10 { top: 10%; left: 82%; font-size: 4.1em; animation-delay: -36s; } /* Правая сторона */
+/* top и left остаются такими же, чтобы заполнить всю область */
+.decorative-header-bg .emoji-1 { top: -10%; left: 5%; font-size: 5em; animation-delay: 0s; }
+.decorative-header-bg .emoji-2 { top: 70%; left: 90%; font-size: 4.5em; animation-delay: -6s; } /* <--- ИЗМЕНЕНИЕ: Скорректированы задержки */
+.decorative-header-bg .emoji-3 { top: -20%; left: 18%; font-size: 5.5em; animation-delay: -12s; }
+.decorative-header-bg .emoji-4 { top: 50%; left: 78%; font-size: 4em; animation-delay: -18s; }
+.decorative-header-bg .emoji-5 { top: -5%; left: 10%; font-size: 4.8em; animation-delay: -24s; }
+.decorative-header-bg .emoji-6 { top: 80%; left: 85%; font-size: 5.2em; animation-delay: -30s; }
+.decorative-header-bg .emoji-7 { top: 30%; left: 2%; font-size: 4.2em; animation-delay: -36s; }
+.decorative-header-bg .emoji-8 { top: -15%; left: 93%; font-size: 4.7em; animation-delay: -42s; }
+.decorative-header-bg .emoji-9 { top: 60%; left: 13%; font-size: 5.3em; animation-delay: -48s; }
+.decorative-header-bg .emoji-10 { top: 10%; left: 82%; font-size: 4.1em; animation-delay: -54s; }
 
-/* <--- НОВЫЕ ЭМОДЗИ ДЛЯ ПРАВОЙ СТОРОНЫ И ДОПОЛНИТЕЛЬНОЙ ЛЕВОЙ --- */
-.decorative-header-bg .emoji-11 { top: 40%; left: 95%; font-size: 5.0em; animation-delay: -40s; } /* Правая сторона, середина */
-.decorative-header-bg .emoji-12 { top: 20%; left: 70%; font-size: 4.3em; animation-delay: -44s; } /* Правая сторона, выше */
-.decorative-header-bg .emoji-13 { top: 0%; left: 98%; font-size: 4.8em; animation-delay: -48s; } /* Правая сторона, самый верх */
-.decorative-header-bg .emoji-14 { top: 90%; left: 75%; font-size: 4.6em; animation-delay: -52s; } /* Правая сторона, самый низ */
+/* НОВЫЕ ЭМОДЗИ ДЛЯ ПРАВОЙ СТОРОНЫ И ДОПОЛНИТЕЛЬНОЙ ЛЕВОЙ */
+.decorative-header-bg .emoji-11 { top: 40%; left: 95%; font-size: 5.0em; animation-delay: -60s; }
+.decorative-header-bg .emoji-12 { top: 20%; left: 70%; font-size: 4.3em; animation-delay: -66s; }
+.decorative-header-bg .emoji-13 { top: 0%; left: 98%; font-size: 4.8em; animation-delay: -72s; }
+.decorative-header-bg .emoji-14 { top: 90%; left: 75%; font-size: 4.6em; animation-delay: -78s; }
 /* Если добавите emoji-15, emoji-16, то продолжайте с left для левой/правой стороны */
-/* .decorative-header-bg .emoji-15 { top: 45%; left: 8%; font-size: 5.1em; animation-delay: -56s; } */
-/* .decorative-header-bg .emoji-16 { top: -5%; left: 72%; font-size: 4.9em; animation-delay: -60s; } */
+/* .decorative-header-bg .emoji-15 { top: 45%; left: 8%; font-size: 5.1em; animation-delay: -84s; } */
+/* .decorative-header-bg .emoji-16 { top: -5%; left: 72%; font-size: 4.9em; animation-delay: -90s; } */
 
 
 @keyframes driftAndFade {
@@ -116,15 +119,16 @@ body {
         opacity: 0; /* Короткая задержка перед появлением */
     }
     10% {
-        opacity: 0.6; /* Быстрое появление */
+        opacity: 0.5; /* <--- ИЗМЕНЕНИЕ: Максимальная прозрачность уменьшена для производительности */
     }
     50% {
         /* Основное смещение для дрейфа: они движутся немного вниз и в стороны */
-        transform: translateY(100px) translateX(70px) rotate(35deg) scale(1.08); /* <--- ИЗМЕНЕНИЕ: Увеличенное смещение и вращение для хаоса */
-        opacity: 0.5;
+        /* Уменьшены значения для translateX и rotate для лучшей производительности */
+        transform: translateY(80px) translateX(40px) rotate(20deg) scale(1.03); /* <--- ИЗМЕНЕНИЕ: Меньше смещения и вращения */
+        opacity: 0.4; /* <--- ИЗМЕНЕНИЕ: Уменьшена прозрачность в середине пути */
     }
     90% {
-        opacity: 0.6; /* Остаются видимыми дольше */
+        opacity: 0.5; /* <--- ИЗМЕНЕНИЕ: Остаются видимыми дольше с уменьшенной прозрачностью */
     }
     99% {
         opacity: 0; /* Быстрое исчезновение перед перезапуском */
@@ -135,37 +139,12 @@ body {
     }
 }
 
-/* Медиа-запросы для мобильных устройств */
+/* --- Медиа-запросы для мобильных устройств --- */
 @media (max-width: 768px) {
     .decorative-header-bg {
-        height: 300px;
+        display: none; /* <--- КЛЮЧЕВОЕ ИЗМЕНЕНИЕ: Полностью скрываем эмодзи на мобильных */
     }
-    .decorative-header-bg .emoji {
-        font-size: 1.5em !important;
-    }
-    .decorative-header-bg .emoji-1,
-    .decorative-header-bg .emoji-3,
-    .decorative-header-bg .emoji-5,
-    .decorative-header-bg .emoji-7,
-    .decorative-header-bg .emoji-9,
-    .decorative-header-bg .emoji-11, /* <--- ДОБАВЛЕНЫ НОВЫЕ КЛАССЫ */
-    .decorative-header-bg .emoji-13 { /* <--- ДОБАВЛЕНЫ НОВЫЕ КЛАССЫ */
-        left: 0% !important;
-        transform: translateX(0px) !important;
-    }
-    .decorative-header-bg .emoji-2,
-    .decorative-header-bg .emoji-4,
-    .decorative-header-bg .emoji-6,
-    .decorative-header-bg .emoji-8,
-    .decorative-header-bg .emoji-10,
-    .decorative-header-bg .emoji-12, /* <--- ДОБАВЛЕНЫ НОВЫЕ КЛАССЫ */
-    .decorative-header-bg .emoji-14 { /* <--- ДОБАВЛЕНЫ НОВЫЕ КЛАССЫ */
-        left: 100% !important;
-        transform: translateX(calc(-100% - 15px)) !important;
-    }
-    /* .decorative-header-bg { display: none; } */
 }
-
 /* --- Utility Classes --- */
 .hidden {
     display: none !important;
