@@ -1,6 +1,23 @@
-/* style.css - Исправленная и оптимизированная версия */
+/* style.css - Enhanced Dark Theme Version */
 
-/* --- Базовые стили и сброс --- */
+/* --- CSS Variables --- */
+:root {
+    --accent-color: #c5ff00; /* Neon Lime */
+    --accent-color-darker: #b0e600;
+    --background-color: #000000;
+    --text-primary: #ffffff;
+    --text-secondary: #999999;
+    --text-tertiary: #777777;
+    --glass-bg-light: rgba(35, 35, 35, 0.3); /* Lighter glass for header/modals */
+    --glass-bg-medium: rgba(25, 25, 25, 0.25); /* Medium glass for containers */
+    --glass-bg-dark: rgba(15, 15, 15, 0.4); /* Darker glass for elements like cards */
+    --glass-border-color: rgba(197, 255, 0, 0.2);
+    --glass-blur-amount: 10px;
+    --glow-accent-soft: rgba(197, 255, 0, 0.3);
+    --glow-accent-medium: rgba(197, 255, 0, 0.5);
+}
+
+/* --- Base Styles & Reset --- */
 * {
     margin: 0;
     padding: 0;
@@ -10,22 +27,151 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px; /* Высота хедера + небольшой запас */
+    scroll-padding-top: 90px; /* Adjusted if header height changes */
 }
 
 body {
-    background-color: #f8f9fa;
-    color: #212529;
-    line-height: 1.6; /* Немного увеличена для читаемости */
-    font-size: 16px; /* Базовый размер шрифта */
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 16px;
+    padding-top: 80px; /* Match fixed header height */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) #111;
 }
 
-/* --- Утилитарные классы --- */
+/* Custom scrollbar for Webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #111;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color-darker);
+}
+
+/* --- Decorative Header Background with Emojis --- */
+/* --- Decorative Header Background with Emojis --- */
+/* --- Decorative Header Background with Emojis --- */
+/* --- Decorative Header Background with Emojis --- */
+/* --- Decorative Header Background with Emojis --- */
+/* --- Decorative Header Background with Emojis --- */
+/* --- Decorative Header Background with Emojis --- */
+/* --- Decorative Header Background with Emojis --- */
+.decorative-header-bg {
+    position: fixed;
+    top: 80px; /* Начинается сразу под хедером */
+    left: 0;
+    width: 100%;
+    height: 600px; /* Сильно увеличенная высота для максимального рассеивания */
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, black 0%, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 95%, transparent 100%);
+}
+
+.decorative-header-bg .emoji {
+    position: absolute;
+    opacity: 0;
+    animation: driftAndFade 50s infinite ease-in-out; /* <--- ИЗМЕНЕНИЕ: Ещё дольше для очень медленного и текучего эффекта с большим количеством элементов */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 8px var(--glow-accent-medium);
+    pointer-events: none;
+}
+
+/* Определяем позиции, размеры и задержки анимации для каждого смайла */
+/* Теперь top и left будут еще более разнообразными для максимального заполнения */
+.decorative-header-bg .emoji-1 { top: -10%; left: 5%; font-size: 5em; animation-delay: 0s; } /* Левая сторона */
+.decorative-header-bg .emoji-2 { top: 70%; left: 90%; font-size: 4.5em; animation-delay: -4s; } /* Правая сторона */
+.decorative-header-bg .emoji-3 { top: -20%; left: 18%; font-size: 5.5em; animation-delay: -8s; } /* Левая сторона */
+.decorative-header-bg .emoji-4 { top: 50%; left: 78%; font-size: 4em; animation-delay: -12s; } /* Правая сторона */
+.decorative-header-bg .emoji-5 { top: -5%; left: 10%; font-size: 4.8em; animation-delay: -16s; } /* Левая сторона */
+.decorative-header-bg .emoji-6 { top: 80%; left: 85%; font-size: 5.2em; animation-delay: -20s; } /* Правая сторона */
+.decorative-header-bg .emoji-7 { top: 30%; left: 2%; font-size: 4.2em; animation-delay: -24s; } /* Левая сторона */
+.decorative-header-bg .emoji-8 { top: -15%; left: 93%; font-size: 4.7em; animation-delay: -28s; } /* Правая сторона */
+.decorative-header-bg .emoji-9 { top: 60%; left: 13%; font-size: 5.3em; animation-delay: -32s; } /* Левая сторона */
+.decorative-header-bg .emoji-10 { top: 10%; left: 82%; font-size: 4.1em; animation-delay: -36s; } /* Правая сторона */
+
+/* <--- НОВЫЕ ЭМОДЗИ ДЛЯ ПРАВОЙ СТОРОНЫ И ДОПОЛНИТЕЛЬНОЙ ЛЕВОЙ --- */
+.decorative-header-bg .emoji-11 { top: 40%; left: 95%; font-size: 5.0em; animation-delay: -40s; } /* Правая сторона, середина */
+.decorative-header-bg .emoji-12 { top: 20%; left: 70%; font-size: 4.3em; animation-delay: -44s; } /* Правая сторона, выше */
+.decorative-header-bg .emoji-13 { top: 0%; left: 98%; font-size: 4.8em; animation-delay: -48s; } /* Правая сторона, самый верх */
+.decorative-header-bg .emoji-14 { top: 90%; left: 75%; font-size: 4.6em; animation-delay: -52s; } /* Правая сторона, самый низ */
+/* Если добавите emoji-15, emoji-16, то продолжайте с left для левой/правой стороны */
+/* .decorative-header-bg .emoji-15 { top: 45%; left: 8%; font-size: 5.1em; animation-delay: -56s; } */
+/* .decorative-header-bg .emoji-16 { top: -5%; left: 72%; font-size: 4.9em; animation-delay: -60s; } */
+
+
+@keyframes driftAndFade {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+        opacity: 0;
+    }
+    1% {
+        opacity: 0; /* Короткая задержка перед появлением */
+    }
+    10% {
+        opacity: 0.6; /* Быстрое появление */
+    }
+    50% {
+        /* Основное смещение для дрейфа: они движутся немного вниз и в стороны */
+        transform: translateY(100px) translateX(70px) rotate(35deg) scale(1.08); /* <--- ИЗМЕНЕНИЕ: Увеличенное смещение и вращение для хаоса */
+        opacity: 0.5;
+    }
+    90% {
+        opacity: 0.6; /* Остаются видимыми дольше */
+    }
+    99% {
+        opacity: 0; /* Быстрое исчезновение перед перезапуском */
+    }
+    100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+        opacity: 0; /* Полностью прозрачные и сброс позиции в конце */
+    }
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    .decorative-header-bg {
+        height: 300px;
+    }
+    .decorative-header-bg .emoji {
+        font-size: 1.5em !important;
+    }
+    .decorative-header-bg .emoji-1,
+    .decorative-header-bg .emoji-3,
+    .decorative-header-bg .emoji-5,
+    .decorative-header-bg .emoji-7,
+    .decorative-header-bg .emoji-9,
+    .decorative-header-bg .emoji-11, /* <--- ДОБАВЛЕНЫ НОВЫЕ КЛАССЫ */
+    .decorative-header-bg .emoji-13 { /* <--- ДОБАВЛЕНЫ НОВЫЕ КЛАССЫ */
+        left: 0% !important;
+        transform: translateX(0px) !important;
+    }
+    .decorative-header-bg .emoji-2,
+    .decorative-header-bg .emoji-4,
+    .decorative-header-bg .emoji-6,
+    .decorative-header-bg .emoji-8,
+    .decorative-header-bg .emoji-10,
+    .decorative-header-bg .emoji-12, /* <--- ДОБАВЛЕНЫ НОВЫЕ КЛАССЫ */
+    .decorative-header-bg .emoji-14 { /* <--- ДОБАВЛЕНЫ НОВЫЕ КЛАССЫ */
+        left: 100% !important;
+        transform: translateX(calc(-100% - 15px)) !important;
+    }
+    /* .decorative-header-bg { display: none; } */
+}
+
+/* --- Utility Classes --- */
 .hidden {
-    display: none !important; /* Важно, чтобы переопределять другие display */
+    display: none !important;
 }
 
-.visually-hidden { /* Для элементов, которые должны быть доступны скринридерам, но не видны */
+.visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -36,58 +182,60 @@ body {
     border: 0;
 }
 
-.link-like-button { /* Стиль для кнопок, выглядящих как ссылки */
+.link-like-button {
     background: none;
     border: none;
-    color: #0b5ed7;
+    color: var(--accent-color);
     text-decoration: underline;
     cursor: pointer;
     padding: 0;
-    font-size: inherit; /* Наследует размер шрифта родителя */
+    font-size: inherit;
     font-family: inherit;
     font-weight: 500;
+    transition: color 0.2s;
 }
 .link-like-button:hover {
-    color: #0a50c1;
+    color: var(--accent-color-darker);
 }
 
-
-/* --- Контейнер и общая разметка --- */
+/* --- Container & General Layout --- */
 .container {
     max-width: 800px;
-    margin: 0 auto; /* Убрал верхний отступ, т.к. body.padding-top */
-    padding: 2rem 1rem;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05); /* Мягкая тень */
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem; /* Increased padding a bit */
+    background-color: var(--glass-bg-medium);
+    border-radius: 15px; /* Slightly more rounded for modern feel */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), 0 0 0 1px var(--glass-border-color);
+    backdrop-filter: blur(var(--glass-blur-amount));
+    -webkit-backdrop-filter: blur(var(--glass-blur-amount));
+    border: 1px solid var(--glass-border-color);
     position: relative;
+    z-index: 10; /* Above decorative background */
 }
-
-body { /* Добавляем padding-top для body, чтобы контент не уходил под фиксированный хедер */
-    padding-top: 80px; /* Равно высоте хедера */
-}
-
 
 .divider,
 .section-divider {
     height: 1px;
-    background-color: #e9ecef;
-    margin: 2.5rem 0; /* Увеличен отступ */
+    background-color: var(--glass-border-color);
+    margin: 3rem 0; /* Increased spacing */
 }
 
-/* --- Хедер и Навигация --- */
+/* --- Header & Navigation (Glassmorphism) --- */
 header.site-header {
-    background-color: white;
-    border-bottom: 1px solid #e9ecef;
-    padding: 0 1.5rem; /* Убран вертикальный паддинг, высота фиксируется */
-    position: fixed; /* Изменено на fixed */
+    background-color: var(--glass-bg-light);
+    backdrop-filter: blur(calc(var(--glass-blur-amount) + 5px)); /* More blur for header */
+    -webkit-backdrop-filter: blur(calc(var(--glass-blur-amount) + 5px));
+    border-bottom: 1px solid var(--glass-border-color);
+    padding: 0 1.5rem;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Увеличен z-index */
+    z-index: 1000;
     height: 80px;
     display: flex;
     align-items: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar {
@@ -100,816 +248,874 @@ header.site-header {
 }
 
 .site-logo img {
-    max-height: 45px; /* Немного уменьшим лого */
+    max-height: 40px; /* Adjusted size */
     width: auto;
     display: block;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); /* Subtle glow for logo */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1.5rem; /* Немного увеличен отступ */
+    gap: 1.8rem; /* Increased gap */
     margin: 0;
     padding: 0;
 }
 
 .nav-links li a {
-    color: #343a40; /* Чуть темнее для контраста */
+    color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
-    transition: color 0.2s;
+    transition: color 0.2s, text-shadow 0.2s;
     padding: 5px 0;
+    position: relative;
 }
 
 .nav-links li a:hover,
-.nav-links li a.active { /* Класс active может добавляться JS для текущей секции */
-    color: #0d6efd;
+.nav-links li a.active {
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--glow-accent-soft);
 }
+
+.nav-links li a::after { /* Underline animation */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 100%;
+}
+
 
 .menu-toggle {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1.8rem;
+    font-size: 2rem; /* Larger icon */
     padding: 5px;
     line-height: 1;
-    color: #333;
-    z-index: 1002; /* Чтобы был поверх nav-links в мобильной версии */
+    color: var(--text-primary);
+    z-index: 1002;
+    transition: color 0.2s, transform 0.2s;
+}
+.menu-toggle:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
 }
 
 /* --- Hero Section --- */
 .hero-section {
     text-align: center;
-    padding: 2rem 1rem 2.5rem; /* Немного изменены отступы */
+    padding: 2.5rem 1rem 3rem;
 }
 
 h1 {
-    font-size: clamp(2rem, 5vw, 2.5rem); /* Адаптивный размер шрифта */
+    font-size: clamp(2.2rem, 5.5vw, 2.8rem);
     font-weight: 700;
-    margin-bottom: 0.75rem;
-    color: #1a1a1a; /* Глубже черный */
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .subtitle {
-    font-size: clamp(1rem, 2.5vw, 1.15rem); /* Адаптивный размер */
-    color: #495057; /* Немного темнее */
-    margin-bottom: 1rem;
+    font-size: clamp(1.05rem, 2.8vw, 1.25rem);
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
 }
 
 .stats {
-    font-size: 0.9rem;
-    color: #6c757d;
-    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    color: var(--text-tertiary);
+    margin-bottom: 2.5rem;
 }
 
-/* --- Кнопки --- */
-.btn-primary, .btn-secondary { /* Общие стили для кнопок */
+/* --- Buttons --- */
+.btn-primary, .btn-secondary {
     border-radius: 50px;
-    padding: 12px 28px; /* Немного увеличен горизонтальный паддинг */
-    font-size: 1.05rem; /* Немного увеличен шрифт */
+    padding: 14px 32px; /* Enhanced padding */
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.2s;
     text-decoration: none;
     display: inline-block;
     text-align: center;
     line-height: 1.5;
-    border: 1px solid transparent; /* Для консистентности */
+    border: 2px solid transparent; /* Thicker border for a more solid feel */
+    letter-spacing: 0.5px;
 }
 
 .btn-primary {
-    background-color: #0d6efd;
-    color: white;
-    border-color: #0d6efd;
+    background-color: var(--accent-color);
+    color: var(--background-color); /* Black text on lime button for contrast */
+    border-color: var(--accent-color);
+    box-shadow: 0 0 12px var(--glow-accent-soft), 0 0 20px var(--glow-accent-soft);
 }
 
 .btn-primary:hover {
-    background-color: #0b5ed7;
-    border-color: #0a58ca;
-    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+    background-color: var(--accent-color-darker);
+    border-color: var(--accent-color-darker);
+    box-shadow: 0 0 18px var(--glow-accent-medium), 0 0 30px var(--glow-accent-medium);
+    transform: scale(1.03) translateY(-2px);
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: #0d6efd; /* Цвет текста как у основной кнопки */
-    border: 1px solid #0d6efd; /* Рамка в цвет основной кнопки */
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
 }
 
 .btn-secondary:hover {
-    background-color: #e7f0ff; /* Очень светлый фон при наведении */
-    color: #0b5ed7;
-    border-color: #0b5ed7;
+    background-color: rgba(197, 255, 0, 0.1);
+    color: var(--accent-color-darker);
+    border-color: var(--accent-color-darker);
+    box-shadow: 0 0 10px rgba(197, 255, 0, 0.2);
+    transform: scale(1.03) translateY(-2px);
 }
-
 
 .hero-section .btn-primary {
     display: block;
-    margin: 0 auto; /* Убраны лишние margin-left/right */
-    max-width: 220px; /* Немного увеличена */
+    margin: 0 auto;
+    max-width: 240px;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.3); }
-    70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(13, 110, 253, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(13, 110, 253, 0); }
+@keyframes pulse-glow {
+    0% { transform: scale(1); box-shadow: 0 0 12px var(--glow-accent-soft), 0 0 20px var(--glow-accent-soft); }
+    70% { transform: scale(1.02); box-shadow: 0 0 18px var(--glow-accent-medium), 0 0 30px var(--glow-accent-medium); }
+    100% { transform: scale(1); box-shadow: 0 0 12px var(--glow-accent-soft), 0 0 20px var(--glow-accent-soft); }
 }
 
 .btn-primary.pulse {
-    animation: pulse 2s infinite;
+    animation: pulse-glow 2s infinite;
 }
 
-/* --- Секции и Заголовки --- */
+/* --- Sections & Headings --- */
 section {
-    margin-bottom: 2.5rem; /* Увеличен отступ */
+    margin-bottom: 3rem;
 }
-
 section:last-of-type {
      margin-bottom: 0;
 }
 
-.intro { /* Класс для блока с заголовком секции и подзаголовком */
-    margin-bottom: 1.5rem;
+.intro {
+    margin-bottom: 2rem;
 }
 
 h2 {
-    font-size: clamp(1.4rem, 4vw, 1.75rem); /* Адаптивный размер */
+    font-size: clamp(1.5rem, 4.5vw, 1.9rem);
     font-weight: 700;
     display: flex;
     align-items: center;
-    margin-bottom: 0.5rem;
-    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
 }
 
-.section-icon { /* Единый класс для иконок в заголовках секций */
-    margin-right: 0.8rem;
-    font-size: 1.8em; /* Относительно h2 */
+.section-icon { /* Use with 💧, 💎, or SVGs */
+    margin-right: 1rem;
+    font-size: 1.8em; /* Relative to h2 */
     line-height: 1;
+    color: var(--accent-color); /* Accent color for icons */
 }
 
 .section-subtitle {
-    font-size: 1rem;
-    color: #495057;
-    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
 }
 
 .mobile-tip {
-    background-color: #e9f5ff; /* Светло-голубой */
+    background-color: rgba(197, 255, 0, 0.05);
     border-radius: 8px;
-    padding: 1rem 1.25rem;
-    margin-bottom: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
     font-size: 0.95rem;
-    color: #0c5460; /* Темно-голубой для текста */
-    border-left: 4px solid #0d6efd;
+    color: #ccc;
+    border-left: 4px solid var(--accent-color);
 }
-
 .mobile-tip strong {
-    color: #0d6efd;
+    color: var(--accent-color);
 }
 
-/* --- Карточки Проектов --- */
+/* --- Project Cards (Glassmorphism) --- */
 .offers {
-    display: grid; /* Используем grid для карточек */
-    grid-template-columns: 1fr; /* Одна колонка по умолчанию */
-    gap: 1.5rem;
-    margin: 1.5rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem; /* Increased gap */
+    margin: 2rem 0;
 }
 
-/* Для десктопов можно сделать 2 колонки, если карточек много */
-/* @media (min-width: 768px) {
-    .offers {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-} */
-
-.project-card { /* Общий класс для всех карточек проектов */
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0; /* Слегка изменен цвет рамки */
+.project-card {
+    background-color: var(--glass-bg-dark);
+    border: 1px solid var(--glass-border-color);
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: 1.75rem; /* Increased padding */
     display: flex;
-    gap: 1.25rem; /* Отступ между иконкой и информацией */
+    gap: 1.5rem;
     align-items: flex-start;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    backdrop-filter: blur(calc(var(--glass-blur-amount) - 3px));
+    -webkit-backdrop-filter: blur(calc(var(--glass-blur-amount) - 3px));
 }
 
 .project-card:hover {
-    transform: translateY(-5px); /* Эффект "поднятия" */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07); /* Более заметная тень */
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25), 0 0 0 2px var(--accent-color);
+    background-color: rgba(30, 30, 30, 0.4);
 }
 
-.project-icon {
-    font-size: 2rem; /* Увеличен размер иконки */
-    min-width: 48px; /* Увеличена мин. ширина */
-    height: 48px;  /* Увеличена высота */
+.project-icon { /* E.g., using emoji directly or an icon font/SVG */
+    font-size: 2.2rem;
+    min-width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f1f3f5; /* Слегка изменен фон */
-    border-radius: 10px; /* Немного изменено скругление */
+    background-color: rgba(197, 255, 0, 0.1);
+    color: var(--accent-color);
+    border-radius: 10px;
     flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+.project-card:hover .project-icon {
+    transform: rotate(-10deg) scale(1.1);
 }
 
 .project-info {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.4rem; /* Уменьшен gap для более плотного текста */
+    gap: 0.5rem;
 }
 
 .project-info h3 {
-    font-size: 1.25rem; /* Немного увеличен */
+    font-size: 1.3rem;
     font-weight: 600;
-    margin-bottom: 0.1rem; /* Уменьшен отступ */
-    color: #212529;
-    display: flex; /* Для выравнивания с hot-badge */
+    margin-bottom: 0.2rem;
+    color: var(--text-primary);
+    display: flex;
     align-items: center;
 }
 
 .project-info p {
     font-size: 0.95rem;
-    color: #495057;
-    margin-bottom: 0.25rem; /* Уменьшен отступ */
-    line-height: 1.5;
+    color: #bbbbbb; /* Lighter secondary for card content */
+    margin-bottom: 0.3rem;
+    line-height: 1.55;
 }
 
 .hot-badge {
-    background-color: #ffe3e6; /* Светло-розовый */
-    color: #dc3545;
-    font-size: 0.7rem; /* Уменьшен */
-    font-weight: 700; /* Жирнее */
-    padding: 4px 8px;
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 5px 10px;
     border-radius: 50px;
     display: inline-block;
-    margin-left: 0.5rem;
-    line-height: 1; /* Для выравнивания */
+    margin-left: 0.6rem;
+    line-height: 1;
+    text-transform: uppercase;
 }
 
 .project-info .reward {
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
-    color: #0d6efd;
-    margin: 0.3rem 0; /* Немного изменены отступы */
+    color: var(--accent-color);
+    margin: 0.4rem 0;
 }
 
-.project-info .btn-action { /* Кнопка в карточке */
-    background-color: #0d6efd;
-    color: white;
+.project-info .btn-action { /* Smaller button for cards */
+    background-color: var(--accent-color);
+    color: var(--background-color);
     border: none;
     border-radius: 50px;
-    padding: 10px 20px;
-    font-size: 0.95rem; /* Немного уменьшен */
+    padding: 10px 22px;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s, box-shadow 0.2s;
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
     text-decoration: none;
     display: inline-block;
     text-align: center;
     align-self: flex-start;
-    margin-top: 0.75rem; /* Увеличен отступ */
+    margin-top: 1rem;
     line-height: 1.5;
 }
 
 .project-info .btn-action:hover {
-    background-color: #0b5ed7;
+    background-color: var(--accent-color-darker);
+    box-shadow: 0 0 10px var(--glow-accent-soft);
+    transform: scale(1.05);
 }
 
-/* --- Кнопка "Показать еще" --- */
+/* --- "Show More" Button --- */
 .show-more-container {
     display: flex;
     justify-content: center;
-    margin: 1.75rem 0 2.5rem; /* Изменены отступы */
+    margin: 2rem 0 3rem;
 }
 
-.btn-show-more {
-    background-color: #f8f9fa; /* Светлый фон */
-    border: 1px solid #dee2e6; /* Четкая граница */
-    color: #212529; /* Темный текст */
+.btn-show-more { /* Styled like btn-secondary */
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
     font-size: 1rem;
     font-weight: 500;
-    cursor: pointer;
-    padding: 10px 24px;
+    padding: 12px 28px;
     border-radius: 50px;
-    min-width: 240px; /* Увеличена мин. ширина */
+    min-width: 260px;
     text-align: center;
-    transition: all 0.2s;
+    transition: all 0.25s;
 }
 
 .btn-show-more:hover {
-    background-color: #e9ecef; /* Темнее фон при наведении */
-    border-color: #ced4da;
+    background-color: rgba(197, 255, 0, 0.1);
+    color: var(--accent-color-darker);
+    border-color: var(--accent-color-darker);
+    box-shadow: 0 0 10px rgba(197, 255, 0, 0.2);
+    transform: scale(1.03);
 }
 
-/* --- Модальные окна --- */
+/* --- Modal Windows (Glassmorphism) --- */
 .modal {
-    /* display: none; Управляется .hidden и .active */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.65); /* Немного темнее */
-    z-index: 1050; /* Выше хедера */
-    display: flex; /* Изменено на flex для .active */
+    background-color: rgba(0, 0, 0, 0.8); /* Darker overlay */
+    z-index: 1050;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    opacity: 0; /* Начальная прозрачность для анимации */
-    visibility: hidden; /* Начально скрыто для анимации */
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s; /* Ensure visibility transition happens after opacity */
 }
 
-.modal.active { /* Класс для показа модального окна */
+.modal.active {
     opacity: 1;
     visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s linear 0s;
 }
 
 .modal-content {
-    background-color: white;
-    border-radius: 12px;
-    padding: 2rem;
-    max-width: 580px; /* Немного шире */
+    background-color: var(--glass-bg-light);
+    backdrop-filter: blur(var(--glass-blur-amount));
+    -webkit-backdrop-filter: blur(var(--glass-blur-amount));
+    border: 1px solid var(--glass-border-color);
+    border-radius: 15px;
+    padding: 2.5rem; /* Increased padding */
+    max-width: 600px;
     width: 100%;
     position: relative;
     max-height: 90vh;
     overflow-y: auto;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    transform: scale(0.95); /* Начальный размер для анимации */
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--glass-border-color);
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease; /* Pop-up effect */
 }
 
 .modal.active .modal-content {
-    transform: scale(1); /* Конечный размер для анимации */
+    transform: scale(1);
+    opacity: 1;
 }
 
-.modal .js-modal-close { /* Используем общий класс js-modal-close */
+.modal .js-modal-close {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.8rem; /* Крупнее */
-    font-weight: normal; /* Обычный шрифт для &times; или ✖ */
+    top: 1.25rem; /* Adjusted for padding */
+    right: 1.25rem;
+    font-size: 2rem;
+    font-weight: normal;
     line-height: 1;
     cursor: pointer;
-    color: #999; /* Светлее */
+    color: var(--text-secondary);
     background: none;
     border: none;
-    padding: 0.3rem; /* Увеличим область клика */
-    transition: color 0.2s;
+    padding: 0.4rem;
+    transition: color 0.2s, transform 0.2s;
 }
 
 .modal .js-modal-close:hover {
-    color: #333;
+    color: var(--text-primary);
+    transform: rotate(90deg) scale(1.1);
 }
 
-/* Стили для модального окна с инструкциями (Task Modal) */
-#task-modal .modal-content h2, #task-modal #taskModalGeneratedTitle { /* Добавлен #taskModalGeneratedTitle */
-    font-size: 1.5rem; /* Увеличен */
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #f0f0f0; /* Светлее */
-    padding-bottom: 0.75rem;
-    color: #333;
+/* Task Modal */
+#task-modal .modal-content h2, #task-modal #taskModalGeneratedTitle {
+    font-size: 1.6rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--glass-border-color);
+    padding-bottom: 1rem;
+    color: var(--text-primary);
 }
 .task-description {
-    color: #555;
-    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.75rem;
     font-size: 1rem;
 }
 .task-steps {
-    margin: 1.5rem 0;
-    padding-left: 1.75rem; /* Увеличен отступ */
-    list-style-type: decimal;
+    margin: 1.75rem 0;
+    padding-left: 2rem;
+    list-style-type: decimal; /* Or use custom emoji/icon bullets */
 }
 .task-steps li {
-    margin-bottom: 0.9rem; /* Увеличен отступ */
-    padding-left: 0.5rem;
-    color: #333;
+    margin-bottom: 1rem;
+    padding-left: 0.6rem;
+    color: #ccc;
     font-size: 0.95rem;
 }
-#task-modal .btn-primary {
-    display: block;
-    width: 100%;
-    margin-top: 1.5rem;
+.task-steps li::marker { /* Style the number/bullet */
+    color: var(--accent-color);
+    font-weight: bold;
 }
-#task-modal .task-buttons { /* Контейнер для кнопок в Task Modal */
+#task-modal .task-buttons {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 #task-modal .task-buttons .btn-primary,
 #task-modal .task-buttons .btn-secondary {
-    width: 100%; /* Растягиваем обе кнопки */
+    width: 100%;
 }
 
-
-/* Стили для Onboarding Modal */
+/* Onboarding Modal */
 #onboarding .modal-content {
-    min-height: 500px; /* Немного выше */
+    min-height: 520px;
     display: flex;
     flex-direction: column;
 }
-
 #onboarding .step {
-    /* display: none; Управляется .hidden и .active */
     flex-grow: 1;
-    display: flex; /* Используем flex по умолчанию, JS будет управлять .hidden */
-    flex-direction: column;
-    justify-content: space-between; /* Распределяет контент */
-}
-#onboarding .step.active { /* Добавлено для ясности, хотя JS управляет через .hidden */
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+/* .step.active is handled by .hidden utility class */
 
-
-#onboarding h2 { /* Заголовки шагов */
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    color: #333;
+#onboarding h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-primary);
 }
 #onboarding p {
-    margin-bottom: 1.25rem; /* Увеличен отступ */
-    color: #555;
-    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
 }
 #onboarding .wallet-links {
     list-style: none;
     padding-left: 0;
-    margin: 1rem 0 1.5rem; /* Изменены отступы */
+    margin: 1.25rem 0 1.75rem;
 }
 #onboarding .wallet-links li {
-    margin-bottom: 1rem; /* Увеличен отступ */
+    margin-bottom: 1rem;
 }
 #onboarding .wallet-links a {
-    display: inline-flex; /* Для лучшего выравнивания иконки и текста */
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    color: #0d6efd;
+    gap: 0.6rem;
+    color: var(--accent-color);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.2s;
+    transition: color 0.2s, letter-spacing 0.2s;
 }
 #onboarding .wallet-links a:hover {
-    color: #0b5ed7;
-    text-decoration: underline;
+    color: var(--accent-color-darker);
+    letter-spacing: 0.5px; /* Subtle hover effect */
 }
 #onboarding .screenshot-gallery {
     display: flex;
-    gap: 12px; /* Немного увеличен gap */
-    margin: 1.25rem 0;
+    gap: 15px;
+    margin: 1.5rem 0;
     justify-content: center;
     flex-wrap: wrap;
 }
 #onboarding .screenshot-gallery img {
-    width: clamp(120px, 46%, 160px); /* Адаптивная ширина */
+    width: clamp(120px, 45%, 170px);
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12); /* Изменена тень */
-    transition: transform 0.25s ease;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     object-fit: cover;
-    cursor: pointer; /* Изменено на pointer, т.к. есть lightbox */
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 #onboarding .screenshot-gallery img:hover {
-    transform: scale(1.07); /* Увеличен эффект */
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 10px var(--glow-accent-soft);
 }
-#onboarding .onboarding-nav { /* Контейнер для кнопок навигации */
+#onboarding .onboarding-nav {
     display: flex;
-    justify-content: space-between; /* Кнопки по краям */
+    justify-content: space-between;
     align-items: center;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid #f0f0f0;
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--glass-border-color);
 }
 #onboarding .onboarding-nav .btn-primary,
 #onboarding .onboarding-nav .btn-secondary {
-    min-width: 120px; /* Минимальная ширина кнопок */
+    min-width: 130px;
 }
-/* Если только одна кнопка (например, "Далее" на первом шаге или "Готово" на последнем) */
-#onboarding .step:first-child .onboarding-nav,
-#onboarding .step:last-child .onboarding-nav {
-    justify-content: center; /* Центрируем, если кнопка одна */
-}
-#onboarding .step:first-child .onboarding-nav .btn-secondary, /* Скрываем "Назад" на первом шаге */
-#onboarding .step:last-child .onboarding-nav .btn-primary[data-onboarding-next] { /* Скрываем "Далее" на последнем шаге */
-    display: none;
-}
+#onboarding .step:first-child .onboarding-nav { justify-content: flex-end; }
+#onboarding .step:first-child .onboarding-nav .btn-secondary { display: none; }
+#onboarding .step:last-child .onboarding-nav .btn-primary[data-onboarding-next] { display: none; }
 
 
-/* --- Lightbox для скриншотов --- */
-.lightbox { /* Уже стилизован как .modal */
-    z-index: 1060; /* Выше других модалок */
-    background-color: rgba(0, 0, 0, 0.85); /* Чуть менее темный */
+/* --- Lightbox for Screenshots --- */
+.lightbox { /* This class should be used for the overlay if reusing modal logic */
+    z-index: 1060;
+    background-color: rgba(0, 0, 0, 0.9); /* Even darker for full focus */
 }
-.lightbox-content {
+/* Reusing .modal structure for lightbox: .lightbox.active, .lightbox .modal-content for image wrapper */
+.lightbox .lightbox-content-wrapper { /* Specific wrapper if needed inside .modal-content */
+    background: none;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: 95%;
+    max-height: 95%;
+}
+.lightbox img.lightbox-image-display { /* The actual image */
     display: block;
-    margin: auto;
-    max-width: 90%; /* Можно больше */
-    max-height: 85%;
-    border-radius: 4px; /* Небольшое скругление для картинки */
+    max-width: 100%;
+    max-height: 100%; /* Was 85vh in modal-content context, now relative to wrapper */
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+    animation: fadeInLightbox 0.4s ease-in-out;
 }
-.lightbox-close { /* Уже стилизован как .js-modal-close */
-    color: #fff; /* Белый для лучшего контраста на темном фоне */
-    font-size: 2.5rem; /* Крупнее */
+.lightbox .js-modal-close { /* Use modal's close button, styled for lightbox */
+    color: #fff;
+    font-size: 2.8rem;
+    top: 20px;
+    right: 20px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
-.lightbox-close:hover {
+.lightbox .js-modal-close:hover {
     color: #ddd;
 }
 
+@keyframes fadeInLightbox {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
 /* --- Email Modal --- */
 #email-modal h2 {
-    font-size: 1.5rem; /* Увеличен */
-    margin-bottom: 0.75rem;
-    color: #333;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
 }
 #email-modal p {
-    margin-bottom: 1.5rem;
-    color: #555;
+    margin-bottom: 1.75rem;
+    color: var(--text-secondary);
     font-size: 1rem;
 }
 .email-form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
 }
 .email-form input[type="email"] {
     width: 100%;
-    padding: 14px; /* Увеличен паддинг */
-    border: 1px solid #ced4da;
+    padding: 16px; /* Generous padding */
+    border: 1px solid rgba(153, 153, 153, 0.3);
     border-radius: 8px;
     font-size: 1rem;
+    background-color: rgba(50, 50, 50, 0.2); /* Subtle dark input */
+    color: var(--text-primary);
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+.email-form input[type="email"]::placeholder {
+    color: var(--text-tertiary);
 }
 .email-form input[type="email"]:focus {
     outline: none;
-    border-color: #86b7fe;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: var(--accent-color);
+    background-color: rgba(50, 50, 50, 0.4);
+    box-shadow: 0 0 0 0.25rem rgba(197, 255, 0, 0.25), 0 0 10px var(--glow-accent-soft) inset;
 }
-.email-form button { /* Используем .btn-primary */
+.email-form button { /* Uses .btn-primary styles */
     width: 100%;
 }
 
-/* --- Инфо-текст и кнопки действий под списком --- */
+/* --- Info Text & Action Buttons --- */
 .info-text {
-    background-color: #e9f5ff;
-    padding: 1.25rem 1.5rem; /* Увеличены паддинги */
-    border-radius: 8px;
-    margin: 2rem 0; /* Увеличены отступы */
-    color: #0c5460;
+    background-color: rgba(197, 255, 0, 0.08); /* Subtle accent background */
+    padding: 1.5rem 1.75rem;
+    border-radius: 10px;
+    margin: 2.5rem 0;
+    color: #dddddd;
     text-align: center;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.05rem;
+    border: 1px solid rgba(197, 255, 0, 0.2);
+    box-shadow: 0 0 15px rgba(197, 255, 0, 0.05) inset;
 }
 
 .action-buttons {
     display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 2.5rem; /* Увеличен отступ */
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 3rem;
 }
-
 .action-buttons .btn-primary,
 .action-buttons .btn-secondary {
-    flex: 1; /* Равномерно делят пространство */
+    flex: 1;
 }
 
-/* --- Ссылки в секциях (Exchanges, Learning, Contact) --- */
+/* --- Links in Sections (Exchanges, Learning, Contact) --- */
 section#exchanges ul,
 section#learning ul,
-section#contact ul { /* ul если будут использоваться */
+section#contact ul {
     list-style: none;
     padding-left: 0;
-    margin-top: 1rem;
+    margin-top: 1.25rem;
 }
 section#exchanges li,
-section#learning p > a, /* Для ссылок внутри параграфов */
+section#learning p > a,
 section#contact p > a {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.85rem;
 }
-section#exchanges a, /* Ссылки в списках */
-section#learning a,  /* Общие ссылки в секции learning */
-section#contact a {  /* Общие ссылки в секции contact */
-    color: #0d6efd;
+section#exchanges a,
+section#learning a,
+section#contact a {
+    color: var(--accent-color);
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.2s, letter-spacing 0.2s;
 }
 section#exchanges a:hover,
 section#learning a:hover,
 section#contact a:hover {
     text-decoration: underline;
-    color: #0b5ed7;
+    color: var(--accent-color-darker);
+    letter-spacing: 0.3px;
 }
-section#exchanges li::before {
-    content: '🔗';
-    margin-right: 0.75rem; /* Увеличен отступ */
+section#exchanges li::before { /* Using emoji for list style */
+    content: '💎'; /* Or 💧 or other relevant emoji */
+    margin-right: 0.85rem;
     font-size: 0.9em;
+    display: inline-block;
+    animation: emojiPulse 1.5s infinite alternate;
 }
-section#learning .btn-secondary { /* Если кнопка в секции learning */
-    margin-top: 0.5rem;
+@keyframes emojiPulse {
+    to { transform: scale(1.2); }
 }
 
+section#learning .btn-secondary {
+    margin-top: 0.75rem;
+}
 
-/* --- Футер --- */
+/* --- Footer --- */
 footer {
     text-align: center;
-    color: #6c757d;
+    color: var(--text-tertiary);
     font-size: 0.9rem;
-    margin-top: 3rem;
-    padding: 2rem 1rem; /* Увеличены паддинги */
-    border-top: 1px solid #e0e0e0;
+    margin-top: 3.5rem;
+    padding: 2.5rem 1rem;
+    border-top: 1px solid var(--glass-border-color);
+    background-color: rgba(10,10,10,0.2); /* Subtle darker footer bg */
+}
+footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+footer a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
 }
 
-/* --- Медиа-запросы (Адаптивность) --- */
+/* --- Dropdown Menu --- */
+.nav-item-dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(25, 25, 25, 0.8); /* Dark glass dropdown */
+    backdrop-filter: blur(var(--glass-blur-amount));
+    -webkit-backdrop-filter: blur(var(--glass-blur-amount));
+    min-width: 260px;
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.3);
+    z-index: 1001;
+    border-radius: 10px;
+    padding: 10px 0;
+    top: calc(100% + 10px); /* Position below the link with some gap */
+    left: 50%;
+    transform: translateX(-50%); /* Center dropdown */
+    border: 1px solid var(--glass-border-color);
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: top center;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+.nav-item-dropdown.active .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+.dropdown-content a {
+    color: var(--text-primary);
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+    font-weight: 400;
+    transition: background-color 0.2s, color 0.2s, padding-left 0.2s;
+}
+.dropdown-content a:hover {
+    background-color: rgba(197, 255, 0, 0.1);
+    color: var(--accent-color);
+    padding-left: 25px; /* Indent on hover */
+}
+
+
+/* --- Media Queries (Mobile First Adaptation) --- */
 @media (max-width: 768px) {
     body {
-      padding-top: 70px; /* Адаптируем под высоту мобильного хедера, если она другая */
+      padding-top: 70px;
     }
     header.site-header {
-      height: 70px; /* Мобильный хедер может быть ниже */
+      height: 70px;
       padding: 0 1rem;
     }
     .site-logo img {
-      max-height: 35px;
+      max-height: 32px;
     }
+
+    .container {
+        padding: 2rem 1rem;
+    }
+
     .nav-links {
-        display: none;
+        display: none; /* Initially hidden */
         flex-direction: column;
         position: absolute;
-        top: 70px; /* Высота хедера */
+        top: 70px; /* Height of mobile header */
         left: 0;
         width: 100%;
-        background: white;
-        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1); /* Усилена тень */
-        padding: 1rem 0;
-        border-top: 1px solid #e9ecef;
-        z-index: 999; /* Чуть ниже .menu-toggle, если он абсолютно позиционирован */
+        background: rgba(10, 10, 10, 0.9); /* Dark, very translucent background for mobile menu */
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        padding: 0.5rem 0;
+        border-top: 1px solid var(--glass-border-color);
+        z-index: 999;
+        max-height: calc(100vh - 70px); /* Prevent menu from being too long */
+        overflow-y: auto;
     }
-
- .modal-content {
-        padding: 1.5rem 1.25rem; /* Адаптивные паддинги */
-        max-height: 85vh; /* Чуть меньше места на мобильных */
-    }
-    /* Добавьте это правило для списка внутри модального окна гайда */
-    #guideModal .modal-content ol {
-        padding-left: 2rem; /* Увеличьте левый отступ для упорядоченного списка */
-    }
-    /* ... остальные стили для мобильных ... */
-
-    .nav-links.show { display: flex !important; }
-    .nav-links li { width: 100%; text-align: left; } /* Выравнивание по левому краю */
+    .nav-links.show { display: flex !important; } /* JS toggles this */
+    .nav-links li { width: 100%; text-align: left; }
     .nav-links li a {
         display: block;
-        padding: 14px 20px; /* Увеличены паддинги */
-        border-bottom: 1px solid #f1f3f5; /* Светлее разделитель */
+        padding: 16px 25px; /* More touch-friendly padding */
+        border-bottom: 1px solid rgba(197, 255, 0, 0.1);
     }
     .nav-links li:last-child a { border-bottom: none; }
+    .nav-links li a::after { display: none; } /* Remove underline animation for mobile */
 
-    .menu-toggle { display: block; /* Показываем кнопку меню */ }
 
-    h1 { font-size: clamp(1.8rem, 6vw, 2.2rem); }
-    .subtitle { font-size: clamp(0.95rem, 3vw, 1.1rem); }
+    .menu-toggle { display: block; }
+
+    h1 { font-size: clamp(1.9rem, 7vw, 2.3rem); }
+    .subtitle { font-size: clamp(1rem, 3.5vw, 1.15rem); }
 
     .project-card {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center; /* Center icon on mobile */
+        text-align: center;
     }
-    .project-icon { margin-bottom: 0.75rem; }
-    .project-info h3 { font-size: 1.15rem; }
+    .project-icon { margin-bottom: 1rem; }
+    .project-info h3 { font-size: 1.2rem; justify-content: center; }
     .project-info .btn-action {
-        align-self: stretch; /* Растягиваем кнопку */
+        align-self: stretch;
         font-size: 1rem;
     }
 
-    .action-buttons { flex-direction: column; }
+    .action-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
     .action-buttons .btn-primary,
     .action-buttons .btn-secondary { width: 100%; }
 
     .modal-content {
-        padding: 1.5rem 1.25rem; /* Адаптивные паддинги */
-        max-height: 85vh; /* Чуть меньше места на мобильных */
+        padding: 1.75rem 1.25rem;
+        max-height: 88vh;
     }
-    #onboarding .modal-content { min-height: auto; /* Авто высота на мобильных */ }
-    #onboarding h2 { font-size: 1.25rem; }
-    #onboarding .screenshot-gallery img { width: clamp(100px, 46%, 140px); }
-    #onboarding .onboarding-nav { flex-direction: column; gap: 0.75rem; }
+    #task-modal .modal-content h2, #task-modal #taskModalGeneratedTitle { font-size: 1.4rem; }
+
+    #onboarding .modal-content { min-height: auto; padding-bottom: 1.5rem; }
+    #onboarding h2 { font-size: 1.3rem; }
+    #onboarding .screenshot-gallery img { width: clamp(100px, 45%, 150px); }
+    #onboarding .onboarding-nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
     #onboarding .onboarding-nav .btn-primary,
-    #onboarding .onboarding-nav .btn-secondary { width: 100%; }
-    /* Показываем все кнопки на мобильных, если так удобнее */
+    #onboarding .onboarding-nav .btn-secondary {
+        width: 100%;
+    }
+    /* Ensure onboarding nav buttons are shown correctly on mobile */
     #onboarding .step:first-child .onboarding-nav .btn-secondary,
     #onboarding .step:last-child .onboarding-nav .btn-primary[data-onboarding-next] {
-        display: block; /* Показываем "Назад" на первом и "Далее" на последнем, если дизайн позволяет */
+        display: block; /* Or adjust based on desired mobile flow */
     }
-     /* Если на первом шаге только одна кнопка "Далее", а на последнем "Готово" */
-    #onboarding .step:first-child .onboarding-nav { justify-content: flex-end; } /* Кнопка "Далее" справа */
-    #onboarding .step:first-child .onboarding-nav .btn-secondary { display: none !important; } /* Точно скрываем "Назад" */
+    /* Specific overrides for first/last step if one button should dominate */
+    #onboarding .step:first-child .onboarding-nav { justify-content: center; }
+    #onboarding .step:first-child .onboarding-nav .btn-secondary { display: none !important; }
 
-    #onboarding .step:last-child .onboarding-nav { justify-content: space-between; } /* Кнопки "Назад" и "Готово" по краям */
-    #onboarding .step:last-child .onboarding-nav .btn-primary[data-onboarding-next] { display: none !important; } /* Точно скрываем "Далее" */
+    #onboarding .step:last-child .onboarding-nav { justify-content: center; } /* Or space-between if Back is present */
+    #onboarding .step:last-child .onboarding-nav .btn-primary[data-onboarding-next] { display: none !important; }
 
-}
-/* Style for the dropdown container */
-.nav-item-dropdown {
-    position: relative; /* Needed for absolute positioning of the dropdown content */
-    display: inline-block; /* Or block, depending on your layout */
-}
-
-.dropdown-content {
-    display: none; /* Hidden by default */
-    position: absolute;
-    background-color: #f9f9f9; /* Background color for the dropdown */
-    min-width: 250px; /* Minimum width */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add a subtle shadow */
-    z-index: 1001; /* Ensure it appears above other content */
-    border-radius: 8px;
-    padding: 10px 0;
-    top: 100%; /* Position below the link */
-    left: 0; /* Align to the left of the link */
-}
-
-.dropdown-content a {
-    color: #333; /* Link color */
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block; /* Make links block elements for padding */
-    font-weight: 400; /* Adjust font weight */
-    transition: background-color 0.2s;
-}
-
-.dropdown-content a:hover {
-    background-color: #e9ecef; /* Highlight on hover */
-}
-
-/* Class added by JavaScript to show the dropdown */
-.nav-item-dropdown.active .dropdown-content {
-    display: block;
-}
-
-/* Adjust mobile menu styling if needed */
-@media (max-width: 768px) {
-    .nav-links {
-        /* Ensure mobile menu handles dropdowns correctly */
-        /* flex-direction: column; already set, this should help */
-    }
-     .nav-links.show .nav-item-dropdown .dropdown-content {
-        position: static; /* Reset positioning for mobile */
+    /* Dropdown in mobile */
+    .nav-links.show .nav-item-dropdown .dropdown-content {
+        position: static;
         box-shadow: none;
-        border-bottom: 1px solid #f1f3f5; /* Add separator */
-        padding: 0; /* Remove horizontal padding */
+        border: none; /* Or border-top/bottom for separation */
+        background-color: transparent; /* Inherit from mobile nav-links bg */
+        backdrop-filter: none;
+        padding: 0;
         min-width: auto;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition: none;
     }
-     .nav-links.show .nav-item-dropdown a {
-        padding: 10px 20px; /* Adjust padding for mobile links */
+     .nav-links.show .nav-item-dropdown > a { /* The main dropdown toggle link */
+        /* border-bottom: 1px solid rgba(197, 255, 0, 0.1) !important; */ /* Match other links */
      }
      .nav-links.show .nav-item-dropdown .dropdown-content a {
-         padding-left: 30px; /* Indent dropdown links slightly */
+         padding: 12px 20px 12px 40px; /* Indent dropdown links */
+         font-size: 0.9rem;
+         border-bottom: 1px solid rgba(197, 255, 0, 0.05); /* Fainter separator for sub-items */
      }
      .nav-links.show .nav-item-dropdown .dropdown-content a:last-child {
          border-bottom: none;
      }
-}
-
-.screenshot-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 10px 0;
-}
-
-.screenshot-gallery img {
-  max-width: 100%;
-  max-height: 150px;
-  width: auto;
-  height: auto;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  object-fit: cover;
-}
-
-.screenshot-gallery img:hover {
-  transform: scale(1.03);
-}
-
-/* Lightbox overlay */
-.lightbox-overlay {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.85);
-  justify-content: center;
-  align-items: center;
-}
-
-.lightbox-overlay img {
-  max-width: 95%;
-  max-height: 90%;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.2);
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+     .nav-links.show .nav-item-dropdown .dropdown-content a:hover {
+        background-color: rgba(197, 255, 0, 0.05);
+        padding-left: 45px;
+     }
 }
