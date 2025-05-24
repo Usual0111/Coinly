@@ -753,75 +753,120 @@ h2 {
 
 /* --- Lightbox for Screenshots --- */
 /* --- Lightbox for Screenshots --- */
-/* Стиль для самого оверлея лайтбокса */
+/* --- Исправленный Lightbox для Screenshots --- */
 .lightbox {
-    z-index: 1060; /* Убедимся, что он поверх всего */
+    z-index: 1060;
     background-color: rgba(0, 0, 0, 0.9);
-    display: flex; /* Используем flexbox для центрирования содержимого */
+    display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed; /* Убедимся, что это модальное окно на весь экран */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* display: none; */ /* Должен управляться JS для скрытия/показа */
-}
-/* Стиль для внутренней обертки изображения (теперь она есть в HTML!) */
-.lightbox .lightbox-content-wrapper {
-    background: none; /* Убираем фон */
-    backdrop-filter: none; /* Убираем эффект размытия */
-    border: none;
-    box-shadow: none;
-    padding: 0; /* Убираем внутренние отступы */
-    display: flex; /* Flexbox для центрирования самого изображения */
-    align-items: center;
-    justify-content: center;
-    width: auto; /* Позволяем ширине подстраиваться */
-    **max-width: 98vw; /* Ограничиваем максимальную ширину обертки от ширины окна */**
-    **max-height: 98vh; /* Ограничиваем максимальную высоту обертки от высоты окна */**
-    box-sizing: border-box; /* Убедимся, что padding/border не увеличивают размеры */
-    position: relative; /* Важно для позиционирования кнопки закрытия */
+    padding: 20px; /* Добавляем отступы от краев экрана */
+    box-sizing: border-box;
 }
 
-/* Стиль для самого изображения */
+.lightbox .lightbox-content-wrapper {
+    background: none;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    max-width: calc(100vw - 40px); /* Учитываем padding лайтбокса */
+    max-height: calc(100vh - 40px);
+    box-sizing: border-box;
+    position: relative;
+}
+
 .lightbox img.lightbox-image-display {
     display: block;
-    **max-width: 100%; /* Ограничиваем максимальную ширину изображения от ширины окна */**
-    **max-height: 100%; /* Ограничиваем максимальную высоту изображения от высоты окна */**
-    **object-fit: contain; /* Вписываем изображение, сохраняя пропорции */**
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Сохраняем пропорции и вписываем в контейнер */
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
     animation: fadeInLightbox 0.4s ease-in-out;
-    margin: auto; /* Центрируем изображение внутри обертки */
 }
-/* Стиль для кнопки закрытия */
+
 .lightbox .js-modal-close {
-    position: absolute; /* Абсолютное позиционирование относительно .lightbox-content-wrapper */
-    top: 10px;
-    right: 10px;
+    position: absolute;
+    top: -10px; /* Размещаем кнопку немного выше изображения */
+    right: -10px; /* И немного правее */
     font-size: 2.8rem;
     font-weight: normal;
     line-height: 1;
     cursor: pointer;
     color: #fff;
-    background: none;
+    background: rgba(0, 0, 0, 0.5); /* Добавляем полупрозрачный фон */
     border: none;
-    padding: 0.4rem;
-    transition: color 0.2s, transform 0.2s;
-    z-index: 10; /* Убедимся, что кнопка поверх изображения */
+    padding: 0.2rem 0.4rem;
+    border-radius: 50%;
+    transition: color 0.2s, transform 0.2s, background-color 0.2s;
+    z-index: 10;
     text-shadow: 0 0 5px rgba(0,0,0,0.8);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .lightbox .js-modal-close:hover {
     color: #ddd;
+    background: rgba(0, 0, 0, 0.7);
     transform: rotate(90deg) scale(1.1);
 }
 
 @keyframes fadeInLightbox {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+    from { 
+        opacity: 0; 
+        transform: scale(0.9); 
+    }
+    to { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
 }
-
+@keyframes fadeInLightbox {
+    from { 
+        opacity: 0; 
+        transform: scale(0.9); 
+    }
+    to { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+}
+/* Мобильная адаптация для лайтбокса */
+@media (max-width: 768px) {
+    .lightbox {
+        padding: 10px; /* Меньше отступов на мобильных */
+    }
+    
+    .lightbox .lightbox-content-wrapper {
+        max-width: calc(100vw - 20px);
+        max-height: calc(100vh - 20px);
+    }
+    
+    .lightbox .js-modal-close {
+        font-size: 2.2rem;
+        top: 5px;
+        right: 5px;
+        width: 40px;
+        height: 40px;
+        padding: 0.1rem 0.3rem;
+    }
+}
 
 /* --- Email Modal --- */
 #email-modal h2 {
