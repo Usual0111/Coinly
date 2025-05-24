@@ -140,9 +140,8 @@ body {
 }
 
 @media (max-width: 768px) {
-    #onboarding .screenshot-gallery img { 
-        width: clamp(100px, 45%, 150px);
-        max-height: 150px; /* ДОБАВЬТЕ и эту строку для мобильных устройств */
+    .decorative-header-bg {
+        display: none; /* Полностью скрываем фоновые эмодзи на мобильных */
     }
 }
 /* --- Utility Classes --- */
@@ -723,9 +722,9 @@ h2 {
     flex-wrap: wrap;
 }
 #onboarding .screenshot-gallery img {
-    width: clamp(120px, 45%, 170px);
-    height: auto;
-    max-height: 200px; /* ДОБАВЬТЕ эту строку - ограничивает максимальную высоту */
+    width: clamp(80px, 35%, 120px); /* УМЕНЬШЕНА ширина */
+    height: clamp(60px, 25vw, 90px); /* ДОБАВЛЕНА фиксированная высота */
+    max-height: 120px; /* ДОБАВЛЕНО ограничение высоты */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -733,6 +732,7 @@ h2 {
     cursor: pointer;
     border: 1px solid rgba(255,255,255,0.1);
 }
+
 #onboarding .screenshot-gallery img:hover {
     transform: scale(1.08) rotate(2deg);
     box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 10px var(--glow-accent-soft);
