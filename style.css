@@ -146,6 +146,8 @@ body {
         max-width: 60px !important;
         max-height: 45px !important;
         border-radius: 6px;
+         .decorative-header-bg {
+        display: none; /* Полностью скрываем фоновые эмодзи на мобильных */
     }
 }
 /* --- Utility Classes --- */
