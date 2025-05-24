@@ -722,9 +722,9 @@ h2 {
     flex-wrap: wrap;
 }
 #onboarding .screenshot-gallery img {
-   width: clamp(70px, 40%, 100px); /* УМЕНЬШЕНА ширина для мобильных */
-        height: clamp(50px, 20vw, 75px); /* ДОБАВЛЕНА фиксированная высота */
-        max-height: 100px; /* ДОБАВЛЕНО ограничение высоты */
+    width: clamp(60px, 35%, 85px);        /* Уменьшены все значения */
+    height: clamp(40px, 15vw, 60px);      /* Уменьшена высота и vw с 20% до 15% */
+    max-height: 60px;                     /* Уменьшено ограничение высоты */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -732,7 +732,6 @@ h2 {
     cursor: pointer;
     border: 1px solid rgba(255,255,255,0.1);
 }
-
 #onboarding .screenshot-gallery img:hover {
     transform: scale(1.08) rotate(2deg);
     box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 10px var(--glow-accent-soft);
