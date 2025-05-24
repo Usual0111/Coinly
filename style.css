@@ -1098,3 +1098,29 @@ footer a:hover {
         padding-left: 45px;
      }
 }
+
+/* --- General Screenshot Gallery Styles (не только для онбординга) --- */
+.screenshot-gallery {
+    display: flex;
+    gap: 15px;
+    margin: 1.5rem 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.screenshot-gallery img {
+    width: clamp(60px, 35%, 85px);
+    height: clamp(40px, 15vw, 60px);
+    max-height: 60px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.screenshot-gallery img:hover {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 10px var(--glow-accent-soft);
+}
