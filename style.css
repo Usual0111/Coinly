@@ -140,8 +140,12 @@ body {
 }
 
 @media (max-width: 768px) {
-    .decorative-header-bg {
-        display: none; /* Полностью скрываем фоновые эмодзи на мобильных */
+    #onboarding .screenshot-gallery img {
+        width: 60px !important;
+        height: 45px !important;
+        max-width: 60px !important;
+        max-height: 45px !important;
+        border-radius: 6px;
     }
 }
 /* --- Utility Classes --- */
@@ -716,25 +720,42 @@ h2 {
 }
 #onboarding .screenshot-gallery {
     display: flex;
-    gap: 15px;
+    gap: 10px;                        /* Уменьшен зазор между картинками */
     margin: 1.5rem 0;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;              /* Выравнивание по центру */
 }
 #onboarding .screenshot-gallery img {
-    width: clamp(60px, 35%, 85px);        /* Уменьшены все значения */
-    height: clamp(40px, 15vw, 60px);      /* Уменьшена высота и vw с 20% до 15% */
-    max-height: 60px;                     /* Уменьшено ограничение высоты */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    /* ФИКСИРОВАННЫЕ маленькие размеры */
+    width: 80px !important;           /* Принудительная ширина */
+    height: 60px !important;          /* Принудительная высота */
+    max-width: 80px !important;       /* Максимальная ширина */
+    max-height: 60px !important;      /* Максимальная высота */
+    min-width: 60px !important;       /* Минимальная ширина */
+    min-height: 45px !important;      /* Минимальная высота */
+    
+    /* Обрезка и позиционирование */
+    object-fit: cover;                /* Обрезает изображение по размеру */
+    object-position: center;          /* Центрирует изображение */
+    
+    /* Оформление */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    object-fit: cover;
     cursor: pointer;
     border: 1px solid rgba(255,255,255,0.1);
+    
+    /* Убираем любые margin/padding */
+    margin: 0;
+    padding: 0;
+    
+    /* Принудительное отображение как блок */
+    display: block;
 }
 #onboarding .screenshot-gallery img:hover {
-    transform: scale(1.08) rotate(2deg);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 10px var(--glow-accent-soft);
+    transform: scale(1.1) rotate(2deg);    /* Уменьшено увеличение с 1.08 до 1.1 */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4), 0 0 8px var(--glow-accent-soft);
 }
 #onboarding .onboarding-nav {
     display: flex;
