@@ -139,10 +139,10 @@ body {
     }
 }
 
-/* --- Медиа-запросы для мобильных устройств --- */
 @media (max-width: 768px) {
-    .decorative-header-bg {
-        display: none; /* <--- КЛЮЧЕВОЕ ИЗМЕНЕНИЕ: Полностью скрываем эмодзи на мобильных */
+    #onboarding .screenshot-gallery img { 
+        width: clamp(100px, 45%, 150px);
+        max-height: 150px; /* ДОБАВЬТЕ и эту строку для мобильных устройств */
     }
 }
 /* --- Utility Classes --- */
@@ -725,6 +725,7 @@ h2 {
 #onboarding .screenshot-gallery img {
     width: clamp(120px, 45%, 170px);
     height: auto;
+    max-height: 200px; /* ДОБАВЬТЕ эту строку - ограничивает максимальную высоту */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
