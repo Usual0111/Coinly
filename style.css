@@ -6,8 +6,8 @@
     --accent-color-darker: #b0e600;
     --background-color: #000000;
     --text-primary: #ffffff;
-    --text-secondary: #999999;
-    --text-tertiary: #777777;
+    --text-secondary: #ffffff;
+    --text-tertiary: #ffffff;
     --glass-bg-light: rgba(35, 35, 35, 0.3); /* Lighter glass for header/modals */
     --glass-bg-medium: rgba(25, 25, 25, 0.25); /* Medium glass for containers */
     --glass-bg-dark: rgba(15, 15, 15, 0.4); /* Darker glass for elements like cards */
