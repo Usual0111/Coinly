@@ -752,41 +752,69 @@ h2 {
 
 
 /* --- Lightbox for Screenshots --- */
-.lightbox { /* This class should be used for the overlay if reusing modal logic */
-    z-index: 1060;
-    background-color: rgba(0, 0, 0, 0.9); /* Even darker for full focus */
-}
-/* Reusing .modal structure for lightbox: .lightbox.active, .lightbox .modal-content for image wrapper */
-.lightbox .lightbox-content-wrapper { /* Specific wrapper if needed inside .modal-content */
-    background: none;
-    backdrop-filter: none;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    display: flex;
+/* --- Lightbox for Screenshots --- */
+/* Стиль для самого оверлея лайтбокса */
+.lightbox {
+    z-index: 1060; /* Убедимся, что он поверх всего */
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex; /* Используем flexbox для центрирования содержимого */
     align-items: center;
     justify-content: center;
-    width: auto;
-    max-width: 95%;
-    max-height: 95%;
+    position: fixed; /* Убедимся, что это модальное окно на весь экран */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* display: none; */ /* Должен управляться JS для скрытия/показа */
 }
-.lightbox img.lightbox-image-display { /* The actual image */
+/* Стиль для внутренней обертки изображения (теперь она есть в HTML!) */
+.lightbox .lightbox-content-wrapper {
+    background: none; /* Убираем фон */
+    backdrop-filter: none; /* Убираем эффект размытия */
+    border: none;
+    box-shadow: none;
+    padding: 0; /* Убираем внутренние отступы */
+    display: flex; /* Flexbox для центрирования самого изображения */
+    align-items: center;
+    justify-content: center;
+    width: auto; /* Позволяем ширине подстраиваться */
+    **max-width: 98vw; /* Ограничиваем максимальную ширину обертки от ширины окна */**
+    **max-height: 98vh; /* Ограничиваем максимальную высоту обертки от высоты окна */**
+    box-sizing: border-box; /* Убедимся, что padding/border не увеличивают размеры */
+    position: relative; /* Важно для позиционирования кнопки закрытия */
+}
+
+/* Стиль для самого изображения */
+.lightbox img.lightbox-image-display {
     display: block;
-    max-width: 100%;
-    max-height: 100%; /* Was 85vh in modal-content context, now relative to wrapper */
+    **max-width: 95vw; /* Ограничиваем максимальную ширину изображения от ширины окна */**
+    **max-height: 95vh; /* Ограничиваем максимальную высоту изображения от высоты окна */**
+    **object-fit: contain; /* Вписываем изображение, сохраняя пропорции */**
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
     animation: fadeInLightbox 0.4s ease-in-out;
+    margin: auto; /* Центрируем изображение внутри обертки */
 }
-.lightbox .js-modal-close { /* Use modal's close button, styled for lightbox */
-    color: #fff;
+/* Стиль для кнопки закрытия */
+.lightbox .js-modal-close {
+    position: absolute; /* Абсолютное позиционирование относительно .lightbox-content-wrapper */
+    top: 10px;
+    right: 10px;
     font-size: 2.8rem;
-    top: 20px;
-    right: 20px;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    font-weight: normal;
+    line-height: 1;
+    cursor: pointer;
+    color: #fff;
+    background: none;
+    border: none;
+    padding: 0.4rem;
+    transition: color 0.2s, transform 0.2s;
+    z-index: 10; /* Убедимся, что кнопка поверх изображения */
+    text-shadow: 0 0 5px rgba(0,0,0,0.8);
 }
 .lightbox .js-modal-close:hover {
     color: #ddd;
+    transform: rotate(90deg) scale(1.1);
 }
 
 @keyframes fadeInLightbox {
