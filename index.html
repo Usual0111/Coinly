@@ -183,12 +183,14 @@
 <a href="/legal/disclaimer.html">Disclaimer</a>
   </footer>
 
-  <div id="lightbox" class="lightbox modal hidden" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
-    <button class="lightbox-close js-modal-close" aria-label="Close image">&times;</button>
-    <img class="lightbox-content" id="lightbox-img" src="" alt="Enlarged screenshot">
-    <div id="lightbox-caption" class="visually-hidden">Enlarged Image</div>
-  </div>
-
+<div id="lightbox" class="lightbox modal hidden" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
+    <div class="modal-content lightbox-content-wrapper">
+        <button class="lightbox-close js-modal-close" aria-label="Close image">&times;</button>
+        <img class="lightbox-image-display" id="lightbox-image" src="" alt="Enlarged screenshot">
+        <div id="lightbox-caption" class="visually-hidden">Enlarged Image</div>
+    </div>
+</div>
+    
   <div id="guideModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="guideModalTitle">
   <div class="modal-content">
     <button class="close js-modal-close" aria-label="Close guide">&times;</button>
