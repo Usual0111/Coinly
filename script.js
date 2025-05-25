@@ -147,7 +147,7 @@ const browserNodesProjectsData = [
 {
   "icon": "💻",
   "name": "Hivello",
-  "description": "Get paid in crypto for sharing your internet — earn passively with just your device.",
+  "description": "Earn points and USDT by sharing your internet — passive income with just your device.",
   "reward": "+$100-$500 (Est. avg.)",
   "btnText": "Start Mining",
   "hot": true,
@@ -277,7 +277,7 @@ const recommendedProjectsData = [
 {
   "icon": "💻",
   "name": "Hivello",
-  "description": "Get paid in crypto for sharing your internet — earn passively with just your device.",
+  "description": "Earn points and USDT by sharing your internet — passive income with just your device.",
   "reward": "+$100-$500 (Est. avg.)",
   "btnText": "Start Mining",
   "hot": true,
@@ -306,6 +306,27 @@ const recommendedProjectsData = [
 projectTrackers.recommended.data = recommendedProjectsData;
 
 const freeToEarnProjectsData = [
+
+  {
+  "icon": "🤖",
+  "name": "NEXY AI",
+  "description": "Get paid in crypto for simple social tasks — no trading skills needed.",
+  "reward": "+$30–$150 (Est. avg.)",
+  "btnText": "Start Earning",
+  "hot": true,
+  "taskId": "nexyai",
+  "instructions": {
+    "title": "📦 NEXY AI Mini-Guide",
+    "description": "🤖 Earn Free Crypto for Social Engagement — Fast, Easy, and You're Early",
+    "steps": [
+      "Log In with X (Twitter). Go to the NEXY AI event page and sign in via your X account.",
+      "Complete Tasks. Follow, like, retweet, join Telegram, and share content to earn Nexy Points.",
+      "Refer Friends. Invite others and earn 10% of their points — the more you share, the more you earn."
+    ],
+    "actionUrl": "https://point.nexyai.io/?ref=EOGFU",
+    "actionText": "Free, simple, and you're just in time — start earning now!"
+  }
+},
 
 {
   "icon": "🚀",
