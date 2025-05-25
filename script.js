@@ -17,6 +17,132 @@ const ITEMS_PER_LOAD = 3;
 // --- Данные проектов (ПЕРЕМЕЩЕНЫ В НАЧАЛО) ---
 // Project data for original browser nodes
 const browserNodesProjectsData = [
+
+  { 
+  "icon": "🧠", 
+  "name": "OpenLedger", 
+  "description": "Get rewarded in crypto for simply keeping a browser extension active while supporting AI innovation.", 
+  "reward": "+$40–$200 (Est. avg.)", 
+  "btnText": "Start Earning", 
+  "hot": true, 
+  "taskId": "openledger", 
+  "instructions": { 
+    "title": "📦 OpenLedger Mini-Guide", 
+    "description": "🧠 Earn Free Crypto While You Browse — Help Build the Future of AI", 
+    "steps": [ 
+      "Install & Sign In. Add the OpenLedger extension to Chrome and log in with your Gmail.",
+      "Stay Active. Keep the extension running in the background to earn points automatically.",
+      "Boost Your Rewards. Complete missions, check in daily, and join the community to score more." 
+    ], 
+    "actionUrl": "https://testnet.openledger.xyz/?referral_code=y4ipacocuq", 
+    "actionText": "It’s free, simple, and you’re right on time — don’t miss out!" 
+  } 
+},
+
+  {
+  "icon": "🧠",
+  "name": "OptimAI",
+  "description": "Get paid in crypto by running a browser node and helping train smarter AI.",
+  "reward": "+$25–$120 (Est. avg.)",
+  "btnText": "Start Earning",
+  "hot": true,
+  "taskId": "optimai",
+  "instructions": {
+    "title": "📦 OptimAI Mini-Guide",
+    "description": "🧠 Earn Free Crypto by Powering AI with Your Browser — It’s Free, Simple, and You’re Early",
+    "steps": [
+      "Sign Up & Set Up. Create an account, generate a wallet, and save your recovery phrase.",
+      "Install the Extension. Add the OptimAI Lite Node from the Chrome Web Store.",
+      "Run the Node & Earn. Keep the extension active, complete simple tasks, and start earning rewards."
+    ],
+    "actionUrl": "https://node.optimai.network/register?ref=27F19F8A",
+    "actionText": "Join early — earn crypto while supporting next-gen AI!"
+  }
+},
+
+  {
+  "icon": "⚡️",
+  "name": "Flow3",
+  "description": "Get paid in crypto just by keeping your browser online — earn SOL & points daily.",
+  "reward": "+$30–$180 (Est. avg.)",
+  "btnText": "Start Earning",
+  "hot": true,
+  "taskId": "flow3",
+  "instructions": {
+    "title": "📦 Flow3 Mini-Guide",
+    "description": "⚡️ Earn Free Crypto by Staying Online — Simple, Free, and You’re Early",
+    "steps": [
+      "Sign Up & Connect. Register with Gmail, connect your Solana wallet.",
+      "Install the Extension. Add Flow3 Node from the Chrome Web Store and keep it running.",
+      "Boost Earnings. Earn SOL & Flow3 Points daily — refer friends or buy a node for bigger rewards."
+    ],
+    "actionUrl": "https://app.flow3.tech/sale-nodes?ref=oAIomW1Rs9",
+    "actionText": "Get started early — earn daily rewards just by being online!"
+  }
+},
+
+  {
+  "icon": "🌐",
+  "name": "Exeos Network",
+  "description": "Get paid in crypto by sharing your unused internet — it runs quietly in your browser.",
+  "reward": "+$20–$100 (Est. avg.)",
+  "btnText": "Start Earning",
+  "hot": true,
+  "taskId": "exuse",
+  "instructions": {
+    "title": "📦 Exuse Network Mini-Guide",
+    "description": "🌐 Earn Free Crypto Using Your Internet — No Tech Skills Needed, Just Stay Online",
+    "steps": [
+      "Connect Your Wallet. Visit the site, log in with Google or connect MetaMask.",
+      "Install the Extension. Add the Exuse browser plugin and keep it active.",
+      "Earn & Share. Earn points automatically and boost rewards by inviting friends."
+    ],
+    "actionUrl": "https://app.exeos.network?referralCode=REFZBWAYSE5",
+    "actionText": "Get in early — turn your internet into daily crypto rewards!"
+  }
+},
+
+  {
+  "icon": "⛏️",
+  "name": "Grid Network",
+  "description": "Get paid in crypto for sharing your internet — earn passively while your browser runs.",
+  "reward": "+$20–$100 (Est. avg.)",
+  "btnText": "Start Earning",
+  "hot": true,
+  "taskId": "grid",
+  "instructions": {
+    "title": "📦 Grid Network Mini-Guide",
+    "description": "⛏️ Earn Free Crypto Just by Keeping the Extension Active — It’s Easy and You’re Early",
+    "steps": [
+      "Register & Verify. Sign up using your email and confirm it.",
+      "Install the Extension. Add the Grid browser plugin and let it run in the background.",
+      "Refer Friends. Share your link and earn more points for each invite."
+    ],
+    "actionUrl": "https://sso.getgrid.ai/registration?referral_code=2b30ce9",
+    "actionText": "Start now — turn your unused internet into daily crypto rewards!"
+  }
+},
+
+  {
+  "icon": "📶",
+  "name": "DeSpeed",
+  "description": "Get paid in crypto for testing your internet speed — earn passively with a browser extension.",
+  "reward": "+$25–$120 (Est. avg.)",
+  "btnText": "Start Earning",
+  "hot": true,
+  "taskId": "despeed",
+  "instructions": {
+    "title": "📦 DeSpeed Mini-Guide",
+    "description": "📶 Earn Free Crypto by Verifying Internet Speed — It’s Simple, Free, and You’re Early",
+    "steps": [
+      "Sign Up with Gmail. Register on DeSpeed and log in to your account.",
+      "Install the Extension. Add the DeSpeed Validator from the Chrome Web Store.",
+      "Activate & Earn. Open the extension, stay online, and invite friends for more rewards."
+    ],
+    "actionUrl": "https://app.despeed.net/register?ref=qFV0QHxGSiVw",
+    "actionText": "Join now — earn rewards just by measuring your internet speed!"
+  }
+},
   
 {
   "icon": "💻",
@@ -126,6 +252,27 @@ actionText: "Start now — early users have the highest earning potential!" }},
 projectTrackers.browser.data = browserNodesProjectsData;
 
 const recommendedProjectsData = [
+
+  { 
+  "icon": "🧠", 
+  "name": "OpenLedger", 
+  "description": "Get rewarded in crypto for simply keeping a browser extension active while supporting AI innovation.", 
+  "reward": "+$40–$200 (Est. avg.)", 
+  "btnText": "Start Earning", 
+  "hot": true, 
+  "taskId": "openledger", 
+  "instructions": { 
+    "title": "📦 OpenLedger Mini-Guide", 
+    "description": "🧠 Earn Free Crypto While You Browse — Help Build the Future of AI", 
+    "steps": [ 
+      "Install & Sign In. Add the OpenLedger extension to Chrome and log in with your Gmail.",
+      "Stay Active. Keep the extension running in the background to earn points automatically.",
+      "Boost Your Rewards. Complete missions, check in daily, and join the community to score more." 
+    ], 
+    "actionUrl": "https://testnet.openledger.xyz/?referral_code=y4ipacocuq", 
+    "actionText": "It’s free, simple, and you’re right on time — don’t miss out!" 
+  } 
+},
   
 {
   "icon": "💻",
@@ -153,9 +300,8 @@ const recommendedProjectsData = [
  instructions: { title: "🪙 Gradient Airdrop — no investment needed!", 
  description: "Complete these simple steps to earn your Gradient Airdrop:", 
  steps: ["Set up a node (right from your browser)", "Earn XP for uptime & inviting friends", "Claim rewards in Season 1"], 
- actionUrl: "https://app.gradient.network/signup?code=744DX2", actionText: "Start Earning" }},
+ actionUrl: "https://app.gradient.network/signup?code=744DX2", actionText: "Start Earning" }}
   
- { icon: "🔷", name: "BlockMesh", description: "Earn Crypto by Sharing Internet — Help Build Ethical AI.", reward: "+$50-$250 (Est. avg.)", btnText: "Start", hot: true, taskId: "blockmesh", instructions: { title: "🎁 Free Crypto Just by Being Online", description: "No money needed • Simple setup • Rewards are live", steps: ["Sign up on Blockmesh and confirm your email.", "Add the Chrome extension. Install it, log in, and keep it running.", "Connect your wallet + Twitter. Get points for easy tasks like captchas and follows."], actionUrl: "https://app.blockmesh.xyz/register?invite_code=5b614ab7-bad2-47f9-ae66-282004203f4a", actionText: "Start Earning" }}
 ];
 projectTrackers.recommended.data = recommendedProjectsData;
 
