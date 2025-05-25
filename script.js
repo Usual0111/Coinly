@@ -253,25 +253,25 @@ projectTrackers.browser.data = browserNodesProjectsData;
 
 const recommendedProjectsData = [
 
-  { 
-  "icon": "🧠", 
-  "name": "OpenLedger", 
-  "description": "Get rewarded in crypto for simply keeping a browser extension active while supporting AI innovation.", 
-  "reward": "+$40–$200 (Est. avg.)", 
-  "btnText": "Start Earning", 
-  "hot": true, 
-  "taskId": "openledger", 
-  "instructions": { 
-    "title": "📦 OpenLedger Mini-Guide", 
-    "description": "🧠 Earn Free Crypto While You Browse — Help Build the Future of AI", 
-    "steps": [ 
-      "Install & Sign In. Add the OpenLedger extension to Chrome and log in with your Gmail.",
-      "Stay Active. Keep the extension running in the background to earn points automatically.",
-      "Boost Your Rewards. Complete missions, check in daily, and join the community to score more." 
-    ], 
-    "actionUrl": "https://testnet.openledger.xyz/?referral_code=y4ipacocuq", 
-    "actionText": "It’s free, simple, and you’re right on time — don’t miss out!" 
-  } 
+    {
+  "icon": "🤖",
+  "name": "NEXY AI",
+  "description": "Get paid in crypto for simple social tasks — no trading skills needed.",
+  "reward": "+$30–$150 (Est. avg.)",
+  "btnText": "Start Earning",
+  "hot": true,
+  "taskId": "nexyai",
+  "instructions": {
+    "title": "📦 NEXY AI Mini-Guide",
+    "description": "🤖 Earn Free Crypto for Social Engagement — Fast, Easy, and You're Early",
+    "steps": [
+      "Log In with X (Twitter). Go to the NEXY AI event page and sign in via your X account.",
+      "Complete Tasks. Follow, like, retweet, join Telegram, and share content to earn Nexy Points.",
+      "Refer Friends. Invite others and earn 10% of their points — the more you share, the more you earn."
+    ],
+    "actionUrl": "https://point.nexyai.io/?ref=EOGFU",
+    "actionText": "Free, simple, and you're just in time — start earning now!"
+  }
 },
   
 {
