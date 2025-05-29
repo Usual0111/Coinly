@@ -91,44 +91,64 @@ body {
 /* top и left остаются такими же, чтобы заполнить всю область */
 /* Определяем позиции, размеры и задержки анимации для каждого смайла */
 /* top и left остаются такими же, чтобы заполнить всю область */
-.decorative-header-bg .emoji-1 { top: -10%; left: 5%; font-size: 5em; animation-delay: 0s; } /* Поворот вправо (по умолчанию) */
-.decorative-header-bg .emoji-2 {
-    top: 70%; left: 90%; font-size: 4.5em; animation-delay: -6s; /* <--- ИЗМЕНЕНИЕ: Скорректированы задержки */
-    animation-name: driftAndFadeLeft; /* Поворот влево */
+.decorative-header-bg .emoji-1 {
+    top: -10%; left: 5%; font-size: 5em; animation-delay: 0s;
+    /* По умолчанию будет driftAndFade (наклон вправо) */
 }
-.decorative-header-bg .emoji-3 { top: -20%; left: 18%; font-size: 5.5em; animation-delay: -12s; } /* Поворот вправо (по умолчанию) */
+.decorative-header-bg .emoji-2 {
+    top: 70%; left: 90%; font-size: 4.5em; animation-delay: -6s;
+    animation-name: driftAndFadeLeft; /* Наклон влево */
+}
+.decorative-header-bg .emoji-3 {
+    top: -20%; left: 18%; font-size: 5.5em; animation-delay: -12s;
+    animation-name: driftAndFadeLeft; /* Наклон влево */
+}
 .decorative-header-bg .emoji-4 {
     top: 50%; left: 78%; font-size: 4em; animation-delay: -18s;
-    animation-name: driftAndFadeLeft; /* Поворот влево */
+    /* По умолчанию будет driftAndFade (наклон вправо) */
 }
-.decorative-header-bg .emoji-5 { top: -5%; left: 10%; font-size: 4.8em; animation-delay: -24s; } /* Поворот вправо (по умолчанию) */
+.decorative-header-bg .emoji-5 {
+    top: -5%; left: 10%; font-size: 4.8em; animation-delay: -24s;
+    /* По умолчанию будет driftAndFade (наклон вправо) */
+}
 .decorative-header-bg .emoji-6 {
     top: 80%; left: 85%; font-size: 5.2em; animation-delay: -30s;
-    animation-name: driftAndFadeLeft; /* Поворот влево */
+    animation-name: driftAndFadeLeft; /* Наклон влево */
 }
-.decorative-header-bg .emoji-7 { top: 30%; left: 2%; font-size: 4.2em; animation-delay: -36s; } /* Поворот вправо (по умолчанию) */
+.decorative-header-bg .emoji-7 {
+    top: 30%; left: 2%; font-size: 4.2em; animation-delay: -36s;
+    animation-name: driftAndFadeLeft; /* Наклон влево */
+}
 .decorative-header-bg .emoji-8 {
     top: -15%; left: 93%; font-size: 4.7em; animation-delay: -42s;
-    animation-name: driftAndFadeLeft; /* Поворот влево */
+    /* По умолчанию будет driftAndFade (наклон вправо) */
 }
-.decorative-header-bg .emoji-9 { top: 60%; left: 13%; font-size: 5.3em; animation-delay: -48s; } /* Поворот вправо (по умолчанию) */
+.decorative-header-bg .emoji-9 {
+    top: 60%; left: 13%; font-size: 5.3em; animation-delay: -48s;
+    /* По умолчанию будет driftAndFade (наклон вправо) */
+}
 .decorative-header-bg .emoji-10 {
     top: 10%; left: 82%; font-size: 4.1em; animation-delay: -54s;
-    animation-name: driftAndFadeLeft; /* Поворот влево */
+    animation-name: driftAndFadeLeft; /* Наклон влево */
 }
 
 /* НОВЫЕ ЭМОДЗИ ДЛЯ ПРАВОЙ СТОРОНЫ И ДОПОЛНИТЕЛЬНОЙ ЛЕВОЙ */
-.decorative-header-bg .emoji-11 { top: 40%; left: 95%; font-size: 5.0em; animation-delay: -60s; } /* Поворот вправо (по умолчанию) */
+.decorative-header-bg .emoji-11 {
+    top: 40%; left: 95%; font-size: 5.0em; animation-delay: -60s;
+    animation-name: driftAndFadeLeft; /* Наклон влево */
+}
 .decorative-header-bg .emoji-12 {
     top: 20%; left: 70%; font-size: 4.3em; animation-delay: -66s;
-    animation-name: driftAndFadeLeft; /* Поворот влево */
+    /* По умолчанию будет driftAndFade (наклон вправо) */
 }
-.decorative-header-bg .emoji-13 { top: 0%; left: 98%; font-size: 4.8em; animation-delay: -72s; } /* Поворот вправо (по умолчанию) */
+.decorative-header-bg .emoji-13 {
+    top: 0%; left: 98%; font-size: 4.8em; animation-delay: -72s;
+    /* По умолчанию будет driftAndFade (наклон вправо) */
+}
 .decorative-header-bg .emoji-14 {
     top: 90%; left: 75%; font-size: 4.6em; animation-delay: -78s;
-    animation-name: driftAndFadeLeft; /* Поворот влево */
+    animation-name: driftAndFadeLeft; /* Наклон влево */
 }
-
 /* Если добавите emoji-15, emoji-16, то продолжайте с left для левой/правой стороны */
 /* .decorative-header-bg .emoji-15 { top: 45%; left: 8%; font-size: 5.1em; animation-delay: -84s; } */ /* Поворот вправо (по умолчанию), если раскомментировать */
 /* .decorative-header-bg .emoji-16 {
